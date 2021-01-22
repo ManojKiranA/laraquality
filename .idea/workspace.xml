@@ -1,0 +1,523 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="3c0aa67a-1849-4c37-b8d9-a890da0e6b1e" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/.idea/blade.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/codeStyles/codeStyleConfig.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/deployment.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/jsLinters/eslint.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/laravel-idea.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/laravel-plugin.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/lq-i.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/php.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/phpunit.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/symfony2.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/watcherTasks.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/Http/Controllers/ApiController.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/Http/Controllers/AuditController.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/Http/Controllers/AuditFirmController.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/Http/Controllers/AuditPlanController.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/Http/Controllers/AuditTypeController.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/Http/Controllers/AuditorController.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/Http/Controllers/ClaimActionController.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/Http/Controllers/ClaimController.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/Http/Controllers/ClaimDecisionController.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/Http/Controllers/ClaimPropertyController.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/Http/Controllers/ClaimTypeController.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/Http/Controllers/CustomerController.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/Http/Controllers/CustomerTypeController.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/Http/Controllers/DepartmentController.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/Http/Controllers/DocumentController.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/Http/Controllers/DocumentTypeController.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/Http/Controllers/JobDescriptionController.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/Http/Controllers/MachineController.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/Http/Controllers/MachineTypeController.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/Http/Controllers/MaintenanceActionController.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/Http/Controllers/MaintenanceController.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/Http/Controllers/MaintenancePlanController.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/Http/Controllers/MaintenanceTypeController.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/Http/Controllers/MeasurementToolActionController.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/Http/Controllers/MeasurementToolController.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/Http/Controllers/MeasurementToolPropertyController.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/Http/Controllers/MeasurementToolTypeController.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/Http/Controllers/ProductController.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/Http/Controllers/ProductQualityPlanController.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/Http/Controllers/ProductTypeController.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/Http/Controllers/ProductVariationController.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/Http/Controllers/RawMaterialController.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/Http/Controllers/RawMaterialQaulityPlanController.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/Http/Controllers/RawMaterialTypeController.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/Http/Controllers/RecipeController.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/Http/Controllers/StaffController.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/Http/Controllers/StandardController.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/Http/Resources/Test.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/Models/Audit.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/Models/AuditFirm.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/Models/AuditPlan.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/Models/AuditType.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/Models/Auditor.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/Models/Claim.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/Models/ClaimDecision.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/Models/ClaimProperty.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/Models/ClaimType.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/Models/Customer.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/Models/CustomerType.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/Models/Department.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/Models/Document.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/Models/DocumentType.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/Models/JobDescription.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/Models/Machine.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/Models/MachineType.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/Models/Maintenance.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/Models/MaintenanceAction.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/Models/MaintenancePlan.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/Models/MaintenanceType.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/Models/MeasurementTool.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/Models/MeasurementToolAction.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/Models/MeasurementToolProperty.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/Models/MeasurementToolType.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/Models/Product.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/Models/ProductMaterialQualityPlan.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/Models/ProductQualityPlan.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/Models/ProductType.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/Models/ProductVariation.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/Models/RawMaterial.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/Models/RawMaterialType.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/Models/Recipe.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/Models/Standard.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/database/migrations/2021_01_13_173231_create_audits_table.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/database/migrations/2021_01_13_173427_create_auditors_table.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/database/migrations/2021_01_13_173552_create_audit_firms_table.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/database/migrations/2021_01_13_173628_create_audit_plans_table.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/database/migrations/2021_01_13_173715_create_audit_types_table.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/database/migrations/2021_01_13_173727_create_claim_actions_table.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/database/migrations/2021_01_13_173739_create_claims_table.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/database/migrations/2021_01_13_173750_create_claim_decisions_table.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/database/migrations/2021_01_13_173813_create_claim_properties_table.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/database/migrations/2021_01_13_173835_create_claim_types_table.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/database/migrations/2021_01_13_173845_create_customers_table.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/database/migrations/2021_01_13_173853_create_customer_types_table.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/database/migrations/2021_01_13_173904_create_departments_table.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/database/migrations/2021_01_13_173913_create_documents_table.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/database/migrations/2021_01_13_173926_create_document_types_table.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/database/migrations/2021_01_13_173940_create_job_descriptions_table.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/database/migrations/2021_01_13_173951_create_machines_table.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/database/migrations/2021_01_13_174000_create_machine_types_table.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/database/migrations/2021_01_13_174020_create_maintenance_actions_table.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/database/migrations/2021_01_13_174026_create_maintenances_table.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/database/migrations/2021_01_13_174037_create_maintenance_plans_table.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/database/migrations/2021_01_13_174048_create_maintenance_types_table.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/database/migrations/2021_01_13_174110_create_measurement_tools_table.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/database/migrations/2021_01_13_174118_create_measurement_tool_actions_table.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/database/migrations/2021_01_13_174125_create_measurement_tool_types_table.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/database/migrations/2021_01_13_174140_create_measurement_tool_properties_table.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/database/migrations/2021_01_13_174152_create_products_table.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/database/migrations/2021_01_13_174205_create_product_types_table.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/database/migrations/2021_01_13_174213_create_product_quality_plans_table.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/database/migrations/2021_01_13_174232_create_product_quality_variations_table.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/database/migrations/2021_01_13_174240_create_product_variations_table.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/database/migrations/2021_01_13_174252_create_raw_materials_table.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/database/migrations/2021_01_13_174308_create_raw_material_quality_plans_table.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/database/migrations/2021_01_13_174319_create_raw_material_types_table.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/database/migrations/2021_01_13_174327_create_recipes_table.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/database/migrations/2021_01_17_204745_create_standards_table.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/database/migrations/2021_01_17_205347_add_new_properties_to_users_table.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/fonts/vendor/@mdi/materialdesignicons-webfont.eot" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/fonts/vendor/@mdi/materialdesignicons-webfont.ttf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/fonts/vendor/@mdi/materialdesignicons-webfont.woff" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/fonts/vendor/@mdi/materialdesignicons-webfont.woff2" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/fonts/vendor/element-ui/lib/theme-chalk/element-icons.ttf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/fonts/vendor/element-ui/lib/theme-chalk/element-icons.woff" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/fonts/vendor/primeicons/primeicons.eot" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/fonts/vendor/primeicons/primeicons.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/fonts/vendor/primeicons/primeicons.ttf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/fonts/vendor/primeicons/primeicons.woff" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/images/general/dummy_user.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/images/general/logo.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/images/vendor/primevue/resources/color.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/images/vendor/primevue/resources/hue.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/images/vendor/primevue/resources/password-meter.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/js/Components/Authentication/Login.vue" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/js/Components/Buttons/ActionButton.vue" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/js/Components/Buttons/GeneralButton.vue" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/js/Components/Error.vue" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/js/Components/Form/Error.vue" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/js/Components/Form/FormContent.vue" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/js/Components/Form/FormSection.vue" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/js/Components/Form/InputGroup.vue" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/js/Components/Form/Inputs/InputText.vue" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/js/Components/Icons/General/BackArrow.vue" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/js/Components/Icons/General/BlueCollar.vue" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/js/Components/Icons/General/Checked.vue" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/js/Components/Icons/General/DownArrow.vue" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/js/Components/Icons/General/LeftArrow.vue" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/js/Components/Icons/General/Logo.vue" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/js/Components/Icons/General/Plus.vue" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/js/Components/Icons/General/Reset.vue" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/js/Components/Icons/General/WhiteCollar.vue" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/js/Components/Icons/General/XIcon.vue" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/js/Components/Icons/Sections/Action.vue" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/js/Components/Icons/Sections/Audit.vue" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/js/Components/Icons/Sections/AuditFirm.vue" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/js/Components/Icons/Sections/Auditor.vue" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/js/Components/Icons/Sections/Audits.vue" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/js/Components/Icons/Sections/Claim.vue" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/js/Components/Icons/Sections/ClaimDecision.vue" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/js/Components/Icons/Sections/Claims.vue" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/js/Components/Icons/Sections/Customer.vue" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/js/Components/Icons/Sections/Department.vue" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/js/Components/Icons/Sections/Document.vue" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/js/Components/Icons/Sections/Documents.vue" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/js/Components/Icons/Sections/JobDescription.vue" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/js/Components/Icons/Sections/Machine.vue" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/js/Components/Icons/Sections/MachineType.vue" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/js/Components/Icons/Sections/Machines.vue" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/js/Components/Icons/Sections/Maintenance.vue" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/js/Components/Icons/Sections/MeasurementTool.vue" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/js/Components/Icons/Sections/MeasurementTools.vue" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/js/Components/Icons/Sections/Plan.vue" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/js/Components/Icons/Sections/Product.vue" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/js/Components/Icons/Sections/ProductType.vue" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/js/Components/Icons/Sections/ProductVariations.vue" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/js/Components/Icons/Sections/Products.vue" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/js/Components/Icons/Sections/RawMaterial.vue" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/js/Components/Icons/Sections/RawMaterials.vue" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/js/Components/Icons/Sections/Recipe.vue" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/js/Components/Icons/Sections/Regulation.vue" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/js/Components/Icons/Sections/Staff.vue" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/js/Components/Icons/Sections/Staff2.vue" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/js/Components/Icons/Sections/Standard.vue" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/js/Components/Icons/Sections/Statistic.vue" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/js/Components/Icons/Sections/Type.vue" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/js/Components/Menu/LeftMenu.vue" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/js/Components/Menu/LeftMenuItem.vue" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/js/Components/Menu/LeftMenuSubItem.vue" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/js/Components/ViewItems/DropDown.vue" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/js/Layouts/AppLayoutDenemeAnt.vue" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/js/Pages/Department/Create.vue" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/js/Pages/Department/Index.vue" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/js/Pages/Product/Create.vue" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/js/Pages/Product/Index.vue" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/js/Pages/Product/ProductType/Create.vue" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/js/Pages/Product/ProductType/Index.vue" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/js/Pages/Staff/Create.vue" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/js/Pages/Staff/Index.vue" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/sass/app.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Exceptions/Handler.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Exceptions/Handler.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Models/User.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Models/User.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Providers/AppServiceProvider.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Providers/AppServiceProvider.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/config/jetstream.php" beforeDir="false" afterPath="$PROJECT_DIR$/config/jetstream.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/seeders/DatabaseSeeder.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/seeders/DatabaseSeeder.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/css/app.css" beforeDir="false" afterPath="$PROJECT_DIR$/public/css/app.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/js/app.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/js/app.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/css/app.css" beforeDir="false" afterPath="$PROJECT_DIR$/resources/css/app.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/js/Jetstream/AuthenticationCard.vue" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/Jetstream/AuthenticationCard.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/js/Layouts/AppLayout.vue" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/Layouts/AppLayout.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/js/Pages/Auth/Login.vue" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/Pages/Auth/Login.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/js/Pages/Dashboard.vue" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/Pages/Dashboard.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/js/app.js" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/app.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/app.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/app.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/routes/web.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/web.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/webpack.config.js" beforeDir="false" afterPath="$PROJECT_DIR$/webpack.config.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/webpack.mix.js" beforeDir="false" afterPath="$PROJECT_DIR$/webpack.mix.js" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="ComposerSettings" doNotAsk="true" synchronizationState="SYNCHRONIZE">
+    <pharConfigPath>$PROJECT_DIR$/composer.json</pharConfigPath>
+    <execution />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Vue Single File Component" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="JsBowerSettings">
+    <node-interpreter value="project" />
+    <bower-package value="" />
+    <bower.json value="" />
+  </component>
+  <component name="PackageJsonUpdateNotifier">
+    <dismissed value="$PROJECT_DIR$/package.json" />
+  </component>
+  <component name="PhpWorkspaceProjectConfiguration">
+    <include_path>
+      <path value="$PROJECT_DIR$/vendor/dasprid/enum" />
+      <path value="$PROJECT_DIR$/vendor/fideloper/proxy" />
+      <path value="$PROJECT_DIR$/vendor/fakerphp/faker" />
+      <path value="$PROJECT_DIR$/vendor/swiftmailer/swiftmailer" />
+      <path value="$PROJECT_DIR$/vendor/theseer/tokenizer" />
+      <path value="$PROJECT_DIR$/vendor/jaybizzle/crawler-detect" />
+      <path value="$PROJECT_DIR$/vendor/opis/closure" />
+      <path value="$PROJECT_DIR$/vendor/paragonie/constant_time_encoding" />
+      <path value="$PROJECT_DIR$/vendor/mockery/mockery" />
+      <path value="$PROJECT_DIR$/vendor/brick/math" />
+      <path value="$PROJECT_DIR$/vendor/laravel/framework" />
+      <path value="$PROJECT_DIR$/vendor/phpdocumentor/reflection-common" />
+      <path value="$PROJECT_DIR$/vendor/phpoption/phpoption" />
+      <path value="$PROJECT_DIR$/vendor/laravel/tinker" />
+      <path value="$PROJECT_DIR$/vendor/pragmarx/google2fa" />
+      <path value="$PROJECT_DIR$/vendor/phpdocumentor/reflection-docblock" />
+      <path value="$PROJECT_DIR$/vendor/laravel/jetstream" />
+      <path value="$PROJECT_DIR$/vendor/phpspec/prophecy" />
+      <path value="$PROJECT_DIR$/vendor/phpdocumentor/type-resolver" />
+      <path value="$PROJECT_DIR$/vendor/laravel/fortify" />
+      <path value="$PROJECT_DIR$/vendor/composer" />
+      <path value="$PROJECT_DIR$/vendor/laravel/sanctum" />
+      <path value="$PROJECT_DIR$/vendor/laravel/sail" />
+      <path value="$PROJECT_DIR$/vendor/doctrine/instantiator" />
+      <path value="$PROJECT_DIR$/vendor/doctrine/inflector" />
+      <path value="$PROJECT_DIR$/vendor/doctrine/lexer" />
+      <path value="$PROJECT_DIR$/vendor/ramsey/collection" />
+      <path value="$PROJECT_DIR$/vendor/ramsey/uuid" />
+      <path value="$PROJECT_DIR$/vendor/monolog/monolog" />
+      <path value="$PROJECT_DIR$/vendor/graham-campbell/result-type" />
+      <path value="$PROJECT_DIR$/vendor/dragonmantank/cron-expression" />
+      <path value="$PROJECT_DIR$/vendor/ralouphie/getallheaders" />
+      <path value="$PROJECT_DIR$/vendor/phpunit/php-file-iterator" />
+      <path value="$PROJECT_DIR$/vendor/vlucas/phpdotenv" />
+      <path value="$PROJECT_DIR$/vendor/phpunit/php-timer" />
+      <path value="$PROJECT_DIR$/vendor/phpunit/php-text-template" />
+      <path value="$PROJECT_DIR$/vendor/phpunit/php-invoker" />
+      <path value="$PROJECT_DIR$/vendor/facade/ignition" />
+      <path value="$PROJECT_DIR$/vendor/phpunit/php-code-coverage" />
+      <path value="$PROJECT_DIR$/vendor/filp/whoops" />
+      <path value="$PROJECT_DIR$/vendor/phpunit/phpunit" />
+      <path value="$PROJECT_DIR$/vendor/facade/ignition-contracts" />
+      <path value="$PROJECT_DIR$/vendor/facade/flare-client-php" />
+      <path value="$PROJECT_DIR$/vendor/league/flysystem" />
+      <path value="$PROJECT_DIR$/vendor/league/commonmark" />
+      <path value="$PROJECT_DIR$/vendor/league/mime-type-detection" />
+      <path value="$PROJECT_DIR$/vendor/phar-io/manifest" />
+      <path value="$PROJECT_DIR$/vendor/phar-io/version" />
+      <path value="$PROJECT_DIR$/vendor/tijsverkoyen/css-to-inline-styles" />
+      <path value="$PROJECT_DIR$/vendor/hamcrest/hamcrest-php" />
+      <path value="$PROJECT_DIR$/vendor/psr/http-client" />
+      <path value="$PROJECT_DIR$/vendor/psr/log" />
+      <path value="$PROJECT_DIR$/vendor/psr/container" />
+      <path value="$PROJECT_DIR$/vendor/symfony/process" />
+      <path value="$PROJECT_DIR$/vendor/psr/http-message" />
+      <path value="$PROJECT_DIR$/vendor/symfony/string" />
+      <path value="$PROJECT_DIR$/vendor/psr/event-dispatcher" />
+      <path value="$PROJECT_DIR$/vendor/symfony/translation" />
+      <path value="$PROJECT_DIR$/vendor/nunomaduro/collision" />
+      <path value="$PROJECT_DIR$/vendor/symfony/service-contracts" />
+      <path value="$PROJECT_DIR$/vendor/guzzlehttp/psr7" />
+      <path value="$PROJECT_DIR$/vendor/psr/simple-cache" />
+      <path value="$PROJECT_DIR$/vendor/guzzlehttp/guzzle" />
+      <path value="$PROJECT_DIR$/vendor/symfony/translation-contracts" />
+      <path value="$PROJECT_DIR$/vendor/guzzlehttp/promises" />
+      <path value="$PROJECT_DIR$/vendor/symfony/http-foundation" />
+      <path value="$PROJECT_DIR$/vendor/symfony/http-kernel" />
+      <path value="$PROJECT_DIR$/vendor/symfony/event-dispatcher" />
+      <path value="$PROJECT_DIR$/vendor/symfony/var-dumper" />
+      <path value="$PROJECT_DIR$/vendor/symfony/console" />
+      <path value="$PROJECT_DIR$/vendor/symfony/polyfill-iconv" />
+      <path value="$PROJECT_DIR$/vendor/symfony/polyfill-php73" />
+      <path value="$PROJECT_DIR$/vendor/symfony/polyfill-intl-idn" />
+      <path value="$PROJECT_DIR$/vendor/symfony/event-dispatcher-contracts" />
+      <path value="$PROJECT_DIR$/vendor/symfony/polyfill-php72" />
+      <path value="$PROJECT_DIR$/vendor/symfony/error-handler" />
+      <path value="$PROJECT_DIR$/vendor/inertiajs/inertia-laravel" />
+      <path value="$PROJECT_DIR$/vendor/symfony/mime" />
+      <path value="$PROJECT_DIR$/vendor/egulias/email-validator" />
+      <path value="$PROJECT_DIR$/vendor/symfony/polyfill-ctype" />
+      <path value="$PROJECT_DIR$/vendor/nesbot/carbon" />
+      <path value="$PROJECT_DIR$/vendor/symfony/polyfill-intl-normalizer" />
+      <path value="$PROJECT_DIR$/vendor/symfony/polyfill-php80" />
+      <path value="$PROJECT_DIR$/vendor/symfony/polyfill-intl-grapheme" />
+      <path value="$PROJECT_DIR$/vendor/webmozart/assert" />
+      <path value="$PROJECT_DIR$/vendor/jenssegers/agent" />
+      <path value="$PROJECT_DIR$/vendor/symfony/css-selector" />
+      <path value="$PROJECT_DIR$/vendor/symfony/routing" />
+      <path value="$PROJECT_DIR$/vendor/symfony/http-client-contracts" />
+      <path value="$PROJECT_DIR$/vendor/symfony/finder" />
+      <path value="$PROJECT_DIR$/vendor/symfony/deprecation-contracts" />
+      <path value="$PROJECT_DIR$/vendor/dnoegel/php-xdg-base-dir" />
+      <path value="$PROJECT_DIR$/vendor/symfony/polyfill-mbstring" />
+      <path value="$PROJECT_DIR$/vendor/bacon/bacon-qr-code" />
+      <path value="$PROJECT_DIR$/vendor/mobiledetect/mobiledetectlib" />
+      <path value="$PROJECT_DIR$/vendor/asm89/stack-cors" />
+      <path value="$PROJECT_DIR$/vendor/myclabs/deep-copy" />
+      <path value="$PROJECT_DIR$/vendor/sebastian/code-unit-reverse-lookup" />
+      <path value="$PROJECT_DIR$/vendor/sebastian/object-reflector" />
+      <path value="$PROJECT_DIR$/vendor/sebastian/global-state" />
+      <path value="$PROJECT_DIR$/vendor/sebastian/environment" />
+      <path value="$PROJECT_DIR$/vendor/sebastian/recursion-context" />
+      <path value="$PROJECT_DIR$/vendor/sebastian/resource-operations" />
+      <path value="$PROJECT_DIR$/vendor/sebastian/version" />
+      <path value="$PROJECT_DIR$/vendor/nikic/php-parser" />
+      <path value="$PROJECT_DIR$/vendor/sebastian/complexity" />
+      <path value="$PROJECT_DIR$/vendor/sebastian/exporter" />
+      <path value="$PROJECT_DIR$/vendor/sebastian/cli-parser" />
+      <path value="$PROJECT_DIR$/vendor/sebastian/comparator" />
+      <path value="$PROJECT_DIR$/vendor/sebastian/code-unit" />
+      <path value="$PROJECT_DIR$/vendor/sebastian/lines-of-code" />
+      <path value="$PROJECT_DIR$/vendor/sebastian/object-enumerator" />
+      <path value="$PROJECT_DIR$/vendor/sebastian/type" />
+      <path value="$PROJECT_DIR$/vendor/sebastian/diff" />
+      <path value="$PROJECT_DIR$/vendor/fruitcake/laravel-cors" />
+      <path value="$PROJECT_DIR$/vendor/tightenco/ziggy" />
+      <path value="$PROJECT_DIR$/vendor/voku/portable-ascii" />
+      <path value="$PROJECT_DIR$/vendor/psy/psysh" />
+    </include_path>
+  </component>
+  <component name="ProblemsViewState">
+    <option name="sortByName" value="true" />
+  </component>
+  <component name="ProjectId" id="1mjhZQbqf7FlzG87hIURYfipQJ4" />
+  <component name="ProjectLevelVcsManager">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="ASKED_ADD_EXTERNAL_FILES" value="true" />
+    <property name="ASKED_SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
+    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/resources/js/Pages/Staff" />
+    <property name="node.js.detected.package.eslint" value="true" />
+    <property name="node.js.detected.package.standard" value="true" />
+    <property name="node.js.path.for.package.eslint" value="project" />
+    <property name="node.js.path.for.package.standard" value="project" />
+    <property name="node.js.selected.package.eslint" value="(autodetect)" />
+    <property name="node.js.selected.package.standard" value="" />
+    <property name="nodejs_package_manager_path" value="npm" />
+    <property name="run.code.analysis.last.selected.profile" value="pProject Default" />
+    <property name="settings.editor.selected.configurable" value="preferences.lookFeel" />
+    <property name="ts.external.directory.path" value="C:\Program Files\JetBrains\PhpStorm 2020.3\plugins\JavaScriptLanguage\jsLanguageServicesImpl\external" />
+    <property name="vue.rearranger.settings.migration" value="true" />
+  </component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Laravel\Projeler\lq-i\resources\js\Pages\Staff" />
+      <recent name="C:\Laravel\Projeler\lq-i\resources\js\Pages\Product\ProductType" />
+      <recent name="C:\Laravel\Projeler\lq-i\resources\js\Pages\Product" />
+      <recent name="C:\Laravel\Projeler\lq-i\resources\js\Components\Buttons" />
+      <recent name="C:\Laravel\Projeler\lq-i\resources\js\Pages\Department" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Laravel\Projeler\lq-i\resources\js\Components\Buttons" />
+    </key>
+  </component>
+  <component name="RunManager" selected="npm.hot">
+    <configuration name="phpunit.xml" type="PHPUnitRunConfigurationType" factoryName="PHPUnit">
+      <TestRunner scope="XML" />
+      <method v="2" />
+    </configuration>
+    <configuration name="hot" type="js.build_tools.npm" temporary="true" nameIsGenerated="true">
+      <package-json value="$PROJECT_DIR$/package.json" />
+      <command value="run" />
+      <scripts>
+        <script value="hot" />
+      </scripts>
+      <node-interpreter value="project" />
+      <envs />
+      <method v="2" />
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="npm.hot" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="3c0aa67a-1849-4c37-b8d9-a890da0e6b1e" name="Default Changelist" comment="" />
+      <created>1610012963489</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1610012963489</updated>
+      <workItem from="1610012965787" duration="2289000" />
+      <workItem from="1610031033309" duration="2488000" />
+      <workItem from="1610036997864" duration="10928000" />
+      <workItem from="1610086262653" duration="5782000" />
+      <workItem from="1610125826017" duration="5918000" />
+      <workItem from="1610131839631" duration="7683000" />
+      <workItem from="1610175189176" duration="18296000" />
+      <workItem from="1610199111831" duration="17608000" />
+      <workItem from="1610276423456" duration="11358000" />
+      <workItem from="1610473200344" duration="17063000" />
+      <workItem from="1610555817364" duration="12717000" />
+      <workItem from="1610575412018" duration="1435000" />
+      <workItem from="1610644559176" duration="24754000" />
+      <workItem from="1610873791515" duration="162000" />
+      <workItem from="1610874002750" duration="1933000" />
+      <workItem from="1610892741370" duration="18847000" />
+      <workItem from="1610959654524" duration="6669000" />
+      <workItem from="1610991732105" duration="10176000" />
+      <workItem from="1611038106701" duration="24476000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State>
+              <option name="FILTERS">
+                <map>
+                  <entry key="branch">
+                    <value>
+                      <list>
+                        <option value="main" />
+                      </list>
+                    </value>
+                  </entry>
+                </map>
+              </option>
+            </State>
+          </value>
+        </entry>
+      </map>
+    </option>
+    <option name="oldMeFiltersMigrated" value="true" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="javascript">
+          <url>file://$PROJECT_DIR$/resources/js/Layouts/AppLayout.vue</url>
+          <line>398</line>
+          <option name="timeStamp" value="1" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="javascript">
+          <url>file://$PROJECT_DIR$/resources/js/Pages/Department/Index.vue</url>
+          <line>16</line>
+          <option name="timeStamp" value="4" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
+  </component>
+  <component name="XSLT-Support.FileAssociations.UIState">
+    <expand />
+    <select />
+  </component>
+</project>

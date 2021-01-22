@@ -17,7 +17,16 @@ mix.js('resources/js/app.js', 'public/js').vue()
         require('tailwindcss'),
         require('autoprefixer'),
     ])
+    .sass('resources/sass/app.scss', 'public/css')
     .webpackConfig(require('./webpack.config'));
+
+    mix.webpackConfig({
+    devServer: {
+        proxy: {
+            '*': 'http://localhost:8000'
+        }
+    }
+});
 
 if (mix.inProduction()) {
     mix.version();

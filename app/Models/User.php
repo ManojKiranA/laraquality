@@ -58,4 +58,23 @@ class User extends Authenticatable
     protected $appends = [
         'profile_photo_url',
     ];
+
+    //MANAGER
+    public function manager()
+    {
+        return $this->belongsTo(User::class,'manager_id','id')->withDefault(['name' => 'Undefined']);
+    }
+
+    //MAIN DEPARTMENT
+    public function department()
+    {
+        return $this->belongsTo(Department::class,'department_id','id')->withDefault(['name' => 'Undefined']);
+    }
+
+    //JOB DESCRIPTION
+    public function jobDescription()
+    {
+        return $this->belongsTo(JobDescription::class,'job_description_id','id')->withDefault(['name' => 'Undefined']);
+    }
+
 }
