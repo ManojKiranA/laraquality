@@ -14,12 +14,10 @@
         </template>
         <div class="relative w-full">
             <!--Content Table-->
-            <form-section @submitted="save" @reset="reset">
-                <!--Section Title-->
-                <template #title>Product Type Infos</template>
-                <template #description>You are going to create new product type for your products</template>
-                <!--Section Content-->
-                <template #form>
+            <form-content @submitted="save" @reset="reset">
+                <form-section
+                title="Product Type Infos"
+                description="You are going to create new product type for your products">
                     <!-- Name -->
                     <input-group label="Product Type Name" for="name" class="col-span-12">
                         <InputText id="name"  v-model="form.name"/>
@@ -28,14 +26,15 @@
                     <input-group label="Descripton" for="name" class="col-span-12">
                         <Textarea id="description" v-model="form.description" rows="3" cols="30" />
                     </input-group>
-                </template>
             </form-section>
+            </form-content>
         </div>
     </app-layout>
 </template>
 
 <script>
 import AppLayout from '@/Layouts/AppLayout'
+import FormContent from '@/Components/Form/FormContent'
 import FormSection from '@/Components/Form/FormSection'
 import InputGroup from '@/Components/Form/InputGroup'
 import Checked from '@/Components/Icons/General/Checked'
@@ -53,6 +52,7 @@ export default {
     props: ['departments','standards'],
     components: {
         AppLayout,
+        FormContent,
         FormSection,
         InputGroup,
         Checked,

@@ -68,7 +68,7 @@
                 <Column field="status" header="Status" filterMatchMode="in">
                     <!--Filter-->
                     <template #filter>
-                        <MultiSelect v-model="filters['status']" :options="isStatus" optionLabel="name" optionValue="value" placeholder="All" class="p-column-filter">
+                        <MultiSelect v-model="filters['status']" :options="employmentStatus" optionLabel="name" optionValue="value" placeholder="All" class="p-column-filter">
                             <template #option="slotProps">
                                 <div class="p-multiselect-representative-option">
                                     <span class="image-text">{{slotProps.option.name}}</span>
@@ -79,10 +79,8 @@
                     <!--Content-->
                     <template #body="slotProps">
                         <span class="p-column-title">Is certified?</span>
-                        <span v-if="slotProps.data.status==0" class="px-2 text-white py-1 rounded-md bg-yellow-500">{{ isStatus[0].name }}</span>
-                        <span v-if="slotProps.data.status==1" class="px-2 text-white py-1 rounded-md bg-green-500">{{ isStatus[1].name }}</span>
-                        <span v-if="slotProps.data.status==2" class="px-2 text-white py-1 rounded-md bg-red-500">{{ isStatus[2].name }}</span>
-                        <span v-if="slotProps.data.status==3" class="px-2 text-white py-1 rounded-md bg-blue-500">{{ isStatus[3].name }}</span>
+                        <span v-if="slotProps.data.status != null" :class="employmentStatus[slotProps.data.status].class">{{ employmentStatus[slotProps.data.status].name }}</span>
+                        <span v-else class="flex items-center px-2 text-red border border-red-500 py-1 rounded-md w-min"><warning class="w-5 h-5 text-red-500 mr-2"/>Undefined</span>
                     </template>
                 </Column>
             </DataTable>
@@ -95,6 +93,7 @@ import AppLayout from '@/Layouts/AppLayout'
 import ActionButton from'@/Components/Buttons/ActionButton'
 import Yes from'@/Components/Icons/General/Checked'
 import No from'@/Components/Icons/General/XIcon'
+import Warning from'@/Components/Icons/General/Warning'
 
 /*PrimeVue Models*/
 import DataTable from 'primevue/datatable';
@@ -122,6 +121,7 @@ export default {
         MultiSelect,
         Yes,
         No,
+        Warning,
         Calendar,
         Button,
         ActionButton,
@@ -132,11 +132,11 @@ export default {
         return {
             filters: {},
             content: [],
-            isStatus:[
-                {name:"Left",value:0},
-                {name:"Active",value:1},
-                {name:"Fired",value:2},
-                {name:"Retired",value:3}
+            employmentStatus:[
+                {name:"Left",value:0,class:'px-2 text-white py-1 rounded-md bg-yellow-500'},
+                {name:"Active",value:1,class:'px-2 text-white py-1 rounded-md bg-green-500'},
+                {name:"Fired",value:2,class:'px-2 text-white py-1 rounded-md bg-red-500'},
+                {name:"Retired",value:3,class:'px-2 text-white py-1 rounded-md bg-blue-500'}
                 ]
         }
     },

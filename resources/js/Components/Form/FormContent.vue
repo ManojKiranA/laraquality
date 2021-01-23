@@ -5,7 +5,7 @@
             <div class="mt-5 md:mt-0 md:col-span-2 bg-white shadow sm:rounded-md">
                     <slot></slot>
                 <!--Submit Button-->
-                <div class="flex col-span-12 justify-end space-x-2 mr-6 pb-5">
+                <div class="flex col-span-12 justify-end space-x-2 mr-4 py-4">
                     <general-button @click.native="reset" type="button" label="Reset" icon="reset"  buttonClass="justify-center bg-yellow-500"/>
                     <general-button type="submit" label="Save" icon="plus"  buttonClass="justify-center bg-green-500"/>
                 </div>

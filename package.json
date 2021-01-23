@@ -31,7 +31,9 @@
         "vue-template-compiler": "^2.6.10"
     },
     "dependencies": {
+        "dayjs": "^1.10.4",
         "primeicons": "^4.1.0",
-        "primevue": "^2.3.0"
+        "primevue": "^2.3.0",
+        "v-calendar": "^2.2.0"
     }
 }
