@@ -10,7 +10,7 @@
         </template>
         <!--Action Buttons-->
         <template #action-buttons>
-            <action-button label="Back to Products List" :link="route('product.index')" action="back"/>
+            <action-button label="Back to Staff List" :link="route('staff.index')" action="back"/>
         </template>
         <div class="relative w-full">
             <!--Content Table-->
@@ -28,7 +28,7 @@
                     </input-group>
                     <!-- Birthday -->
                     <input-group label="Birthday" for="birthday_date" class="col-span-12 md:col-span-6">
-                        <InputDate v-model="form.birthday_date" />
+                        <InputDate v-model="form.birthday_date"/>
                     </input-group>
                     <!-- Blood Group -->
                     <input-group label="Blood Group" for="blood_group" class="col-span-12 md:col-span-6">
@@ -56,7 +56,7 @@
                     </input-group>
                     <!-- Phone -->
                     <input-group label="Phone" for="phone" class="col-span-12 md:col-span-6">
-                        <InputMask id="phone"  v-model="form.phone"  mask="+99(999) 999-9999" />
+                        <InputMask id="phone" name="phone" v-model="form.phone"  mask="+99(999) 999-9999" />
                     </input-group>
                     <!-- Address -->
                     <input-group label="Address" for="address" class="col-span-12 md:col-span-6">
@@ -64,19 +64,19 @@
                     </input-group>
                     <!-- Emergency Contacts -->
                     <input-group label="Emergency Contacts" for="emergency_contacts" class="col-span-12 md:col-span-6">
-                        <InputRepeatable id="emergency_contacts"  v-model="form.emergency_contacts"/>
+                        <InputRepeatable id="emergency_contacts"  v-model="form.emergency_contacts" value1name="Name" value2name="Phone"/>
                     </input-group>
                     <!-- Education Information -->
                     <input-group label="Education Info" for="education_info" class="col-span-12 md:col-span-6">
-                        <Chips id="education_info"  v-model="form.education_info"/>
+                        <InputRepeatable id="education_info"  v-model="form.education_info" value1name="School" value2name="Section"/>
                     </input-group>
                     <!-- Skill Information -->
                     <input-group label="Skill Info" for="skill_info" class="col-span-12 md:col-span-6">
-                        <Chips id="skill_info"  v-model="form.skill_info"/>
+                        <InputRepeatable id="skill_info"  v-model="form.skill_info" value1name="Skill"/>
                     </input-group>
                     <!-- Additional Tasks -->
                     <input-group label="Additional Tasks" for="additional_task" class="col-span-12 md:col-span-6">
-                        <Chips id="additional_task"  v-model="form.additional_task"/>
+                        <InputRepeatable id="additional_task"  v-model="form.additional_task" value1name="Task"/>
                     </input-group>
                 </form-section>
                 <form-section
@@ -84,7 +84,7 @@
                 description="The position and other information about of the staff in the business">
                     <!-- Email -->
                     <input-group label="Email" for="email" class="col-span-12 md:col-span-6">
-                        <InputText id="email"  v-model="form.email"/>
+                        <InputText id="email" name="email"  v-model="form.email"/>
                     </input-group>
                     <!-- Department -->
                     <input-group label="Department" for="department_id" class="col-span-12 md:col-span-6">
@@ -119,7 +119,7 @@
                     <!-- Job Description -->
                     <input-group label="Job Description" for="job_description_id" class="col-span-12 md:col-span-6">
                         <div v-if="loading"><ProgressSpinner /></div>{{ loading}}
-                        <Dropdown v-model="form.job_description_id" :options="jobDescriptions" optionLabel="name" :filter="true" placeholder="Select a Job Description" :showClear="true" />
+                        <Dropdown v-model="form.job_description_id" :options="jobDescriptions" optionLabel="name" :filter="true" placeholder="Select a Job Description" :showClear="true" :disabled="this.form.collar_type == null" />
                     </input-group>
                     <!-- Manager -->
                     <input-group label="Manager" for="manager_id" class="col-span-12 md:col-span-6">
@@ -151,31 +151,30 @@
                     </input-group>
                     <!-- Directed Staff -->
                     <input-group label="Directed Staff" for="directed_staff" class="col-span-12 md:col-span-6">
-                        <Dropdown v-model="form.directed_staff" :options="users" :value="id" optionLabel="id" :filter="true" placeholder="Select a Staff" :showClear="true">
+                        <MultiSelect v-model="form.directed_staff" :options="users" optionLabel="name" placeholder="Select a Staff" :showClear="true" :filter="true">
                             <!--Chosen Item-->
                             <template #value="slotProps">
-                                <div class="flex flex-row items-center" v-if="slotProps.value">
+                                <div class="flex flex-row items-center" v-for="option of slotProps.value" :key="option.id">
                                     <!--Picture-->
-                                    <img v-if="slotProps.value.profile_photo_path" :src="'/storage/'+slotProps.value.profile_photo_path" class="w-6 h-6 rounded-full mr-2"/>
+                                    <img v-if="option.profile_photo_path" :src="'/storage/'+option.profile_photo_path" class="w-6 h-6 rounded-full mr-2"/>
                                     <img v-else src="/images/general/dummy_user.svg" class="w-6 h-6 rounded-full mr-2"/>
                                     <!--Name-->
-                                    <div>{{slotProps.value.name}}</div>
+                                    <div>{{option.name}}</div>
                                 </div>
-                                <span v-else>
-                                    {{slotProps.placeholder}}
-                                </span>
+                                <template v-if="!slotProps.value || slotProps.value.length === 0">
+                                    Select Staff
+                                </template>
                             </template>
-                            <!--Item in The Opened List-->
                             <template #option="slotProps">
                                 <div class="flex flex-row items-center">
-                                    <!--Picture-->
+                                     <!--Picture-->
                                     <img v-if="slotProps.option.profile_photo_path" :src="'/storage/'+slotProps.option.profile_photo_path" class="w-6 h-6 rounded-full mr-2"/>
                                     <img v-else src="/images/general/dummy_user.svg" class="w-6 h-6 rounded-full mr-2"/>
                                     <!--Name-->
                                     <div>{{slotProps.option.name}}</div>
                                 </div>
                             </template>
-                        </Dropdown>
+                        </MultiSelect>
                     </input-group>
                 </form-section>
                 <form-section
@@ -243,6 +242,7 @@ import Textarea from 'primevue/textarea';
 import ProgressSpinner from 'primevue/progressspinner';
 import InputMask from 'primevue/inputmask';
 import Chips from 'primevue/chips';
+import MultiSelect from 'primevue/multiselect';
 
 
 export default {
@@ -266,6 +266,7 @@ export default {
         ProgressSpinner,
         InputMask,
         Chips,
+        MultiSelect,
     },
     data() {
         return {
@@ -273,24 +274,25 @@ export default {
             form: this.$inertia.form({
                 _method: 'POST',
                 name : '',
-                citizen_id : '',
-                birthday_date : '',
-                blood_group : '',
-                phone : '',
-                address : '',
-                emergency_contacts : '',
-                education_info : '',
-                skill_info : '',
-                additional_task : '',
-                directed_staff : '',
-                status : '',
-                leaving_date : '',
-                leaving_reason : '',
                 email : '',
                 department_id : '',
-                manager_id : '',
-                collar_type : '',
                 job_description_id : '',
+                collar_type : '',
+                manager_id : '',
+                directed_staff : [],
+                citizen_id : '',
+                status : '',
+                starting_date : '',
+                birthday_date : '',
+                leaving_date : '',
+                leaving_reason : '',
+                blood_group : '',
+                phone : [],
+                address : '',
+                emergency_contacts : [],
+                education_info : [],
+                skill_info : [],
+                additional_task : [],
             }),
             collarType: [
                 {name: 'White Collar', value: 0, icon: 'WhiteCollar',class: 'w-5 h-5 text-gray-500 mr-2'},
@@ -312,41 +314,30 @@ export default {
                 {name:"Fired",value:2},
                 {name:"Retired",value:3}
             ],
-            en: {
-                firstDayOfWeek: 0,
-                dayNames: ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"],
-                dayNamesShort: ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"],
-                dayNamesMin: ["Su","Mo","Tu","We","Th","Fr","Sa"],
-                monthNames: [ "January","February","March","April","May","June","July","August","September","October","November","December" ],
-                monthNamesShort: [ "Jan", "Feb", "Mar", "Apr", "May", "Jun","Jul", "Aug", "Sep", "Oct", "Nov", "Dec" ],
-                today: 'Today',
-                clear: 'Clear',
-                dateFormat: 'mm/dd/yy',
-                weekHeader: 'Wk'
-            }
         };
     },
     methods: {
         reset: function () {
             this.form.name = '';
-            this.form.citizen_id = '';
-            this.form.birthday_date = '';
-            this.form.blood_group = '';
-            this.form.phone = '';
-            this.form.address = '';
-            this.form.emergency_contacts = '';
-            this.form.education_info = '';
-            this.form.skill_info = '';
-            this.form.additional_task = '';
-            this.form.directed_staff = '';
-            this.form.status = '';
-            this.form.leaving_date = '';
-            this.form.leaving_reason = '';
             this.form.email = '';
             this.form.department_id = '';
-            this.form.manager_id = '';
-            this.form.collar_type = '';
             this.form.job_description_id = '';
+            this.form.collar_type = '';
+            this.form.manager_id = '';
+            this.form.directed_staff = [];
+            this.form.citizen_id = '';
+            this.form.status = '';
+            this.form.starting_date = '';
+            this.form.birthday_date = '';
+            this.form.leaving_date = '';
+            this.form.leaving_reason = '';
+            this.form.blood_group = '';
+            this.form.phone = [];
+            this.form.address = '';
+            this.form.emergency_contacts = [];
+            this.form.education_info = [];
+            this.form.skill_info = [];
+            this.form.additional_task = [];
         },
         save() {
             this.form.post(route('staff.store'), {

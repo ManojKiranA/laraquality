@@ -6,7 +6,12 @@ use App\Models\Department;
 use App\Models\JobDescription;
 use App\Models\User;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Str;
 use Inertia\Inertia;
+/*Mail Controller*/
+use App\Mail\StaffRegister;
+use Illuminate\Support\Facades\Mail;
 
 class StaffController extends Controller
 {
@@ -17,7 +22,6 @@ class StaffController extends Controller
      */
     public function index()
     {
-
         return Inertia::render('Staff/Index',[
             'staff'=>User::with('department:id,name','jobDescription:id,name')->get(),
         ]);
@@ -32,9 +36,9 @@ class StaffController extends Controller
     {
         $collarTypeId = $request->collarTypeId;
         return Inertia::render('Staff/Create',[
-            'departments'=>Department::all(),
-            'jobDescriptions'=>JobDescription::where('collar_type',$collarTypeId)->get(),
-            'users'=>User::where('collar_type',1)->get(),
+            'departments'=>Department::all(['id','name']),
+            'jobDescriptions'=>JobDescription::where('collar_type',$collarTypeId)->get(['id','name']),
+            'users'=>User::where('collar_type',1)->get(['id','name','profile_photo_path']),
         ]);
     }
 
@@ -46,7 +50,25 @@ class StaffController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $attributes = $request->all();
+        $request->department_id != null  && $attributes['department_id'] = $request->department_id['id'];
+        $request->job_description_id != null  && $attributes['job_description_id'] = $request->job_description_id['id'];
+        $request->collar_type != null  && $attributes['collar_type'] = $request->collar_type['value'];
+        $request->manager_id != null  && $attributes['manager_id'] = $request->manager_id['id'];
+        $request->status != null  && $attributes['status'] = $request->status['value'];
+        $request->blood_group != null  && $attributes['blood_group'] = $request->blood_group['value'];
+        $attributes['creator_id'] = Auth::id();
+        $randomPassword = Str::random(8);
+        $attributes['password'] = bcrypt($randomPassword);
+        $mailData = [];
+        $mailData['name'] = $request->name;
+        $mailData['email'] = $request->email;
+        $mailData['password'] = $randomPassword;
+        User::create($attributes);
+
+        Mail::to($request->email)->send(new StaffRegister($mailData));
+
+        return redirect()->back()->with('message', 'Post Created Successfully.');
     }
 
     /**

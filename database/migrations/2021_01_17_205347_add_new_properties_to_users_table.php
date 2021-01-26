@@ -24,7 +24,7 @@ class AddNewPropertiesToUsersTable extends Migration
             $table->date('starting_date')->default(\Carbon\Carbon::now());
             $table->date('birthday_date')->nullable();
             $table->date('leaving_date')->nullable();
-            $table->json('leaving_reason')->nullable();
+            $table->string('leaving_reason',255)->nullable();
             $table->string('blood_group',5)->nullable();
             $table->json('phone')->nullable();
             $table->string('address',750)->nullable();
@@ -32,6 +32,8 @@ class AddNewPropertiesToUsersTable extends Migration
             $table->json('education_info')->nullable();
             $table->json('skill_info')->nullable();
             $table->json('additional_task')->nullable();
+            $table->foreignId('creator_id');
+            $table->foreignId('updater_id')->nullable();
             $table->softDeletes('deleted_at', 0);
         });
     }

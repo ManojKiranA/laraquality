@@ -26,7 +26,28 @@ class User extends Authenticatable
      * @var array
      */
     protected $fillable = [
-        'name', 'email', 'password',
+        'name',
+        'email',
+        'password',
+        'department_id',
+        'job_description_id',
+        'collar_type',
+        'manager_id',
+        'directed_staff',
+        'citizen_id',
+        'status',
+        'starting_date',
+        'birthday_date',
+        'leaving_date',
+        'leaving_reason',
+        'blood_group',
+        'phone',
+        'address',
+        'emergency_contact',
+        'education_info',
+        'skill_info',
+        'additional_task',
+        'creator_id'
     ];
 
     /**
@@ -48,6 +69,15 @@ class User extends Authenticatable
      */
     protected $casts = [
         'email_verified_at' => 'datetime',
+        'starting_date'=>'datetime',
+        'birthday_date'=>'datetime',
+        'leaving_date'=>'datetime',
+        'directed_staff'=>'array',
+        'phone'=>'array',
+        'emergency_contact'=>'array',
+        'education_info'=>'array',
+        'skill_info'=>'array',
+        'additional_task'=>'array',
     ];
 
     /**
