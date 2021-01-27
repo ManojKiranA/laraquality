@@ -51,7 +51,7 @@ class Department extends Model
     //MAIN DEPARTMENT
     public function department()
     {
-        return $this->belongsTo(Department::class,'department_id','id')->withDefault(['name' => 'Undefined']);
+        return $this->belongsTo(Department::class,'department_id','id')->withDefault(['name' => 'Main Department']);
     }
 
 }

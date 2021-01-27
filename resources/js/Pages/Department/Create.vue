@@ -14,13 +14,14 @@
         </template>
         <div class="relative w-full">
             <!--Content Table-->
-            <form-content @submitted="save"  @reset="reset">
+            <form-content @submitted="save()"  @reset="reset">
                 <form-section
                 title="Department Infos"
                 description="You are going to create new department for your company">
                     <!-- Name -->
                     <input-group label="Department Name" for="name" class="col-span-12 md:col-span-6">
                         <InputText id="name"  v-model="form.name"/>
+                        <Error :message="error.name"/>
                     </input-group>
                     <!-- Manager -->
                     <input-group label="Manager" for="manager_id" class="col-span-12 md:col-span-6">
@@ -29,8 +30,8 @@
                             <template #value="slotProps">
                                 <div class="flex flex-row items-center" v-if="slotProps.value">
                                     <!--Picture-->
-                                    <img v-if="slotProps.value.profile_photo_path" :src="'/storage/'+slotProps.value.profile_photo_path" class="w-6 h-6 rounded-full mr-2"/>
-                                    <img v-else src="/images/general/dummy_user.svg" class="w-6 h-6 rounded-full mr-2"/>
+                                    <img v-if="slotProps.value.profile_photo_path" :src="'/storage/'+slotProps.value.profile_photo_path" class="w-6 h-6 rounded-full mr-2" :alt="slotProps.value.name"/>
+                                    <img v-else src="/images/general/dummy_user.svg" class="w-6 h-6 rounded-full mr-2" :alt="slotProps.value.name"/>
                                     <!--Name-->
                                     <div>{{slotProps.value.name}}</div>
                                 </div>
@@ -42,21 +43,23 @@
                             <template #option="slotProps">
                                 <div class="flex flex-row items-center">
                                     <!--Picture-->
-                                    <img v-if="slotProps.option.profile_photo_path" :src="'/storage/'+slotProps.option.profile_photo_path" class="w-6 h-6 rounded-full mr-2"/>
-                                    <img v-else src="/images/general/dummy_user.svg" class="w-6 h-6 rounded-full mr-2"/>
+                                    <img v-if="slotProps.option.profile_photo_path" :src="'/storage/'+slotProps.option.profile_photo_path" class="w-6 h-6 rounded-full mr-2" :alt="slotProps.option.name"/>
+                                    <img v-else src="/images/general/dummy_user.svg" class="w-6 h-6 rounded-full mr-2" :alt="slotProps.option.name"/>
                                     <!--Name-->
                                     <div>{{slotProps.option.name}}</div>
                                 </div>
                             </template>
                         </Dropdown>
+                        <Error :message="error.manager_id"/>
                     </input-group>
                     <!-- Department Type-->
                     <input-group label="Main Department" for="department_type" class="col-span-12 md:col-span-6">
                         <Dropdown v-model="form.department_type" :options="departmentType" optionLabel="name" placeholder="Select Department Type" :showClear="true"/>
+                        <Error :message="error.department_type"/>
                     </input-group>
                     <!-- Main Department -->
                     <input-group label="Main Department" for="department_id" class="col-span-12 md:col-span-6">
-                        <Dropdown v-model="form.department_id" :options="departments" optionLabel="name":disabled="form.department_type.value === 0" :filter="true" placeholder="Select a Department" :showClear="true" />
+                        <Dropdown v-model="form.department_id" :options="departments" optionLabel="name" :disabled="form.department_type === null || form.department_type.value === 0" :filter="true" placeholder="Select a Department" :showClear="true" />
                     </input-group>
                     <!-- Customer Complaint -->
                     <input-group label="Can it get a customer complaint?" for="is_complaint" class="col-span-12 md:col-span-6">
@@ -83,6 +86,7 @@
                                 </div>
                             </template>
                         </Dropdown>
+                        <Error :message="error.is_complaint"/>
                     </input-group>
                     <!-- Production -->
                     <input-group label="Can it make production or has any product?" for="is_production" class="col-span-12 md:col-span-6">
@@ -109,9 +113,11 @@
                                 </div>
                             </template>
                         </Dropdown>
+                        <Error :message="error.is_production"/>
                     </input-group>
                 </form-section>
             </form-content>
+            <loading-screen v-if="loading"/>
         </div>
     </app-layout>
 </template>
@@ -120,15 +126,17 @@
 import AppLayout from '@/Layouts/AppLayout'
 import FormContent from '@/Components/Form/FormContent'
 import FormSection from '@/Components/Form/FormSection'
+import Error from '@/Components/Form/Error'
 import InputGroup from '@/Components/Form/InputGroup'
 import Checked from '@/Components/Icons/General/Checked'
 import XIcon from '@/Components/Icons/General/XIcon'
 import ActionButton from '@/Components/Buttons/ActionButton'
+import LoadingScreen from '@/Components/Misc/LoadingScreen'
 /*PrimeVue Models*/
 import InputText from 'primevue/inputtext'
 import Dropdown from 'primevue/dropdown';
 import SelectButton from 'primevue/selectbutton';
-
+import InlineMessage from 'primevue/inlinemessage';
 
 
 export default {
@@ -137,24 +145,29 @@ export default {
         AppLayout,
         FormContent,
         FormSection,
+        Error,
         InputGroup,
         Checked,
         XIcon,
         InputText,
         Dropdown,
         SelectButton,
-        ActionButton
+        ActionButton,
+        InlineMessage,
+        LoadingScreen,
     },
     data() {
         return {
+            loading: false,
+            error:{},
             form: this.$inertia.form({
                 _method: 'POST',
-                name: '',
-                manager_id: '',
-                department_type: '',
+                name: null,
+                manager_id: null,
+                department_type: null,
                 department_id: '',
-                is_complaint: '',
-                is_production: '',
+                is_complaint: null,
+                is_production: null,
             }),
             departmentType: [
                 {name: 'Main Department', value: 0},
@@ -172,22 +185,27 @@ export default {
     },
     methods: {
         reset: function () {
-            this.form.name = '';
-            this.form.manager_id = '';
-            this.form.department_type = '';
+            this.form.name = null;
+            this.form.manager_id = null;
+            this.form.department_type = null;
             this.form.department_id = '';
-            this.form.is_complaint = '';
-            this.form.is_production = '';
+            this.form.is_complaint = null;
+            this.form.is_production = null;
         },
         save() {
-            this.form.post(route('department.store'), {
-                    errorBag: 'department',
+                this.form.name === null ? this.$set(this.error, 'name', 'Name is required') : this.$set(this.error, 'name', '');
+                this.form.manager_id === null ? this.$set(this.error, 'manager_id', 'You should select a manager') : this.$set(this.error, 'manager_id', '');
+                this.form.department_type === null ? this.$set(this.error, 'department_type', 'You should select a department type') : this.$set(this.error, 'department_type', '');
+                this.form.is_complaint === null ? this.$set(this.error, 'is_complaint', 'You should select a complaint status') : this.$set(this.error, 'is_complaint', '');
+                this.form.is_production === null ? this.$set(this.error, 'is_production', 'You should select a production status') : this.$set(this.error, 'is_production', '');
+            if(this.form.name !== null && this.form.manager_id !== null && this.form.department_type !== null && this.form.is_complaint !== null && this.form.is_production !== null) {
+                this.form.post(route('department.store'), {
+                    errorBag: 'staff',
                     preserveScroll: true,
-            });
-            this.reset();
+                });
+                this.loading = true;
+            }
         },
-
-
     },
 }
 </script>

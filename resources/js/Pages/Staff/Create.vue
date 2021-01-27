@@ -118,7 +118,6 @@
                     </input-group>
                     <!-- Job Description -->
                     <input-group label="Job Description" for="job_description_id" class="col-span-12 md:col-span-6">
-                        <div v-if="loading"><ProgressSpinner /></div>{{ loading}}
                         <Dropdown v-model="form.job_description_id" :options="jobDescriptions" optionLabel="name" :filter="true" placeholder="Select a Job Description" :showClear="true" :disabled="this.form.collar_type == null" />
                     </input-group>
                     <!-- Manager -->
@@ -218,6 +217,7 @@
                     </input-group>
                 </form-section>
             </form-content>
+            <loading-screen v-if="loading"/>
         </div>
     </app-layout>
 </template>
@@ -234,6 +234,7 @@ import XIcon from '@/Components/Icons/General/XIcon'
 import WhiteCollar from '@/Components/Icons/General/WhiteCollar'
 import BlueCollar from '@/Components/Icons/General/BlueCollar'
 import ActionButton from '@/Components/Buttons/ActionButton'
+import LoadingScreen from '@/Components/Misc/LoadingScreen'
 /*PrimeVue Models*/
 import InputText from 'primevue/inputtext'
 import Dropdown from 'primevue/dropdown';
@@ -267,10 +268,11 @@ export default {
         InputMask,
         Chips,
         MultiSelect,
+        LoadingScreen,
     },
     data() {
         return {
-            loading: '',
+            loading: false,
             form: this.$inertia.form({
                 _method: 'POST',
                 name : '',
@@ -344,7 +346,7 @@ export default {
                     errorBag: 'staff',
                     preserveScroll: true,
             });
-            this.reset();
+            this.loading = true;
         },
         jobDescriptionChange(){
             this.$inertia.reload( {

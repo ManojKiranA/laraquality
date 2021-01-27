@@ -24,10 +24,7 @@
                 :sortOrder="1"
                 class="p-datatable-responsive-demo p-datatable p-component p-datatable-gridlines p-datatable-striped">
                 <template #empty>
-                    No customers found.
-                </template>
-                <template #loading>
-                    Loading customers data. Please wait.
+                    No departments found.
                 </template>
                 <!--Name-->
                 <Column field="name" header="Department Name" filterMatchMode="contains">
@@ -66,6 +63,7 @@
                         <Chip v-else :label="slotProps.data.manager.name" image="/images/general/dummy_user.svg" />
                     </template>
                 </Column>
+                <!--Complaint-->
                 <Column field="is_complaint" header="Get a complaint?" filterMatchMode="in">
                     <!--Filter-->
                     <template #filter>
@@ -84,6 +82,7 @@
                         <no v-if="slotProps.data.is_complaint==0" class="w-5 h-5 text-red-500"/>
                     </template>
                 </Column>
+                <!--Production-->
                 <Column field="is_production" header="Make Production?"  filterMatchMode="in">
                     <!--Filter-->
                     <template #filter>
@@ -127,6 +126,7 @@ import MultiSelect from 'primevue/multiselect';
 import Calendar from 'primevue/calendar';
 import Button from 'primevue/button';
 import Chip from 'primevue/chip';
+
 
 export default {
     props: ['content'],

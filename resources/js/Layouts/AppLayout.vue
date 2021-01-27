@@ -279,7 +279,10 @@
                         </div>
                     </div>
                     <!--Content-->
-                    <main class="flex">
+                    <main class="flex flex-col">
+                        <div v-if="$page.props.flash.message" class="alert">
+                            <Message :severity="$page.props.flash.message.type" :life="10000" :sticky="false">{{ $page.props.flash.message.content }}</Message>
+                        </div>
                         <slot></slot>
                     </main>
                     <section class="font-semibold text-right text-gray-500 items-center flex justify-end space-x-1">
@@ -344,6 +347,8 @@ import JetDropdownLink from '@/Jetstream/DropdownLink'
 import JetNavLink from '@/Jetstream/NavLink'
 import JetResponsiveNavLink from '@/Jetstream/ResponsiveNavLink'
 import PanelMenu from 'primevue/panelmenu'
+import Message from 'primevue/message';
+
 
 
 export default {
@@ -392,6 +397,7 @@ export default {
         SectionIconStaff2,
         SectionIconStandard,
         SectionIconType,
+        Message,
     },
 
     data() {

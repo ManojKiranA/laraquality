@@ -32,7 +32,7 @@ class AddNewPropertiesToUsersTable extends Migration
             $table->json('education_info')->nullable();
             $table->json('skill_info')->nullable();
             $table->json('additional_task')->nullable();
-            $table->foreignId('creator_id');
+            $table->foreignId('creator_id')->nullable();
             $table->foreignId('updater_id')->nullable();
             $table->softDeletes('deleted_at', 0);
         });

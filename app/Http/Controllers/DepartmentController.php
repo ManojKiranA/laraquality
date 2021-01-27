@@ -58,9 +58,12 @@ class DepartmentController extends Controller
         $attributes['is_production'] = $request->is_production['value'];
         $attributes['creator_id'] = Auth::id();
         Department::create($attributes);
+        $message = [];
+        $message['type'] = 'success' ;
+        $message['content'] = 'The department has been successfully created. The department created: '.$request->name ;
 
-        return redirect()->back()
-            ->with('message', 'Post Created Successfully.');
+        return redirect()->route('department.index')
+            ->with('message', $message);
     }
 
     /**
