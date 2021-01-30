@@ -2,16 +2,11 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="3c0aa67a-1849-4c37-b8d9-a890da0e6b1e" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/resources/js/Components/Misc/LoadingScreen.vue" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/DepartmentController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/DepartmentController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Middleware/HandleInertiaRequests.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Middleware/HandleInertiaRequests.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Models/Department.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Models/Department.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/database/migrations/2021_01_17_205347_add_new_properties_to_users_table.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/migrations/2021_01_17_205347_add_new_properties_to_users_table.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/js/Layouts/AppLayout.vue" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/Layouts/AppLayout.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/js/Pages/Department/Create.vue" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/Pages/Department/Create.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/js/Pages/Department/Index.vue" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/Pages/Department/Index.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/js/Pages/Staff/Create.vue" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/Pages/Staff/Create.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/JobDescriptionController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/JobDescriptionController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Models/JobDescription.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Models/JobDescription.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/migrations/2021_01_13_173940_create_job_descriptions_table.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/migrations/2021_01_13_173940_create_job_descriptions_table.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/js/Pages/JobDescription/Create.vue" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/Pages/JobDescription/Create.vue" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -183,7 +178,7 @@
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/resources/js/Pages/Staff" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/resources/js/Components/Form/Inputs" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.detected.package.standard" value="true" />
     <property name="node.js.path.for.package.eslint" value="project" />
@@ -198,11 +193,11 @@
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Laravel\Projeler\lq-i\resources\js\Components\Form\Inputs" />
+      <recent name="C:\Laravel\Projeler\lq-i\resources\js\Pages" />
       <recent name="C:\Laravel\Projeler\lq-i\resources\js\Pages\Staff" />
       <recent name="C:\Laravel\Projeler\lq-i\resources\js\Pages\Product\ProductType" />
       <recent name="C:\Laravel\Projeler\lq-i\resources\js\Pages\Product" />
-      <recent name="C:\Laravel\Projeler\lq-i\resources\js\Components\Buttons" />
-      <recent name="C:\Laravel\Projeler\lq-i\resources\js\Pages\Department" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="C:\Laravel\Projeler\lq-i\resources\js\Components\Buttons" />
@@ -260,7 +255,10 @@
       <workItem from="1611597154258" duration="11166000" />
       <workItem from="1611679860717" duration="1916000" />
       <workItem from="1611688814161" duration="6209000" />
-      <workItem from="1611767654055" duration="17582000" />
+      <workItem from="1611767654055" duration="17989000" />
+      <workItem from="1611848371192" duration="7584000" />
+      <workItem from="1611952016826" duration="14305000" />
+      <workItem from="1612024611756" duration="2143000" />
     </task>
     <task id="LOCAL-00001" summary="beta_v.0.0.1&#10;&#10;Create Pages Designed (Department, Product, Product Type)&#10;Index Pages Designed (Department, Product, Product Type and Staff)">
       <created>1611310478408</created>
@@ -276,7 +274,21 @@
       <option name="project" value="LOCAL" />
       <updated>1611405812446</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="beta_v.0.0.4&#10;#Validation system added&#10;#Flash messages added (Success, Warning etc.)&#10;#Loading screen component added">
+      <created>1611786421720</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1611786421720</updated>
+    </task>
+    <task id="LOCAL-00004" summary="#Editable and repeatable form field component added&#10;@InputInlineEditableRepeatable.vue">
+      <created>1611968073465</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1611968073465</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -293,7 +305,7 @@
                   <entry key="branch">
                     <value>
                       <list>
-                        <option value="main" />
+                        <option value="HEAD" />
                       </list>
                     </value>
                   </entry>
@@ -310,7 +322,10 @@
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
     <MESSAGE value="beta_v.0.0.1&#10;&#10;Create Pages Designed (Department, Product, Product Type)&#10;Index Pages Designed (Department, Product, Product Type and Staff)" />
     <MESSAGE value="beta_v.0.0.2&#10;&#10;Date and Repeatable Fields Added&#10;https://vcalendar.io/ Support" />
-    <option name="LAST_COMMIT_MESSAGE" value="beta_v.0.0.2&#10;&#10;Date and Repeatable Fields Added&#10;https://vcalendar.io/ Support" />
+    <MESSAGE value="beta_v.0.0.4&#10;#Validation system added&#10;#Flash messages added (Success, Warning etc.)&#10;#Loading screen component added" />
+    <MESSAGE value="#Editable and repeatable form field component added" />
+    <MESSAGE value="#Editable and repeatable form field component added&#10;@InputInlineEditableRepeatable.vue" />
+    <option name="LAST_COMMIT_MESSAGE" value="#Editable and repeatable form field component added&#10;@InputInlineEditableRepeatable.vue" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -338,7 +353,6 @@
         <line-breakpoint enabled="true" type="javascript">
           <url>file://$PROJECT_DIR$/resources/js/Layouts/AppLayout.vue</url>
           <line>17</line>
-          <properties lambdaOrdinal="-1" />
           <option name="timeStamp" value="12" />
         </line-breakpoint>
       </breakpoints>

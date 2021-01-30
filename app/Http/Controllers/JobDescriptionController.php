@@ -6,6 +6,7 @@ use App\Models\Department;
 use App\Models\JobDescription;
 use App\Models\User;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 use Inertia\Inertia;
 
 class JobDescriptionController extends Controller
@@ -40,11 +41,21 @@ class JobDescriptionController extends Controller
      * Store a newly created resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @return \Illuminate\Http\Response
+     * @return \Illuminate\Http\RedirectResponse
      */
     public function store(Request $request)
     {
-        //
+        $attributes = $request->all();
+        $attributes['department_id'] = $request->department_id['id'];
+        $attributes['collar_type'] = $request->collar_type['value'];
+        $attributes['creator_id'] = Auth::id();
+        JobDescription::create($attributes);
+
+        $message = [];
+        $message['type'] = 'success';
+        $message['content'] = 'The job description has been successfully created. The job decription created: '.$request->name ;
+
+        return redirect()->route('job-description.index')->with('message', $message);
     }
 
     /**

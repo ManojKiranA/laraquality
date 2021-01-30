@@ -19,7 +19,7 @@
                 title="Job Description Infos"
                 description="You are going to create new job description for relation with your staff">
                     <!-- Name -->
-                    <input-group label="Title" for="name" class="col-span-12 md:col-span-6">
+                    <input-group label="Title" for="name" class="col-span-12">
                         <InputText id="name"  v-model="form.name"/>
                         <Error :message="error.name"/>
                     </input-group>
@@ -54,6 +54,11 @@
                     <input-group label="Related Department" for="department_id" class="col-span-12 md:col-span-6">
                         <Dropdown v-model="form.department_id" :options="departments" optionLabel="name" :filter="true" placeholder="Select a Department" :showClear="true" />
                         <Error :message="error.department_id"/>
+                    </input-group>
+                    <!-- Summary -->
+                    <input-group label="Summary" for="summary" class="col-span-12">
+                        <Textarea v-model="summary" :autoResize="true" rows="2" cols="30" />
+                        <Error :message="error.summary"/>
                     </input-group>
                 </form-section>
                 <form-section
@@ -152,6 +157,8 @@ import InputText from 'primevue/inputtext'
 import Dropdown from 'primevue/dropdown';
 import SelectButton from 'primevue/selectbutton';
 import MultiSelect from 'primevue/multiselect';
+import Textarea from 'primevue/textarea';
+
 
 
 export default {
@@ -172,6 +179,7 @@ export default {
         BlueCollar,
         WhiteCollar,
         MultiSelect,
+        Textarea,
         LoadingScreen,
     },
     data() {

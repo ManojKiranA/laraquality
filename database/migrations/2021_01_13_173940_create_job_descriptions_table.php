@@ -16,9 +16,9 @@ class CreateJobDescriptionsTable extends Migration
         Schema::create('job_descriptions', function (Blueprint $table) {
             $table->id();
             $table->string('name',255);
-            $table->string('summary',500);
+            $table->string('summary',500)->nullable();
             $table->tinyInteger('collar_type')->nullable();
-            $table->json('department_id')->nullable();
+            $table->foreignId('department_id')->nullable();
             $table->json('job_responsibility')->nullable();
             $table->json('job_requirement')->nullable();
             $table->json('report_to')->nullable();
