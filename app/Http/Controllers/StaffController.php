@@ -65,10 +65,14 @@ class StaffController extends Controller
         $mailData['email'] = $request->email;
         $mailData['password'] = $randomPassword;
         User::create($attributes);
+        $message = [];
+        $message['type'] = 'success' ;
+        $message['content'] = 'The staff has been successfully created. The staff created: '.$request->name ;
 
         Mail::to($request->email)->send(new StaffRegister($mailData));
 
-        return redirect()->back()->with('message', 'Post Created Successfully.');
+        return redirect()->route('staff.index')
+            ->with('message', $message);
     }
 
     /**

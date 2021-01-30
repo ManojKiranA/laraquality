@@ -22,7 +22,10 @@ class CreateJobDescriptionsTable extends Migration
             $table->json('job_responsibility')->nullable();
             $table->json('job_requirement')->nullable();
             $table->json('report_to')->nullable();
-            $table->json('working_together_staff')->nullable();
+            $table->json('working_together')->nullable();
+            $table->json('working_conditions')->nullable();
+            $table->json('working_equipments')->nullable();
+            $table->json('kpi')->nullable();
             $table->foreignId('creator_id');
             $table->foreignId('updater_id')->nullable();
             $table->timestamps();
