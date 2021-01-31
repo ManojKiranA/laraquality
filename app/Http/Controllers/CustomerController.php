@@ -2,28 +2,33 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Customer;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
+use Inertia\Inertia;
 
 class CustomerController extends Controller
 {
     /**
      * Display a listing of the resource.
      *
-     * @return \Illuminate\Http\Response
+     * @return \Inertia\Response
      */
     public function index()
     {
-        //
+        return Inertia::render('Customer/Index',[
+            'customers'=>Customer::all(['id','name','tax_id','email','phone','status']),
+        ]);
     }
 
     /**
      * Show the form for creating a new resource.
      *
-     * @return \Illuminate\Http\Response
+     * @return \Inertia\Response
      */
     public function create()
     {
-        //
+        return Inertia::render('Customer/Create');
     }
 
     /**
@@ -34,7 +39,16 @@ class CustomerController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $attributes = $request->all();
+        $attributes['status'] = $request->status != null  ? $request->status['value'] : 1 ;
+        $attributes['creator_id'] = Auth::id();
+        Customer::create($attributes);
+        $message = [];
+        $message['type'] = 'success' ;
+        $message['content'] = 'The customer has been successfully created. The customer created: '.$request->name ;
+
+        return redirect()->route('customer.index')
+            ->with('message', $message);
     }
 
     /**

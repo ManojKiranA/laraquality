@@ -727,11 +727,11 @@ export default {
                     ]
                 },
                 {
-                    label: 'Customer',
+                    label: 'Customers',
                     icon:'SectionIconCustomer',
                     link:'customer.index',
                     linkType:'route',
-                    type:'dropdown',
+                    type:'standard',
                 }
                 ]
         }

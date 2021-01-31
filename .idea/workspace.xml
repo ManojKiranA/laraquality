@@ -2,40 +2,15 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="3c0aa67a-1849-4c37-b8d9-a890da0e6b1e" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/app/Http/Resources/ProductResource.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/config/media-library.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/database/migrations/2021_01_30_191722_create_media_table.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/database/seeders/DepartmentSeeder.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/database/seeders/ProductTypeSeeder.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/database/seeders/UserSeeder.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/lq-i.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/lq-i.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/php.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/php.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/js/Pages/Customer/Create.vue" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/js/Pages/Customer/Index.vue" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Actions/Fortify/CreateNewUser.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Actions/Fortify/CreateNewUser.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/ProductController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/ProductController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/ProductTypeController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/ProductTypeController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/StaffController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/StaffController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Models/Product.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Models/Product.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Models/ProductType.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Models/ProductType.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/composer.json" beforeDir="false" afterPath="$PROJECT_DIR$/composer.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/composer.lock" beforeDir="false" afterPath="$PROJECT_DIR$/composer.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/config/filesystems.php" beforeDir="false" afterPath="$PROJECT_DIR$/config/filesystems.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/database/factories/UserFactory.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/factories/UserFactory.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/database/migrations/2014_10_12_000000_create_users_table.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/migrations/2014_10_12_000000_create_users_table.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/database/migrations/2021_01_13_173904_create_departments_table.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/migrations/2021_01_13_173904_create_departments_table.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/database/migrations/2021_01_13_173940_create_job_descriptions_table.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/migrations/2021_01_13_173940_create_job_descriptions_table.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/database/migrations/2021_01_13_174152_create_products_table.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/migrations/2021_01_13_174152_create_products_table.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/database/migrations/2021_01_13_174205_create_product_types_table.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/migrations/2021_01_13_174205_create_product_types_table.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/database/migrations/2021_01_17_204745_create_standards_table.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/migrations/2021_01_17_204745_create_standards_table.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/database/migrations/2021_01_17_205347_add_new_properties_to_users_table.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/database/seeders/DatabaseSeeder.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/seeders/DatabaseSeeder.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/js/Components/Form/FormContent.vue" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/Components/Form/FormContent.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/js/Pages/Department/Create.vue" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/Pages/Department/Create.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/js/Pages/Product/Create.vue" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/Pages/Product/Create.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/js/Pages/Product/Index.vue" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/Pages/Product/Index.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/js/Pages/Product/ProductType/Create.vue" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/Pages/Product/ProductType/Create.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/js/Pages/Product/ProductType/Index.vue" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/Pages/Product/ProductType/Index.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/CustomerController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/CustomerController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Models/Customer.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Models/Customer.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/migrations/2021_01_13_173845_create_customers_table.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/migrations/2021_01_13_173845_create_customers_table.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/js/Layouts/AppLayout.vue" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/Layouts/AppLayout.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/js/Pages/Staff/Index.vue" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/Pages/Staff/Index.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/routes/web.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/web.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -217,7 +192,7 @@
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/resources/js/Components/Form/Inputs" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/resources/js/Pages" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.detected.package.standard" value="true" />
     <property name="node.js.path.for.package.eslint" value="project" />
@@ -232,8 +207,8 @@
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
-      <recent name="C:\Laravel\Projeler\lq-i\resources\js\Components\Form\Inputs" />
       <recent name="C:\Laravel\Projeler\lq-i\resources\js\Pages" />
+      <recent name="C:\Laravel\Projeler\lq-i\resources\js\Components\Form\Inputs" />
       <recent name="C:\Laravel\Projeler\lq-i\resources\js\Pages\Staff" />
       <recent name="C:\Laravel\Projeler\lq-i\resources\js\Pages\Product\ProductType" />
       <recent name="C:\Laravel\Projeler\lq-i\resources\js\Pages\Product" />
@@ -298,7 +273,7 @@
       <workItem from="1611848371192" duration="7584000" />
       <workItem from="1611952016826" duration="14305000" />
       <workItem from="1612024611756" duration="20010000" />
-      <workItem from="1612077023082" duration="27462000" />
+      <workItem from="1612077023082" duration="36155000" />
     </task>
     <task id="LOCAL-00001" summary="beta_v.0.0.1&#10;&#10;Create Pages Designed (Department, Product, Product Type)&#10;Index Pages Designed (Department, Product, Product Type and Staff)">
       <created>1611310478408</created>
@@ -335,7 +310,14 @@
       <option name="project" value="LOCAL" />
       <updated>1612028030380</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="beta_v.0.0.5&#10;#User migration and add new properties to users migration merged&#10;#Spatie Media Library added&#10;#Product photo upload feature added&#10;#All migrations revised about foreignId with on linking&#10;#Department and Admin User seeders added&#10;#Random users factory revised">
+      <created>1612123545379</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1612123545380</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -373,7 +355,8 @@
     <MESSAGE value="#Editable and repeatable form field component added" />
     <MESSAGE value="#Editable and repeatable form field component added&#10;@InputInlineEditableRepeatable.vue" />
     <MESSAGE value="Job Description create action core properties added&#10;-Job Description Fillable areas added to model&#10;-Create function added to controller&#10;-Summary area added" />
-    <option name="LAST_COMMIT_MESSAGE" value="Job Description create action core properties added&#10;-Job Description Fillable areas added to model&#10;-Create function added to controller&#10;-Summary area added" />
+    <MESSAGE value="beta_v.0.0.5&#10;#User migration and add new properties to users migration merged&#10;#Spatie Media Library added&#10;#Product photo upload feature added&#10;#All migrations revised about foreignId with on linking&#10;#Department and Admin User seeders added&#10;#Random users factory revised" />
+    <option name="LAST_COMMIT_MESSAGE" value="beta_v.0.0.5&#10;#User migration and add new properties to users migration merged&#10;#Spatie Media Library added&#10;#Product photo upload feature added&#10;#All migrations revised about foreignId with on linking&#10;#Department and Admin User seeders added&#10;#Random users factory revised" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -392,11 +375,6 @@
           <url>file://$PROJECT_DIR$/resources/js/Pages/Product/ProductType/Create.vue</url>
           <line>9</line>
           <option name="timeStamp" value="7" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="javascript">
-          <url>file://$PROJECT_DIR$/resources/js/Pages/Staff/Create.vue</url>
-          <line>30</line>
-          <option name="timeStamp" value="11" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="javascript">
           <url>file://$PROJECT_DIR$/resources/js/Layouts/AppLayout.vue</url>

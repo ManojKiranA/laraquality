@@ -98,7 +98,7 @@ Route::middleware(['auth:sanctum', 'verified'])->prefix('dashboard')->group(func
     //Claim Property
     Route::resource('claim-property', \App\Http\Controllers\ClaimPropertyController::class);
     //Customer
-    Route::resource('customer', \App\Http\Controllers\Customer::class);
+    Route::resource('customer', \App\Http\Controllers\CustomerController::class);
     //Measurement Tool
     Route::resource('measurement-tool', \App\Http\Controllers\MeasurementToolController::class);
     //Measurement Tool Type
