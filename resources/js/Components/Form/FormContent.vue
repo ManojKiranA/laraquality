@@ -1,6 +1,6 @@
 <template>
     <div>
-        <form @submit.prevent="$emit('submitted')">
+        <form @submit.prevent="$emit('submitted')" :enctype="enctype">
             <!--Form Body-->
             <div class="mt-5 md:mt-0 md:col-span-2 bg-white shadow sm:rounded-md">
                     <slot></slot>
@@ -22,6 +22,7 @@
 import GeneralButton from '@/Components/Buttons/GeneralButton'
 
 export default {
+    props:['enctype'],
     components: {
         GeneralButton,
     },

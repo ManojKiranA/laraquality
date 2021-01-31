@@ -22,8 +22,30 @@ class CreateUsersTable extends Migration
             $table->rememberToken();
             $table->foreignId('current_team_id')->nullable();
             $table->text('profile_photo_path')->nullable();
+            $table->foreignId('department_id')->nullable()->references('id')->on('departments');
+            $table->foreignId('job_description_id')->nullable()->references('id')->on('job_descriptions');
+            $table->tinyInteger('collar_type')->nullable();
+            $table->foreignId('manager_id')->nullable()->references('id')->on('users');
+            $table->json('directed_staff')->nullable();
+            $table->string('citizen_id',50)->nullable();
+            $table->tinyInteger('status')->nullable();
+            $table->date('starting_date')->default(\Carbon\Carbon::now());
+            $table->date('birthday_date')->nullable();
+            $table->date('leaving_date')->nullable();
+            $table->string('leaving_reason',255)->nullable();
+            $table->string('blood_group',5)->nullable();
+            $table->json('phone')->nullable();
+            $table->string('address',750)->nullable();
+            $table->json('emergency_contact')->nullable();
+            $table->json('education_info')->nullable();
+            $table->json('skill_info')->nullable();
+            $table->json('additional_task')->nullable();
+            $table->foreignId('creator_id')->nullable()->references('id')->on('users');
+            $table->foreignId('updater_id')->nullable()->references('id')->on('users');
+            $table->softDeletes('deleted_at', 0);
             $table->timestamps();
         });
+        /*(new \Database\Seeders\DatabaseSeeder())->call(\Database\Seeders\UserSeeder::class);*/
     }
 
     /**

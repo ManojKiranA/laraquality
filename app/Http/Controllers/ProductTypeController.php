@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Department;
 use App\Models\ProductType;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
@@ -17,7 +18,7 @@ class ProductTypeController extends Controller
     public function index()
     {
         return Inertia::render('Product/ProductType/Index',[
-            'productTypes'=>ProductType::all(),
+            'productTypes'=>ProductType::with('department:id,name')->get(['id','name','department_id','description']),
         ]);
     }
 
@@ -26,9 +27,11 @@ class ProductTypeController extends Controller
      *
      * @return \Inertia\Response
      */
-    public function create()
+    public function create(Request $request)
     {
-        return Inertia::render('Product/ProductType/Create');
+        return Inertia::render('Product/ProductType/Create',[
+            'departments'=>Department::all(['id','name']),
+        ]);
     }
 
     /**
@@ -40,11 +43,16 @@ class ProductTypeController extends Controller
     public function store(Request $request)
     {
         $attributes = $request->all();
+        $attributes['department_id'] = $request->department_id['id'];
         $attributes['creator_id'] = Auth::id();
         ProductType::create($attributes);
 
-        return redirect()->back()
-            ->with('message', 'Post Created Successfully.');
+        $message = [];
+        $message['type'] = "success";
+        $message['content'] = 'The product type has been successfully created. The product type created: '.$request->name ;
+
+        return redirect()->route('product-type.index')
+            ->with('message', $message);
     }
 
     /**

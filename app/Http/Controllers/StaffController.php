@@ -46,7 +46,7 @@ class StaffController extends Controller
      * Store a newly created resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @return \Illuminate\Http\Response
+     * @return \Illuminate\Http\RedirectResponse
      */
     public function store(Request $request)
     {
@@ -65,6 +65,7 @@ class StaffController extends Controller
         $mailData['email'] = $request->email;
         $mailData['password'] = $randomPassword;
         User::create($attributes);
+
         $message = [];
         $message['type'] = 'success' ;
         $message['content'] = 'The staff has been successfully created. The staff created: '.$request->name ;

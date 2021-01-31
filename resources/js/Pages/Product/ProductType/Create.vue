@@ -22,6 +22,10 @@
                     <input-group label="Product Type Name" for="name" class="col-span-12">
                         <InputText id="name"  v-model="form.name"/>
                     </input-group>
+                    <!-- Department -->
+                    <input-group label="Department" for="department_id" class="col-span-12">
+                        <Dropdown v-model="form.department_id" :options="departments" optionLabel="name" :filter="true" placeholder="Select a Department" :showClear="true" />
+                    </input-group>
                     <!-- Description -->
                     <input-group label="Descripton" for="name" class="col-span-12">
                         <Textarea id="description" v-model="form.description" rows="3" cols="30" />
@@ -67,34 +71,25 @@ export default {
         return {
             form: this.$inertia.form({
                 _method: 'POST',
-                name : '',
-                description : '',
-            }),
-            productType: [
-                {name: 'Sample 1', value: 0},
-                {name: 'Sample 2', value: 1},
-                {name: 'Sample 3', value: 2}
-            ],
-            isCertified: [
-                {name: 'Yes, It is certified', value: 1, icon: 'Checked',class: 'w-5 h-5 text-green-500 mr-2'},
-                {name: 'Yes, It is\'t certified', value: 0, icon: 'XIcon',class: 'w-5 h-5 text-red-500 mr-2'}
-            ]
+                name : null,
+                department_id : null,
+                description : null,
+            })
         };
     },
     methods: {
         reset: function () {
-            this.form.name = '';
-            this.form.description = '';
+            this.form.name = null;
+            this.form.department_id = null;
+            this.form.description = null;
         },
         save() {
             this.form.post(route('product-type.store'), {
-                    errorBag: 'product',
+                    errorBag: 'product-type',
                     preserveScroll: true,
             });
             this.reset();
         },
-
-
     },
 }
 </script>

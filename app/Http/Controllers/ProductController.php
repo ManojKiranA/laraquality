@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Resources\ProductResource;
 use App\Models\Department;
 use App\Models\Product;
 use App\Models\ProductType;
@@ -12,9 +13,12 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Inertia\Inertia;
 use Inertia\Response;
+use Spatie\MediaLibrary\HasMedia;
+use Spatie\MediaLibrary\InteractsWithMedia;
 
 class ProductController extends Controller
 {
+    use InteractsWithMedia;
     /**
      * Display a listing of the resource.
      *
@@ -23,7 +27,8 @@ class ProductController extends Controller
     public function index(Request $request)
     {
         return Inertia::render('Product/Index',[
-            'products'=>Product::with('department:id,name','standard:id,name,code','productType:id,name')->get(),
+            'departments'=>Department::where('is_production',1)->get(['id','name']),
+            'products'=>ProductResource::collection(Product::all())
         ]);
     }
 
@@ -32,12 +37,12 @@ class ProductController extends Controller
      *
      * @return Response|\Inertia\Response
      */
-    public function create()
+    public function create(Request $request)
     {
         return Inertia::render('Product/Create',[
             'departments'=> Department::where('is_production',1)->get(),
-            'standards'=>Standard::where('standard_type',0)->get(),
-            'productTypes' => ProductType::all(),
+            'standards'=>Standard::where('department_id',$request->departmentId)->get(['id','code']),
+            'productTypes' => ProductType::where('department_id',$request->departmentId)->get(['id','name']),
         ]);
     }
 
@@ -49,17 +54,27 @@ class ProductController extends Controller
      */
     public function store(Request $request)
     {
-        $attributes = $request->all();
-        $attributes['product_type'] = $request->product_type['id'];
+        $attributes = new Product($request->all());
+        $attributes['product_type_id'] = $request->product_type_id['id'];
         isset($request->department_id) ? $attributes['department_id'] = $request->department_id['id'] : $attributes['department_id'] = null;
         $attributes['is_certified'] = $request->is_certified['value'];
         isset($request->standard_id) ? $attributes['standard_id'] = $request->standard_id['id'] : $attributes['standard_id'] = null;
-        $attributes['standard_id'] = $request->standard_id['id'];
         $attributes['creator_id'] = Auth::id();
-        Product::create($attributes);
+        $attributes->save();
 
-        return redirect()->back()
-            ->with('message', 'Post Created Successfully.');
+        /*Product Photo*/
+        if($request->hasFile('photo')){
+            $attributes
+                ->addMediaFromRequest('photo')
+                ->toMediaCollection('photo');
+        }
+
+        $message = [];
+        $message['type'] = 'success' ;
+        $message['content'] = 'The product has been successfully created. The product created: '.$request->name ;
+
+        return redirect()->route('product.index')
+            ->with('message', $message);
     }
 
     /**

@@ -200,7 +200,7 @@ export default {
                 this.form.is_production === null ? this.$set(this.error, 'is_production', 'You should select a production status') : this.$set(this.error, 'is_production', '');
             if(this.form.name !== null && this.form.manager_id !== null && this.form.department_type !== null && this.form.is_complaint !== null && this.form.is_production !== null) {
                 this.form.post(route('department.store'), {
-                    errorBag: 'staff',
+                    errorBag: 'department',
                     preserveScroll: true,
                 });
                 this.loading = true;

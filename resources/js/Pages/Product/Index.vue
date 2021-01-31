@@ -15,7 +15,7 @@
         <div class="relative w-full">
             <!--Content Table-->
             <DataTable
-                :value="products"
+                :value="products.data"
                 :filters="filters"
                 class="p-datatable-responsive-demo p-datatable p-component p-datatable-gridlines p-datatable-striped">
                 <template #empty>
@@ -44,44 +44,54 @@
                     </template>
                     <!--Content-->
                     <template #body="slotProps">
-                        <span class="p-column-title">Product Name</span>
-                        {{slotProps.data.name}}
+                        <div class="flex flex-row items-center">
+                            <span class="p-column-title">Product Name</span>
+                            <img v-if="slotProps.data.photo" :src="slotProps.data.photo" class="w-10 h-10 border rounded-md mr-2"/>
+                            <div v-else class="w-10 h-10 border rounded-md mr-2 bg-gray-200"></div>
+                            {{slotProps.data.name}}
+                        </div>
                     </template>
                 </Column>
                 <!--Department-->
-                <Column field="department.name" header="Main Department" filterMatchMode="contains">
+                <Column field="department_id" header="Main Department"  filterMatchMode="in">
                     <!--Filter-->
                     <template #filter>
-                        <InputText type="text" v-model="filters['department.name']" class="p-column-filter" placeholder="Search by department"/>
+                        <MultiSelect v-model="filters['department_id']" :options="departments" optionLabel="name" optionValue="id" placeholder="All" class="p-column-filter">
+                            <template #option="slotProps">
+                                <div class="p-multiselect-representative-option">
+                                    <span class="image-text">{{slotProps.option.name}}</span>
+                                </div>
+                            </template>
+                        </MultiSelect>
                     </template>
                     <!--Content-->
                     <template #body="slotProps">
                         <span class="p-column-title">Main Department</span>
-                        {{slotProps.data.department.name}}
+                        {{slotProps.data.department}}
                     </template>
                 </Column>
                 <!--Product Type-->
-                <Column field="product_type.name" header="Product Type" filterMatchMode="contains">
+                <Column field="productType" header="Product Type" filterMatchMode="contains">
                     <!--Filter-->
                     <template #filter>
-                        <InputText type="text" v-model="filters['product_type']" class="p-column-filter" placeholder="Search by type"/>
+                        <InputText type="text" v-model="filters['productType']" class="p-column-filter" placeholder="Search by type"/>
                     </template>
                     <!--Content-->
                     <template #body="slotProps">
                         <span class="p-column-title">Product Type</span>
-                        {{slotProps.data.product_type.name}}
+                        {{slotProps.data.productType}}
                     </template>
                 </Column>
                 <!--Standard-->
-                <Column field="standard.code" header="Standard" filterMatchMode="contains">
+                <Column field="standard" header="Standard" filterMatchMode="contains">
                     <!--Filter-->
                     <template #filter>
-                        <InputText type="text" v-model="filters['standard.code']" class="p-column-filter" placeholder="Search by standard"/>
+                        <InputText type="text" v-model="filters['standard']" class="p-column-filter" placeholder="Search by standard"/>
                     </template>
                     <!--Content-->
                     <template #body="slotProps">
                         <span class="p-column-title">Standard</span>
-                        {{slotProps.data.standard.code}}
+                        {{slotProps.data.standard}}
                     </template>
                 </Column>
                 <!--Certified-->
@@ -104,6 +114,7 @@
                     </template>
                 </Column>
             </DataTable>
+            {{test}}
         </div>
     </app-layout>
 </template>
@@ -127,7 +138,7 @@ import Button from 'primevue/button';
 import Chip from 'primevue/chip';
 
 export default {
-    props: ['products'],
+    props: ['products','departments'],
     components: {
         AppLayout,
         DataTable,

@@ -18,7 +18,7 @@ class CreateJobDescriptionsTable extends Migration
             $table->string('name',255);
             $table->string('summary',500)->nullable();
             $table->tinyInteger('collar_type')->nullable();
-            $table->foreignId('department_id')->nullable();
+            $table->foreignId('department_id')->nullable()->references('id')->on('departments');
             $table->json('job_responsibility')->nullable();
             $table->json('job_requirement')->nullable();
             $table->json('report_to')->nullable();
@@ -26,8 +26,8 @@ class CreateJobDescriptionsTable extends Migration
             $table->json('working_conditions')->nullable();
             $table->json('working_equipments')->nullable();
             $table->json('kpi')->nullable();
-            $table->foreignId('creator_id');
-            $table->foreignId('updater_id')->nullable();
+            $table->foreignId('creator_id')->references('id')->on('users');
+            $table->foreignId('updater_id')->nullable()->references('id')->on('users');
             $table->timestamps();
             $table->softDeletes('deleted_at', 0);
         });

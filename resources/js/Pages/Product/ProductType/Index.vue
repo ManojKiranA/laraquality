@@ -20,31 +20,48 @@
                 :resizableColumns="true"
                 columnResizeMode="fit"
                 class="p-datatable-responsive-demo p-datatable p-component p-datatable-gridlines p-datatable-striped">
-                <template #header>
-                    <div class="table-header flex justify-between items-center">
-                        List of Product Types
-                        <span class="p-input-icon-left">
-                            <i class="pi pi-search" />
-                            <InputText v-model="filters['global']" placeholder="Global Search" />
-                        </span>
-                    </div>
+                <template #empty>
+                    No product types found.
+                </template>
+                <template #loading>
+                    Loading product type data. Please wait.
                 </template>
                 <template #empty>
                     No customers found.
                 </template>
                 <!--Name-->
                 <Column field="name" header="Product Type Name" filterMatchMode="contains">
+                    <!--Filter-->
+                    <template #filter>
+                        <InputText type="text" v-model="filters['name']" class="p-column-filter" placeholder="Search by name"/>
+                    </template>
                     <!--Content-->
                     <template #body="slotProps">
                         <span class="p-column-title">Product Name</span>
                         {{slotProps.data.name}}
                     </template>
                 </Column>
-                <!--Description-->
-                <Column field="description" header="Description" filterMatchMode="contains">
+                <!--Department-->
+                <Column field="department.name" header="Department" filterMatchMode="contains">
+                    <!--Filter-->
+                    <template #filter>
+                        <InputText type="text" v-model="filters['department.name']" class="p-column-filter" placeholder="Search by department"/>
+                    </template>
                     <!--Content-->
                     <template #body="slotProps">
-                        <span class="p-column-title">Product Description</span>
+                        <span class="p-column-title">Department</span>
+                        {{slotProps.data.department.name}}
+                    </template>
+                </Column>
+                <!--Description-->
+                <Column field="description" header="Description" filterMatchMode="contains">
+                    <!--Filter-->
+                    <template #filter>
+                        <InputText type="text" v-model="filters['description']" class="p-column-filter" placeholder="Search by descripton"/>
+                    </template>
+                    <!--Content-->
+                    <template #body="slotProps">
+                        <span class="p-column-title">Product Type Description</span>
                         {{slotProps.data.description}}
                     </template>
                 </Column>

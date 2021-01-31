@@ -2,11 +2,40 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="3c0aa67a-1849-4c37-b8d9-a890da0e6b1e" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/app/Http/Resources/ProductResource.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/config/media-library.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/database/migrations/2021_01_30_191722_create_media_table.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/database/seeders/DepartmentSeeder.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/database/seeders/ProductTypeSeeder.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/database/seeders/UserSeeder.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/lq-i.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/lq-i.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/php.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/php.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/JobDescriptionController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/JobDescriptionController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Models/JobDescription.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Models/JobDescription.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Actions/Fortify/CreateNewUser.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Actions/Fortify/CreateNewUser.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/ProductController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/ProductController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/ProductTypeController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/ProductTypeController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/StaffController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/StaffController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Models/Product.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Models/Product.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Models/ProductType.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Models/ProductType.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/composer.json" beforeDir="false" afterPath="$PROJECT_DIR$/composer.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/composer.lock" beforeDir="false" afterPath="$PROJECT_DIR$/composer.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/config/filesystems.php" beforeDir="false" afterPath="$PROJECT_DIR$/config/filesystems.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/factories/UserFactory.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/factories/UserFactory.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/migrations/2014_10_12_000000_create_users_table.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/migrations/2014_10_12_000000_create_users_table.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/migrations/2021_01_13_173904_create_departments_table.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/migrations/2021_01_13_173904_create_departments_table.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/database/migrations/2021_01_13_173940_create_job_descriptions_table.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/migrations/2021_01_13_173940_create_job_descriptions_table.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/js/Pages/JobDescription/Create.vue" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/Pages/JobDescription/Create.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/migrations/2021_01_13_174152_create_products_table.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/migrations/2021_01_13_174152_create_products_table.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/migrations/2021_01_13_174205_create_product_types_table.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/migrations/2021_01_13_174205_create_product_types_table.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/migrations/2021_01_17_204745_create_standards_table.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/migrations/2021_01_17_204745_create_standards_table.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/migrations/2021_01_17_205347_add_new_properties_to_users_table.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/seeders/DatabaseSeeder.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/seeders/DatabaseSeeder.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/js/Components/Form/FormContent.vue" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/Components/Form/FormContent.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/js/Pages/Department/Create.vue" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/Pages/Department/Create.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/js/Pages/Product/Create.vue" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/Pages/Product/Create.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/js/Pages/Product/Index.vue" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/Pages/Product/Index.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/js/Pages/Product/ProductType/Create.vue" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/Pages/Product/ProductType/Create.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/js/Pages/Product/ProductType/Index.vue" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/Pages/Product/ProductType/Index.vue" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -15,7 +44,9 @@
   </component>
   <component name="ComposerSettings" doNotAsk="true" synchronizationState="SYNCHRONIZE">
     <pharConfigPath>$PROJECT_DIR$/composer.json</pharConfigPath>
-    <execution />
+    <execution>
+      <executable path="composer" />
+    </execution>
   </component>
   <component name="EditorConfigPreviewManager">
     <editorConfig file="$PROJECT_DIR$/.editorconfig" previewFile="$PROJECT_DIR$/resources/js/Components/Form/Inputs/InputDate.vue" />
@@ -158,6 +189,14 @@
       <path value="$PROJECT_DIR$/vendor/tightenco/ziggy" />
       <path value="$PROJECT_DIR$/vendor/voku/portable-ascii" />
       <path value="$PROJECT_DIR$/vendor/psy/psysh" />
+      <path value="$PROJECT_DIR$/vendor/spatie/temporary-directory" />
+      <path value="$PROJECT_DIR$/vendor/spatie/image-optimizer" />
+      <path value="$PROJECT_DIR$/vendor/spatie/laravel-medialibrary" />
+      <path value="$PROJECT_DIR$/vendor/spatie/image" />
+      <path value="$PROJECT_DIR$/vendor/maennchen/zipstream-php" />
+      <path value="$PROJECT_DIR$/vendor/intervention/image" />
+      <path value="$PROJECT_DIR$/vendor/myclabs/php-enum" />
+      <path value="$PROJECT_DIR$/vendor/league/glide" />
     </include_path>
   </component>
   <component name="ProblemsViewState">
@@ -258,7 +297,8 @@
       <workItem from="1611767654055" duration="17989000" />
       <workItem from="1611848371192" duration="7584000" />
       <workItem from="1611952016826" duration="14305000" />
-      <workItem from="1612024611756" duration="2143000" />
+      <workItem from="1612024611756" duration="20010000" />
+      <workItem from="1612077023082" duration="27462000" />
     </task>
     <task id="LOCAL-00001" summary="beta_v.0.0.1&#10;&#10;Create Pages Designed (Department, Product, Product Type)&#10;Index Pages Designed (Department, Product, Product Type and Staff)">
       <created>1611310478408</created>
@@ -288,7 +328,14 @@
       <option name="project" value="LOCAL" />
       <updated>1611968073465</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="Job Description create action core properties added&#10;-Job Description Fillable areas added to model&#10;-Create function added to controller&#10;-Summary area added">
+      <created>1612028030380</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1612028030380</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -325,7 +372,8 @@
     <MESSAGE value="beta_v.0.0.4&#10;#Validation system added&#10;#Flash messages added (Success, Warning etc.)&#10;#Loading screen component added" />
     <MESSAGE value="#Editable and repeatable form field component added" />
     <MESSAGE value="#Editable and repeatable form field component added&#10;@InputInlineEditableRepeatable.vue" />
-    <option name="LAST_COMMIT_MESSAGE" value="#Editable and repeatable form field component added&#10;@InputInlineEditableRepeatable.vue" />
+    <MESSAGE value="Job Description create action core properties added&#10;-Job Description Fillable areas added to model&#10;-Create function added to controller&#10;-Summary area added" />
+    <option name="LAST_COMMIT_MESSAGE" value="Job Description create action core properties added&#10;-Job Description Fillable areas added to model&#10;-Create function added to controller&#10;-Summary area added" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

@@ -11,4 +11,10 @@ class ProductType extends Model
 
 
     protected $fillable = ['name','description','creator_id','updater_id'];
+
+    //RELATED DEPARTMENT
+    public function department()
+    {
+        return $this->belongsTo(Department::class,'department_id','id')->withDefault(['name' => 'Undefined']);
+    }
 }

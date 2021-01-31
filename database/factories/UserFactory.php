@@ -29,6 +29,13 @@ class UserFactory extends Factory
             'email_verified_at' => now(),
             'password' => '$2y$10$92IXUNpkjO0rOQ5byMi.Ye4oKoEa3Ro9llC/.og/at2.uheWG/igi', // password
             'remember_token' => Str::random(10),
+            'collar_type' => 0,
+            'citizen_id' => $this->faker->regexify('[A-Z]{5}[0-9]{6}'),
+            'status'=> $this->faker->numberBetween(0, 3),
+            'starting_date' => $this->faker->dateTimeBetween(),
+            'leaving_date' => ($this->faker->numberBetween(0, 3) != 1 ? $this->faker->dateTimeBetween() : null),
+            'blood_group' => $this->faker->numberBetween(0, 7),
+            'creator_id' => 1,
         ];
     }
 

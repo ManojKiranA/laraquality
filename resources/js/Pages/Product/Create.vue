@@ -14,25 +14,29 @@
         </template>
         <div class="relative w-full">
             <!--Content Table-->
-            <form-content  @submitted="save"  @reset="reset">
+            <form-content  @submitted="save"  @reset="reset" enctype='multipart/form-data'>
                 <form-section
                 title="Product Infos"
                 description="You are going to create new product for your company">
                     <!-- Name -->
                     <input-group label="Product Name" for="name" class="col-span-12 md:col-span-6">
                         <InputText id="name"  v-model="form.name"/>
+                        <Error :message="error.name"/>
                     </input-group>
                     <!-- Code -->
                     <input-group label="Product Code" for="code" class="col-span-12 md:col-span-6">
                         <InputText id="code"  v-model="form.code"/>
-                    </input-group>
-                    <!-- Product Type-->
-                    <input-group label="Product Type" for="product_type" class="col-span-12 md:col-span-6">
-                        <Dropdown v-model="form.product_type" :options="productTypes" optionLabel="name" :filter="true" placeholder="Select Product Type" :showClear="true"/>
+                        <Error :message="error.code"/>
                     </input-group>
                     <!-- Department -->
                     <input-group label="Related Department" for="department_id" class="col-span-12 md:col-span-6">
-                        <Dropdown v-model="form.department_id" :options="departments" optionLabel="name" :filter="true" placeholder="Select a Department" :showClear="true" />
+                        <Dropdown v-model="form.department_id" :options="departments" optionLabel="name" :filter="true" placeholder="Select a Department" :showClear="true" @change="productTypeChange" />
+                        <Error :message="error.department_id"/>
+                    </input-group>
+                    <!-- Product Type-->
+                    <input-group label="Product Type" for="product_type_id" class="col-span-12 md:col-span-6">
+                        <Dropdown v-model="form.product_type_id" :options="productTypes" optionLabel="name" :filter="true" placeholder="Select Product Type" :showClear="true"/>
+                        <Error :message="error.product_type_id"/>
                     </input-group>
                     <!-- Certified -->
                     <input-group label="Is it certified?" for="is_certified" class="col-span-12 md:col-span-6">
@@ -59,13 +63,27 @@
                                 </div>
                             </template>
                         </Dropdown>
+                        <Error :message="error.is_certified"/>
                     </input-group>
                     <!-- Standard -->
                     <input-group label="Certified Standard" for="standard_id" class="col-span-12 md:col-span-6">
-                        <Dropdown v-model="form.standard_id" :options="standards" optionLabel="code" :filter="true" placeholder="Select a Standard" :showClear="true" />
+                        <Dropdown v-model="form.standard_id" :options="standards" :disabled="form.is_certified ===null || form.is_certified.value === 0" optionLabel="code" :filter="true" placeholder="Select a Standard" :showClear="true" />
+                    </input-group>
+                    <!-- Photo -->
+                    <input-group label="Product Photo" for="name" class="col-span-12 ">
+                        <div class="flex flex-row w-full items-center">
+                            <label class="flex justify-between space-x-1 items-center text-white">
+                                <span v-if="!form.photo" class="flex p-2 bg-blue-500 rounded-md">+ Choose a file</span>
+                                <span v-if="form.photo" class="flex items-center p-2 bg-green-500 rounded-md">
+                                    {{form.photo.name.slice(0, 50)}}
+                                </span>
+                                <input type="file" class="hidden" name="photo" @change="processFile($event)">
+                            </label>
+                            <span v-if="form.photo" @click="form.photo = null" class="flex px-2 cursor-pointer rounded-full bg-red-500 text-white ml-2 rounded-md">x</span>
+                        </div>
                     </input-group>
                     <!-- Description -->
-                    <input-group label="Descripton" for="name" class="col-span-12">
+                    <input-group label="Descripton" for="description" class="col-span-12">
                         <Textarea id="description" v-model="form.description" rows="3" cols="30" />
                     </input-group>
                 </form-section>
@@ -79,6 +97,7 @@ import AppLayout from '@/Layouts/AppLayout'
 import FormContent from '@/Components/Form/FormContent'
 import FormSection from '@/Components/Form/FormSection'
 import InputGroup from '@/Components/Form/InputGroup'
+import Error from '@/Components/Form/Error'
 import Checked from '@/Components/Icons/General/Checked'
 import XIcon from '@/Components/Icons/General/XIcon'
 import ActionButton from '@/Components/Buttons/ActionButton'
@@ -87,6 +106,9 @@ import InputText from 'primevue/inputtext'
 import Dropdown from 'primevue/dropdown';
 import SelectButton from 'primevue/selectbutton';
 import Textarea from 'primevue/textarea';
+import FileUpload from 'primevue/fileupload';
+
+
 
 
 
@@ -97,49 +119,74 @@ export default {
         FormContent,
         FormSection,
         InputGroup,
+        Error,
         Checked,
         XIcon,
         InputText,
         Dropdown,
         SelectButton,
         ActionButton,
-        Textarea
+        Textarea,
+        FileUpload,
     },
     data() {
         return {
             form: this.$inertia.form({
                 _method: 'POST',
-                name : '',
-                code : '',
-                department_id : '',
-                product_type : '',
-                description : '',
-                is_certified : '',
-                standard_id : '',
+                name : null,
+                photo : null,
+                code : null,
+                department_id : null,
+                product_type_id : null,
+                description : null,
+                is_certified : null,
+                standard_id : null,
             }),
+            error:{},
             isCertified: [
                 {name: 'Yes, It is certified', value: 1, icon: 'Checked',class: 'w-5 h-5 text-green-500 mr-2'},
-                {name: 'Yes, It is\'t certified', value: 0, icon: 'XIcon',class: 'w-5 h-5 text-red-500 mr-2'}
+                {name: 'No, It is\'t certified', value: 0, icon: 'XIcon',class: 'w-5 h-5 text-red-500 mr-2'}
             ]
         };
     },
     methods: {
         reset: function () {
-            this.form.name = '';
-            this.form.code = '';
-            this.form.department_id = '';
-            this.form.product_type = '';
-            this.form.description = '';
-            this.form.is_certified = '';
-            this.form.standard_id = '';
+            this.form.name = null;
+            this.form.photo = null;
+            this.form.code = null;
+            this.form.department_id = null;
+            this.form.product_type_id = null;
+            this.form.description = null;
+            this.form.is_certified = null;
+            this.form.standard_id = null;
         },
         save() {
-            this.form.post(route('product.store'), {
+            this.form.name === null ? this.$set(this.error, 'name', 'Name is required') : this.$set(this.error, 'name', '');
+            this.form.code === null ? this.$set(this.error, 'code', 'Product code is required') : this.$set(this.error, 'code', '');
+            this.form.department_id === null ? this.$set(this.error, 'department_id', 'You should select a department') : this.$set(this.error, 'department_id', '');
+            this.form.product_type_id === null ? this.$set(this.error, 'product_type_id', 'You should select a product type') : this.$set(this.error, 'product_type_id', '');
+            this.form.is_certified === null ? this.$set(this.error, 'is_certified', 'You should select a certification status') : this.$set(this.error, 'is_certified', '');
+            if(this.form.name !== null && this.form.code !== null && this.form.department_id !== null && this.form.product_type_id !== null && this.form.is_certified !== null) {
+                this.form.post(route('product.store'), {
                     errorBag: 'product',
                     preserveScroll: true,
-            });
-            this.reset();
+                });
+                this.loading = true;
+            }
         },
+        productTypeChange(){
+            this.$inertia.reload( {
+                method: 'get',
+                data: {departmentId :this.form.department_id.id},
+                replace: true,
+                preserveState: true,
+                preserveScroll: true,
+                only: ['productTypes','standards'],
+            })
+        },
+        processFile(event) {
+            this.form.photo = event.target.files[0]
+        }
 
 
     },
