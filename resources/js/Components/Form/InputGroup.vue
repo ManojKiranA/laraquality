@@ -1,7 +1,7 @@
 <template>
     <div class="flex flex-col">
         <!--Label-->
-        <label for="for" class="block font-medium text-sm text-gray-700">
+        <label :for="labelFor" class="block font-medium text-sm text-gray-700">
             <span v-if="label">{{ label }}</span>
             <span v-else><slot #label></slot></span>
         </label>
@@ -18,6 +18,6 @@
 
 <script>
 export default {
-    props: ['label','for','error']
+    props: ['label','labelFor','error']
 }
 </script>

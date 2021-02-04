@@ -2,9 +2,10 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\ComplaintAction;
 use Illuminate\Http\Request;
 
-class ClaimActionController extends Controller
+class ComplaintActionController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -40,10 +41,10 @@ class ClaimActionController extends Controller
     /**
      * Display the specified resource.
      *
-     * @param  int  $id
+     * @param  \App\Models\ComplaintAction  $complaintAction
      * @return \Illuminate\Http\Response
      */
-    public function show($id)
+    public function show(ComplaintAction $complaintAction)
     {
         //
     }
@@ -51,10 +52,10 @@ class ClaimActionController extends Controller
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  int  $id
+     * @param  \App\Models\ComplaintAction  $complaintAction
      * @return \Illuminate\Http\Response
      */
-    public function edit($id)
+    public function edit(ComplaintAction $complaintAction)
     {
         //
     }
@@ -63,10 +64,10 @@ class ClaimActionController extends Controller
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @param  int  $id
+     * @param  \App\Models\ComplaintAction  $complaintAction
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(Request $request, ComplaintAction $complaintAction)
     {
         //
     }
@@ -74,10 +75,10 @@ class ClaimActionController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  int  $id
+     * @param  \App\Models\ComplaintAction  $complaintAction
      * @return \Illuminate\Http\Response
      */
-    public function destroy($id)
+    public function destroy(ComplaintAction $complaintAction)
     {
         //
     }

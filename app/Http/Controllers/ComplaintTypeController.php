@@ -2,28 +2,35 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\ComplaintType;
+use App\Models\Department;
 use Illuminate\Http\Request;
+use Inertia\Inertia;
 
-class ClaimController extends Controller
+class ComplaintTypeController extends Controller
 {
     /**
      * Display a listing of the resource.
      *
-     * @return \Illuminate\Http\Response
+     * @return \Inertia\Response
      */
     public function index()
     {
-        //
+        return Inertia::render('Complaint/ComplaintType/Index',[
+            'complaintTypes' => ComplaintType::all()
+        ]);
     }
 
     /**
      * Show the form for creating a new resource.
      *
-     * @return \Illuminate\Http\Response
+     * @return \Inertia\Response
      */
     public function create()
     {
-        //
+        return Inertia::render('Complaint/ComplaintType/Create',[
+            'departments'=>Department::where('is_complaint',1)->get(['id','name']),
+        ]);
     }
 
     /**
@@ -40,10 +47,10 @@ class ClaimController extends Controller
     /**
      * Display the specified resource.
      *
-     * @param  int  $id
+     * @param  \App\Models\ComplaintType  $complaintType
      * @return \Illuminate\Http\Response
      */
-    public function show($id)
+    public function show(ComplaintType $complaintType)
     {
         //
     }
@@ -51,10 +58,10 @@ class ClaimController extends Controller
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  int  $id
+     * @param  \App\Models\ComplaintType  $complaintType
      * @return \Illuminate\Http\Response
      */
-    public function edit($id)
+    public function edit(ComplaintType $complaintType)
     {
         //
     }
@@ -63,10 +70,10 @@ class ClaimController extends Controller
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @param  int  $id
+     * @param  \App\Models\ComplaintType  $complaintType
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(Request $request, ComplaintType $complaintType)
     {
         //
     }
@@ -74,10 +81,10 @@ class ClaimController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  int  $id
+     * @param  \App\Models\ComplaintType  $complaintType
      * @return \Illuminate\Http\Response
      */
-    public function destroy($id)
+    public function destroy(ComplaintType $complaintType)
     {
         //
     }

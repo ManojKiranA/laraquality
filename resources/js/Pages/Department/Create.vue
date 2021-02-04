@@ -19,12 +19,12 @@
                 title="Department Infos"
                 description="You are going to create new department for your company">
                     <!-- Name -->
-                    <input-group label="Department Name" for="name" class="col-span-12 md:col-span-6">
+                    <input-group label="Department Name" labelFor="name" class="col-span-12 md:col-span-6">
                         <InputText id="name"  v-model="form.name"/>
                         <Error :message="error.name"/>
                     </input-group>
                     <!-- Manager -->
-                    <input-group label="Manager" for="manager_id" class="col-span-12 md:col-span-6">
+                    <input-group label="Manager" labelFor="manager_id" class="col-span-12 md:col-span-6">
                         <Dropdown v-model="form.manager_id" :options="users" :value="id" optionLabel="id" :filter="true" placeholder="Select a Manager" :showClear="true">
                             <!--Chosen Item-->
                             <template #value="slotProps">
@@ -53,16 +53,16 @@
                         <Error :message="error.manager_id"/>
                     </input-group>
                     <!-- Department Type-->
-                    <input-group label="Main Department" for="department_type" class="col-span-12 md:col-span-6">
+                    <input-group label="Main Department" labelFor="department_type" class="col-span-12 md:col-span-6">
                         <Dropdown v-model="form.department_type" :options="departmentType" optionLabel="name" placeholder="Select Department Type" :showClear="true"/>
                         <Error :message="error.department_type"/>
                     </input-group>
                     <!-- Main Department -->
-                    <input-group label="Main Department" for="department_id" class="col-span-12 md:col-span-6">
+                    <input-group label="Main Department" labelFor="department_id" class="col-span-12 md:col-span-6">
                         <Dropdown v-model="form.department_id" :options="departments" optionLabel="name" :disabled="form.department_type === null || form.department_type.value === 0" :filter="true" placeholder="Select a Department" :showClear="true" />
                     </input-group>
                     <!-- Customer Complaint -->
-                    <input-group label="Can it get a customer complaint?" for="is_complaint" class="col-span-12 md:col-span-6">
+                    <input-group label="Can it get a customer complaint?" labelFor="is_complaint" class="col-span-12 md:col-span-6">
                         <Dropdown v-model="form.is_complaint" :options="isComplaint" optionLabel="name" placeholder="Select" :showClear="true">
                             <!--Chosen Item-->
                             <template #value="slotProps">
@@ -89,7 +89,7 @@
                         <Error :message="error.is_complaint"/>
                     </input-group>
                     <!-- Production -->
-                    <input-group label="Can it make production or has any product?" for="is_production" class="col-span-12 md:col-span-6">
+                    <input-group label="Can it make production or has any product?" labelFor="is_production" class="col-span-12 md:col-span-6">
                         <Dropdown v-model="form.is_production" :options="isProduction" optionLabel="name" placeholder="Select" :showClear="true">
                             <!--Chosen Item-->
                             <template #value="slotProps">

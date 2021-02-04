@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateClaimActionsTable extends Migration
+class CreateComplaintDecisionsTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,7 +13,7 @@ class CreateClaimActionsTable extends Migration
      */
     public function up()
     {
-        Schema::create('claim_actions', function (Blueprint $table) {
+        Schema::create('complaint_decisions', function (Blueprint $table) {
             $table->id();
             $table->timestamps();
         });
@@ -26,6 +26,6 @@ class CreateClaimActionsTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('claim_actions');
+        Schema::dropIfExists('complaint_decisions');
     }
 }

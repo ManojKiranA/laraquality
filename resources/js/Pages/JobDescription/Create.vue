@@ -19,12 +19,12 @@
                 title="Job Description Infos"
                 description="You are going to create new job description for relation with your staff">
                     <!-- Name -->
-                    <input-group label="Title" for="name" class="col-span-12">
+                    <input-group label="Title" labelFor="name" class="col-span-12">
                         <InputText id="name"  v-model="form.name"/>
                         <Error :message="error.name"/>
                     </input-group>
                     <!-- Collar Type -->
-                    <input-group label="Collar Type" for="collar_type" class="col-span-12 md:col-span-6">
+                    <input-group label="Collar Type" labelFor="collar_type" class="col-span-12 md:col-span-6">
                         <Dropdown v-model="form.collar_type" :options="collarType" optionLabel="name" placeholder="Select" :showClear="true" @change="jobDescriptionChange">
                             <!--Chosen Item-->
                             <template #value="slotProps">
@@ -51,12 +51,12 @@
                         <Error :message="error.collar_type"/>
                     </input-group>
                     <!-- Related Department -->
-                    <input-group label="Related Department" for="department_id" class="col-span-12 md:col-span-6">
+                    <input-group label="Related Department" labelFor="department_id" class="col-span-12 md:col-span-6">
                         <Dropdown v-model="form.department_id" :options="departments" optionLabel="name" :filter="true" placeholder="Select a Department" :showClear="true" />
                         <Error :message="error.department_id"/>
                     </input-group>
                     <!-- Summary -->
-                    <input-group label="Summary" for="summary" class="col-span-12">
+                    <input-group label="Summary" labelFor="summary" class="col-span-12">
                         <Textarea v-model="summary" :autoResize="true" rows="2" cols="30" />
                         <Error :message="error.summary"/>
                     </input-group>
@@ -65,27 +65,27 @@
                 title="Requirements, Powers and Responsibilities"
                 description="Job description's definitions">
                     <!-- Job Requirements -->
-                    <input-group label="Job Requirements" for="job_requirement" class="col-span-12">
+                    <input-group label="Job Requirements" labelFor="job_requirement" class="col-span-12">
                         <InputRepeatable id="job_requirement"  v-model="form.job_requirement" valueName="Requirement"/>
                     </input-group>
                     <!-- Key Performance Indicators (KPIs) -->
-                    <input-group label="Key Performance Indicators (KPIs)" for="kpi" class="col-span-12">
+                    <input-group label="Key Performance Indicators (KPIs)" labelFor="kpi" class="col-span-12">
                         <InputRepeatable id="kpi"  v-model="form.kpi" valueName="KPI"/>
                     </input-group>
                     <!-- Job Responsibilities -->
-                    <input-group label="Job Responsibilities" for="job_responsibility" class="col-span-12">
+                    <input-group label="Job Responsibilities" labelFor="job_responsibility" class="col-span-12">
                         <InputRepeatable id="job_responsibility"  v-model="form.job_responsibility" valueName="Responsibility"/>
                     </input-group>
                     <!-- Working Conditions and Areas-->
-                    <input-group label="Working Conditions and Areas" for="working_conditions" class="col-span-12">
+                    <input-group label="Working Conditions and Areas" labelFor="working_conditions" class="col-span-12">
                         <InputRepeatable id="working_conditions"  v-model="form.working_conditions" valueName="Condition or Area"/>
                     </input-group>
                     <!-- Working Equipments-->
-                    <input-group label="Working Equipments" for="working_equipments" class="col-span-12">
+                    <input-group label="Working Equipments" labelFor="working_equipments" class="col-span-12">
                         <InputRepeatable id="working_equipments"  v-model="form.working_equipments" valueName="Equipment"/>
                     </input-group>
                     <!-- It works together with  -->
-                    <input-group label="It works together with" for="working_together" class="col-span-12  md:col-span-6">
+                    <input-group label="It works together with" labelFor="working_together" class="col-span-12  md:col-span-6">
                         <MultiSelect v-model="form.working_together" :options="jobDescriptions" optionLabel="name" placeholder="Select a Job Description" :showClear="true" :filter="true">
                             <!--Chosen Item-->
                             <template #value="slotProps">
@@ -106,7 +106,7 @@
                         </MultiSelect>
                     </input-group>
                     <!-- It reports to -->
-                    <input-group label="It reports to" for="report_to" class="col-span-12 md:col-span-6">
+                    <input-group label="It reports to" labelFor="report_to" class="col-span-12 md:col-span-6">
                         <MultiSelect v-model="form.report_to" :options="users" optionLabel="name" placeholder="Select a Staff" :showClear="true" :filter="true">
                             <!--Chosen Item-->
                             <template #value="slotProps">

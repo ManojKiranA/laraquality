@@ -19,15 +19,15 @@
                 title="Product Type Infos"
                 description="You are going to create new product type for your products">
                     <!-- Name -->
-                    <input-group label="Product Type Name" for="name" class="col-span-12">
+                    <input-group label="Product Type Name" labelFor="name" class="col-span-12">
                         <InputText id="name"  v-model="form.name"/>
                     </input-group>
                     <!-- Department -->
-                    <input-group label="Department" for="department_id" class="col-span-12">
+                    <input-group label="Department" labelFor="department_id" class="col-span-12">
                         <Dropdown v-model="form.department_id" :options="departments" optionLabel="name" :filter="true" placeholder="Select a Department" :showClear="true" />
                     </input-group>
                     <!-- Description -->
-                    <input-group label="Descripton" for="name" class="col-span-12">
+                    <input-group label="Descripton" labelFor="name" class="col-span-12">
                         <Textarea id="description" v-model="form.description" rows="3" cols="30" />
                     </input-group>
             </form-section>

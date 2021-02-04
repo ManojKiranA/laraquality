@@ -2,14 +2,39 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="3c0aa67a-1849-4c37-b8d9-a890da0e6b1e" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/resources/js/Pages/Customer/Create.vue" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/js/Pages/Customer/Index.vue" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/Http/Controllers/ComplaintPropertyController.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/Models/ComplaintProperty.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/database/migrations/2021_02_01_092439_create_complaint_properties_table.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/js/Pages/Complaint/ComplaintType/Create.vue" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/js/Pages/Complaint/ComplaintType/Index.vue" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/js/Pages/Complaint/Create.vue" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/js/Pages/Complaint/Index.vue" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/CustomerController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/CustomerController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Models/Customer.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Models/Customer.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/database/migrations/2021_01_13_173845_create_customers_table.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/migrations/2021_01_13_173845_create_customers_table.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/ClaimActionController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/ComplaintController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/ClaimController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/ComplaintTypeController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/ClaimDecisionController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/ComplaintActionController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/ClaimPropertyController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/ComplaintDecisionController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/ClaimTypeController.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Models/Claim.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Models/Complaint.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Models/ClaimDecision.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Models/ComplaintType.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Models/ClaimProperty.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Models/ComplaintAction.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Models/ClaimType.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Models/ComplaintDecision.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/migrations/2021_01_13_173727_create_claim_actions_table.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/migrations/2021_02_01_092511_create_complaint_actions_table.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/migrations/2021_01_13_173739_create_claims_table.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/migrations/2021_02_01_092140_create_complaints_table.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/migrations/2021_01_13_173750_create_claim_decisions_table.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/migrations/2021_02_01_092425_create_complaint_types_table.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/migrations/2021_01_13_173813_create_claim_properties_table.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/migrations/2021_02_01_092456_create_complaint_decisions_table.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/migrations/2021_01_13_173835_create_claim_types_table.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/js/Components/Form/InputGroup.vue" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/Components/Form/InputGroup.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/js/Components/Icons/Sections/ClaimDecision.vue" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/Components/Icons/Sections/ClaimDecision.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/js/Components/Icons/Sections/Standard.vue" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/Components/Icons/Sections/Standard.vue" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/js/Layouts/AppLayout.vue" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/Layouts/AppLayout.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/js/Pages/Staff/Index.vue" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/Pages/Staff/Index.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/js/Pages/Customer/Create.vue" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/Pages/Customer/Create.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/js/Pages/Department/Create.vue" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/Pages/Department/Create.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/js/Pages/JobDescription/Create.vue" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/Pages/JobDescription/Create.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/js/Pages/Product/Create.vue" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/Pages/Product/Create.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/js/Pages/Product/Index.vue" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/Pages/Product/Index.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/js/Pages/Product/ProductType/Create.vue" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/Pages/Product/ProductType/Create.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/js/Pages/Staff/Create.vue" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/Pages/Staff/Create.vue" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/routes/web.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/web.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -175,6 +200,7 @@
     </include_path>
   </component>
   <component name="ProblemsViewState">
+    <option name="selectedIndex" value="1" />
     <option name="sortByName" value="true" />
   </component>
   <component name="ProjectId" id="1mjhZQbqf7FlzG87hIURYfipQJ4" />
@@ -214,6 +240,7 @@
       <recent name="C:\Laravel\Projeler\lq-i\resources\js\Pages\Product" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Laravel\Projeler\lq-i\resources\js\Pages\Complaint" />
       <recent name="C:\Laravel\Projeler\lq-i\resources\js\Components\Buttons" />
     </key>
   </component>
@@ -274,6 +301,8 @@
       <workItem from="1611952016826" duration="14305000" />
       <workItem from="1612024611756" duration="20010000" />
       <workItem from="1612077023082" duration="36155000" />
+      <workItem from="1612168202805" duration="15267000" />
+      <workItem from="1612267006453" duration="4624000" />
     </task>
     <task id="LOCAL-00001" summary="beta_v.0.0.1&#10;&#10;Create Pages Designed (Department, Product, Product Type)&#10;Index Pages Designed (Department, Product, Product Type and Staff)">
       <created>1611310478408</created>
@@ -380,6 +409,11 @@
           <url>file://$PROJECT_DIR$/resources/js/Layouts/AppLayout.vue</url>
           <line>17</line>
           <option name="timeStamp" value="12" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="javascript">
+          <url>file://$PROJECT_DIR$/resources/js/Pages/Product/Create.vue</url>
+          <line>144</line>
+          <option name="timeStamp" value="13" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>

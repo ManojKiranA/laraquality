@@ -88,15 +88,15 @@ Route::middleware(['auth:sanctum', 'verified'])->prefix('dashboard')->group(func
     //Document Type
     Route::resource('document-type', \App\Http\Controllers\DocumentTypeController::class);
     //Claim
-    Route::resource('claim', \App\Http\Controllers\ClaimController::class);
+    Route::resource('complaint', \App\Http\Controllers\ComplaintController::class);
     //Claim Type
-    Route::resource('claim-type', \App\Http\Controllers\ClaimTypeController::class);
+    Route::resource('complaint-type', \App\Http\Controllers\ComplaintTypeController::class);
     //Claim Action
-    Route::resource('claim-action', \App\Http\Controllers\ClaimActionController::class);
+    Route::resource('complaint-action', \App\Http\Controllers\ComplaintActionController::class);
     //Claim Decision
-    Route::resource('claim-decision', \App\Http\Controllers\ClaimDecisionController::class);
+    Route::resource('complaint-decision', \App\Http\Controllers\ComplaintDecisionController::class);
     //Claim Property
-    Route::resource('claim-property', \App\Http\Controllers\ClaimPropertyController::class);
+    Route::resource('complaint-property', \App\Http\Controllers\ComplaintPropertyController::class);
     //Customer
     Route::resource('customer', \App\Http\Controllers\CustomerController::class);
     //Measurement Tool

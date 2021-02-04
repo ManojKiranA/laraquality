@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateClaimPropertiesTable extends Migration
+class CreateComplaintPropertiesTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,7 +13,7 @@ class CreateClaimPropertiesTable extends Migration
      */
     public function up()
     {
-        Schema::create('claim_properties', function (Blueprint $table) {
+        Schema::create('complaint_properties', function (Blueprint $table) {
             $table->id();
             $table->timestamps();
         });
@@ -26,6 +26,6 @@ class CreateClaimPropertiesTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('claim_properties');
+        Schema::dropIfExists('complaint_properties');
     }
 }

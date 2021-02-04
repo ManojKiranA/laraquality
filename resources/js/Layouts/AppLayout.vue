@@ -286,7 +286,7 @@
                         <slot></slot>
                     </main>
                     <section class="font-semibold text-right text-gray-500 items-center flex justify-end space-x-1">
-                        <a href="https://laraquality.dev/" class="text-blue-600 hover:underline">LaraQuality v_beta.0.0.2</a>
+                        <a href="https://laraquality.dev/" class="text-blue-600 hover:underline">LaraQuality v_beta.0.0.5</a>
                         <span>by</span>
                         <a href="https://sinanaydogan.com.tr" class="text-teal-400 hover:underline">Sinan AYDOĞAN</a>
                         <a href="https://github.com/sinan-aydogan/LaraQuality-i"  class="text-blue-600 hover:underline flex items-center" target="_blank"><git-hub-icon class="w-5 h-5" /></a>
@@ -690,37 +690,37 @@ export default {
                     type:'dropdown',
                     items: [
                         {
-                            label: 'Claims',
+                            label: 'Complaints',
                             icon:'SectionIconClaims',
-                            link:'claim.index',
+                            link:'complaint.index',
                             linkType:'route',
                             type:'standard',
                         },
                         {
-                            label: 'Claim Actions',
+                            label: 'Complaint Actions',
                             icon:'SectionIconAction',
-                            link:'claim-action.index',
+                            link:'complaint-action.index',
                             linkType:'route',
                             type:'standard',
                         },
                         {
-                            label: 'Claim Decisions',
+                            label: 'Complaint Decisions',
                             icon:'SectionIconClaimDecision',
-                            link:'claim-decision.index',
+                            link:'complaint-decision.index',
                             linkType:'route',
                             type:'standard',
                         },
                         {
-                            label: 'Claim Types',
+                            label: 'Complaint Types',
                             icon:'SectionIconType',
-                            link:'claim-type.index',
+                            link:'complaint-type.index',
                             linkType:'route',
                             type:'standard',
                         },
                         {
-                            label: 'Claim Properties',
+                            label: 'Complaint Properties',
                             icon:'SectionIconType',
-                            link:'claim-property.index',
+                            link:'complaint-property.index',
                             linkType:'route',
                             type:'standard',
                         },
