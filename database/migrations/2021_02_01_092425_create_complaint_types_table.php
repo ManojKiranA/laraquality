@@ -16,7 +16,7 @@ class CreateComplaintTypesTable extends Migration
         Schema::create('complaint_types', function (Blueprint $table) {
             $table->id();
             $table->string('name',250);
-            $table->tinyInteger('critical_status')->nullable()->default(0);
+            $table->tinyInteger('critical_level')->nullable()->default(0);
             $table->boolean('department_id')->nullable()->references('id')->on('departments');
             $table->json('product_id')->nullable();
             $table->string('source',750)->nullable();

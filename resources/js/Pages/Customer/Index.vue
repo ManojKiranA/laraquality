@@ -28,7 +28,7 @@
                 <Column field="name" header="Customer Name" filterMatchMode="contains">
                     <!--Filter-->
                     <template #filter>
-                        <InputText type="text" v-model="filters['name']" class="p-column-filter" placeholder="Search by name"/>
+                        <InputText type="text" v-model="filters['name']" class="flex w-full border-gray-300 rounded-md" placeholder="Search by name"/>
                     </template>
                     <!--Content-->
                     <template #body="slotProps">
@@ -40,7 +40,7 @@
                 <Column field="tax_id" header="Tax ID" filterMatchMode="contains">
                     <!--Filter-->
                     <template #filter>
-                        <InputText type="text" v-model="filters['tax_id']" class="p-column-filter" placeholder="Search by tax id"/>
+                        <InputText type="text" v-model="filters['tax_id']" class="flex w-full border-gray-300 rounded-md" placeholder="Search by tax id"/>
                     </template>
                     <!--Content-->
                     <template #body="slotProps">
@@ -52,7 +52,7 @@
                 <Column field="phone" header="Phone" filterMatchMode="contains">
                     <!--Filter-->
                     <template #filter>
-                        <InputText type="text" v-model="filters['phone']" class="p-column-filter" placeholder="Search by phone"/>
+                        <InputText type="text" v-model="filters['phone']" class="flex w-full border-gray-300 rounded-md" placeholder="Search by phone"/>
                     </template>
                     <!--Content-->
                     <template #body="slotProps">
@@ -64,7 +64,7 @@
                 <Column field="status" header="Status" filterMatchMode="in">
                     <!--Filter-->
                     <template #filter>
-                        <MultiSelect v-model="filters['status']" :options="status" optionLabel="name" optionValue="value" placeholder="All" class="p-column-filter">
+                        <MultiSelect v-model="filters['status']" :options="status" optionLabel="name" optionValue="value" placeholder="All" class="flex w-full border-gray-300 rounded-md">
                             <template #option="slotProps">
                                 <div class="p-multiselect-representative-option">
                                     <span class="image-text">{{slotProps.option.name}}</span>

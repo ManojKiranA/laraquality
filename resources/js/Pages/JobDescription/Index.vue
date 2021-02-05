@@ -25,7 +25,7 @@
                 <Column field="name" header="Title" filterMatchMode="contains">
                     <!--Filter-->
                     <template #filter>
-                        <InputText type="text" v-model="filters['name']" class="p-column-filter" placeholder="Search by name"/>
+                        <InputText type="text" v-model="filters['name']" class="flex w-full border-gray-300 rounded-md" placeholder="Search by name"/>
                     </template>
                     <!--Content-->
                     <template #body="slotProps">
@@ -37,7 +37,7 @@
                 <Column field="collar_type" header="Collar Type" filterMatchMode="contains">
                     <!--Filter-->
                     <template #filter>
-                        <MultiSelect v-model="filters['collar_type']" :options="collarType" optionLabel="name" optionValue="value" placeholder="All" class="p-column-filter">
+                        <MultiSelect v-model="filters['collar_type']" :options="collarType" optionLabel="name" optionValue="value" placeholder="All" class="flex w-full border-gray-300 rounded-md">
                             <template #option="slotProps">
                                 <div class="p-multiselect-representative-option">
                                     <span class="image-text">{{slotProps.option.name}}</span>
@@ -55,7 +55,7 @@
                 <Column field="department.name" header="Related Department" filterMatchMode="contains">
                     <!--Filter-->
                     <template #filter>
-                        <InputText type="text" v-model="filters['department.name']" class="p-column-filter" placeholder="Search by department"/>
+                        <InputText type="text" v-model="filters['department.name']" class="flex w-full border-gray-300 rounded-md" placeholder="Search by department"/>
                     </template>
                     <!--Content-->
                     <template #body="slotProps">

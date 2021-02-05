@@ -10,7 +10,7 @@
         </template>
         <!--Action Buttons-->
         <template #action-buttons>
-            <action-button label="Create New Staff" :link="route('complaint-type.create')" action="submit"/>
+            <action-button label="Create Complaint Type" :link="route('complaint-type.create')" action="submit"/>
         </template>
         <div class="relative w-full">
             <!--Content Table-->
@@ -28,7 +28,7 @@
                 <Column field="critical_status" header="Complaint Type" filterMatchMode="contains">
                     <!--Filter-->
                     <template #filter>
-                        <InputText type="text" v-model="filters['name']" class="p-column-filter" placeholder="Search by name"/>
+                        <InputText type="text" v-model="filters['name']" class="flex w-full border-gray-300 rounded-md" placeholder="Search by name"/>
                     </template>
                     <!--Content-->
                     <template #body="slotProps">
@@ -38,23 +38,36 @@
                         </div>
                     </template>
                 </Column>
-                <!--Critical Status-->
-                <Column field="critical_status" header="Critical Status" filterMatchMode="contains">
+                <!--Critical Level-->
+                <Column field="critical_level" header="Critical Level" filterMatchMode="contains">
                     <!--Filter-->
                     <template #filter>
-                        <InputText type="text" v-model="filters['critical_status']" class="p-column-filter" placeholder="Search by critically"/>
+                        <MultiSelect v-model="filters['critical_level']" :options="criticalLevel" optionLabel="name" optionValue="value" placeholder="All" class="flex w-full border-gray-300 rounded-md">
+                            <template #option="slotProps">
+                                <div class="p-multiselect-representative-option">
+                                    <span :class="'text-'+slotProps.option.class+'-600 image-text'">{{slotProps.option.name}}</span>
+                                </div>
+                            </template>
+                        </MultiSelect>
                     </template>
                     <!--Content-->
                     <template #body="slotProps">
-                        <span class="p-column-title">Critical Status</span>
-                        {{slotProps.data.critical_status}}
+                        <span class="p-column-title">Critical Level</span>
+                        <span v-if="slotProps.data.critical_level != null" :class="'p-2 rounded-md bg-'+criticalLevel[slotProps.data.critical_level].class+'-100 text-'+criticalLevel[slotProps.data.critical_level].class+'-600'">{{ criticalLevel[slotProps.data.critical_level].name }}</span>
+                        <span v-else class="flex items-center px-2 text-red border border-red-500 py-1 rounded-md w-min"><warning class="w-5 h-5 text-red-500 mr-2"/>Undefined</span>
                     </template>
                 </Column>
                 <!--Related Department-->
-                <Column field=department.name header="Related Department" filterMatchMode="contains">
+                <Column field="department_id" header="Related Department"  filterMatchMode="in">
                     <!--Filter-->
                     <template #filter>
-                        <InputText type="text" v-model="filters['department.name']" class="p-column-filter" placeholder="Search by department"/>
+                        <MultiSelect v-model="filters['department_id']" :options="departments" optionLabel="name" optionValue="id" placeholder="All" class="flex w-full border-gray-300 rounded-md">
+                            <template #option="slotProps">
+                                <div class="p-multiselect-representative-option">
+                                    <span class="image-text">{{slotProps.option.name}}</span>
+                                </div>
+                            </template>
+                        </MultiSelect>
                     </template>
                     <!--Content-->
                     <template #body="slotProps">
@@ -88,7 +101,7 @@ import Chip from 'primevue/chip';
 import Badge from 'primevue/badge';
 
 export default {
-    props: ['complaintTypes'],
+    props: ['complaintTypes','departments'],
     components: {
         AppLayout,
         DataTable,
@@ -111,12 +124,12 @@ export default {
         return {
             filters: {},
             content: [],
-            employmentStatus:[
-                {name:"Left",value:0,class:'px-2 text-white py-1 rounded-md bg-yellow-500'},
-                {name:"Active",value:1,class:'px-2 text-white py-1 rounded-md bg-green-500'},
-                {name:"Fired",value:2,class:'px-2 text-white py-1 rounded-md bg-red-500'},
-                {name:"Retired",value:3,class:'px-2 text-white py-1 rounded-md bg-blue-500'}
-                ]
+            criticalLevel: [
+                {name: 'Minor', value: 0, class: 'green'},
+                {name: 'Moderate', value: 1, class: 'yellow'},
+                {name: 'Major', value: 2, class: 'indigo'},
+                {name: 'Critical', value: 3, class: 'red'},
+            ],
         }
     },
     methods: {

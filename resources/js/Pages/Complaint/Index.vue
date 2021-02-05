@@ -28,7 +28,7 @@
                 <Column field="name" header="Staff Name" filterMatchMode="contains">
                     <!--Filter-->
                     <template #filter>
-                        <InputText type="text" v-model="filters['name']" class="p-column-filter" placeholder="Search by name"/>
+                        <InputText type="text" v-model="filters['name']" class="flex w-full border-gray-300 rounded-md" placeholder="Search by name"/>
                     </template>
                     <!--Content-->
                     <template #body="slotProps">
@@ -44,7 +44,7 @@
                 <Column field="department.name" header="Department" filterMatchMode="contains">
                     <!--Filter-->
                     <template #filter>
-                        <InputText type="text" v-model="filters['department.name']" class="p-column-filter" placeholder="Search by department"/>
+                        <InputText type="text" v-model="filters['department.name']" class="flex w-full border-gray-300 rounded-md" placeholder="Search by department"/>
                     </template>
                     <!--Content-->
                     <template #body="slotProps">
@@ -56,7 +56,7 @@
                 <Column field=job_description.name header="Job Description" filterMatchMode="contains">
                     <!--Filter-->
                     <template #filter>
-                        <InputText type="text" v-model="filters['job_description.name']" class="p-column-filter" placeholder="Search by job desc."/>
+                        <InputText type="text" v-model="filters['job_description.name']" class="flex w-full border-gray-300 rounded-md" placeholder="Search by job desc."/>
                     </template>
                     <!--Content-->
                     <template #body="slotProps">
@@ -68,7 +68,7 @@
                 <Column field="status" header="Status" filterMatchMode="in">
                     <!--Filter-->
                     <template #filter>
-                        <MultiSelect v-model="filters['status']" :options="employmentStatus" optionLabel="name" optionValue="value" placeholder="All" class="p-column-filter">
+                        <MultiSelect v-model="filters['status']" :options="employmentStatus" optionLabel="name" optionValue="value" placeholder="All" class="flex w-full border-gray-300 rounded-md">
                             <template #option="slotProps">
                                 <div class="p-multiselect-representative-option">
                                     <span class="image-text">{{slotProps.option.name}}</span>

@@ -33,7 +33,7 @@
                 <Column field="name" header="Product Type Name" filterMatchMode="contains">
                     <!--Filter-->
                     <template #filter>
-                        <InputText type="text" v-model="filters['name']" class="p-column-filter" placeholder="Search by name"/>
+                        <InputText type="text" v-model="filters['name']" class="flex w-full border-gray-300 rounded-md" placeholder="Search by name"/>
                     </template>
                     <!--Content-->
                     <template #body="slotProps">
@@ -45,7 +45,7 @@
                 <Column field="department.name" header="Department" filterMatchMode="contains">
                     <!--Filter-->
                     <template #filter>
-                        <InputText type="text" v-model="filters['department.name']" class="p-column-filter" placeholder="Search by department"/>
+                        <InputText type="text" v-model="filters['department.name']" class="flex w-full border-gray-300 rounded-md" placeholder="Search by department"/>
                     </template>
                     <!--Content-->
                     <template #body="slotProps">
@@ -57,7 +57,7 @@
                 <Column field="description" header="Description" filterMatchMode="contains">
                     <!--Filter-->
                     <template #filter>
-                        <InputText type="text" v-model="filters['description']" class="p-column-filter" placeholder="Search by descripton"/>
+                        <InputText type="text" v-model="filters['description']" class="flex w-full border-gray-300 rounded-md" placeholder="Search by descripton"/>
                     </template>
                     <!--Content-->
                     <template #body="slotProps">
