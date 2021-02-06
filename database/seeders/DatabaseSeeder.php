@@ -16,12 +16,21 @@ class DatabaseSeeder extends Seeder
     {
         /*Admin Seeder*/
         $this->call(UserSeeder::class);
+
         /*Random User Factory*/
         \App\Models\User::factory(30)->create();
+
+        /*Random Customer Factory*/
+        \App\Models\Customer::factory(30)->create();
+
         /*Department Seeder*/
         $this->call(DepartmentSeeder::class);
+
         /*Product Type Seeder*/
         $this->call(ProductTypeSeeder::class);
+
+        /*Products Seeder*/
+        $this->call(ProductSeeder::class);
 
 
         if(App::environment('local')){
