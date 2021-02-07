@@ -1,41 +1,19 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
   <component name="ChangeListManager">
     <list default="true" id="3c0aa67a-1849-4c37-b8d9-a890da0e6b1e" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/app/Http/Controllers/ComplaintPropertyController.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/Models/ComplaintProperty.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/database/migrations/2021_02_01_092439_create_complaint_properties_table.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/js/Pages/Complaint/ComplaintType/Create.vue" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/js/Pages/Complaint/ComplaintType/Index.vue" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/js/Pages/Complaint/Create.vue" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/js/Pages/Complaint/Index.vue" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/database/migrations/2021_02_05_122656_create_complaint_complaint_type_table.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/database/seeders/ComplaintTypeSeeder.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/ClaimActionController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/ComplaintController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/ClaimController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/ComplaintTypeController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/ClaimDecisionController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/ComplaintActionController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/ClaimPropertyController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/ComplaintDecisionController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/ClaimTypeController.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Models/Claim.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Models/Complaint.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Models/ClaimDecision.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Models/ComplaintType.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Models/ClaimProperty.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Models/ComplaintAction.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Models/ClaimType.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Models/ComplaintDecision.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/database/migrations/2021_01_13_173727_create_claim_actions_table.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/migrations/2021_02_01_092511_create_complaint_actions_table.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/database/migrations/2021_01_13_173739_create_claims_table.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/migrations/2021_02_01_092140_create_complaints_table.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/database/migrations/2021_01_13_173750_create_claim_decisions_table.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/migrations/2021_02_01_092425_create_complaint_types_table.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/database/migrations/2021_01_13_173813_create_claim_properties_table.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/migrations/2021_02_01_092456_create_complaint_decisions_table.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/database/migrations/2021_01_13_173835_create_claim_types_table.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/js/Components/Form/InputGroup.vue" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/Components/Form/InputGroup.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/js/Components/Icons/Sections/ClaimDecision.vue" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/Components/Icons/Sections/ClaimDecision.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/js/Components/Icons/Sections/Standard.vue" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/Components/Icons/Sections/Standard.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/js/Layouts/AppLayout.vue" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/Layouts/AppLayout.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/js/Pages/Customer/Create.vue" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/Pages/Customer/Create.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/js/Pages/Department/Create.vue" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/Pages/Department/Create.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/js/Pages/JobDescription/Create.vue" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/Pages/JobDescription/Create.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/js/Pages/Product/Create.vue" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/Pages/Product/Create.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/js/Pages/Product/Index.vue" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/Pages/Product/Index.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/js/Pages/Product/ProductType/Create.vue" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/Pages/Product/ProductType/Create.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/js/Pages/Staff/Create.vue" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/Pages/Staff/Create.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/routes/web.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/web.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/ComplaintController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/ComplaintController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Models/Complaint.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Models/Complaint.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/migrations/2021_02_01_092140_create_complaints_table.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/migrations/2021_02_01_092140_create_complaints_table.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/seeders/DatabaseSeeder.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/seeders/DatabaseSeeder.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/js/Pages/Complaint/Create.vue" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/Pages/Complaint/Create.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/js/Pages/Complaint/Index.vue" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/Pages/Complaint/Index.vue" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -200,7 +178,6 @@
     </include_path>
   </component>
   <component name="ProblemsViewState">
-    <option name="selectedIndex" value="1" />
     <option name="sortByName" value="true" />
   </component>
   <component name="ProjectId" id="1mjhZQbqf7FlzG87hIURYfipQJ4" />
@@ -302,7 +279,10 @@
       <workItem from="1612024611756" duration="20010000" />
       <workItem from="1612077023082" duration="36155000" />
       <workItem from="1612168202805" duration="15267000" />
-      <workItem from="1612267006453" duration="4624000" />
+      <workItem from="1612267006453" duration="32394000" />
+      <workItem from="1612729117248" duration="334000" />
+      <workItem from="1612729611351" duration="7000" />
+      <workItem from="1612730793594" duration="266000" />
     </task>
     <task id="LOCAL-00001" summary="beta_v.0.0.1&#10;&#10;Create Pages Designed (Department, Product, Product Type)&#10;Index Pages Designed (Department, Product, Product Type and Staff)">
       <created>1611310478408</created>
@@ -346,7 +326,35 @@
       <option name="project" value="LOCAL" />
       <updated>1612123545380</updated>
     </task>
-    <option name="localTasksCounter" value="7" />
+    <task id="LOCAL-00007" summary="label for property error is fixed&#10;#input group props edited for-&gt;:labelFor&#10;#for property of all create pages fields edited for-&gt;labelFor &#10;#the claim renamed as the complaint and new pages added (Complaint Index and Create)">
+      <created>1612427292192</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1612427292192</updated>
+    </task>
+    <task id="LOCAL-00008" summary="filter inputs converted fixed size to responsive style&#10;#tailwind active feature added for background color&#10;#Complaint Type Pages added (Create - Index)&#10;#The fillable fields added to Complaint Type Model">
+      <created>1612511287892</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1612511287892</updated>
+    </task>
+    <task id="LOCAL-00009" summary="CustomerFactory and ComplaintSeeder added">
+      <created>1612595599695</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1612595599695</updated>
+    </task>
+    <task id="LOCAL-00010" summary="Teams menu moved in to the user menu">
+      <created>1612729223497</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1612729223497</updated>
+    </task>
+    <option name="localTasksCounter" value="11" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -385,14 +393,18 @@
     <MESSAGE value="#Editable and repeatable form field component added&#10;@InputInlineEditableRepeatable.vue" />
     <MESSAGE value="Job Description create action core properties added&#10;-Job Description Fillable areas added to model&#10;-Create function added to controller&#10;-Summary area added" />
     <MESSAGE value="beta_v.0.0.5&#10;#User migration and add new properties to users migration merged&#10;#Spatie Media Library added&#10;#Product photo upload feature added&#10;#All migrations revised about foreignId with on linking&#10;#Department and Admin User seeders added&#10;#Random users factory revised" />
-    <option name="LAST_COMMIT_MESSAGE" value="beta_v.0.0.5&#10;#User migration and add new properties to users migration merged&#10;#Spatie Media Library added&#10;#Product photo upload feature added&#10;#All migrations revised about foreignId with on linking&#10;#Department and Admin User seeders added&#10;#Random users factory revised" />
+    <MESSAGE value="label for property error is fixed&#10;#input group props edited for-&gt;:labelFor&#10;#for property of all create pages fields edited for-&gt;labelFor &#10;#the claim renamed as the complaint and new pages added (Complaint Index and Create)" />
+    <MESSAGE value="filter inputs converted fixed size to responsive style&#10;#tailwind active feature added for background color&#10;#Complaint Type Pages added (Create - Index)&#10;#The fillable fields added to Complaint Type Model" />
+    <MESSAGE value="CustomerFactory and ComplaintSeeder added" />
+    <MESSAGE value="Teams menu moved in to the user menu" />
+    <option name="LAST_COMMIT_MESSAGE" value="Teams menu moved in to the user menu" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
       <breakpoints>
         <line-breakpoint enabled="true" type="javascript">
           <url>file://$PROJECT_DIR$/resources/js/Layouts/AppLayout.vue</url>
-          <line>409</line>
+          <line>443</line>
           <option name="timeStamp" value="1" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="javascript">
@@ -414,6 +426,21 @@
           <url>file://$PROJECT_DIR$/resources/js/Pages/Product/Create.vue</url>
           <line>144</line>
           <option name="timeStamp" value="13" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="javascript">
+          <url>file://$PROJECT_DIR$/resources/js/Pages/Staff/Index.vue</url>
+          <line>67</line>
+          <option name="timeStamp" value="15" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="javascript">
+          <url>file://$PROJECT_DIR$/resources/js/Pages/Staff/Index.vue</url>
+          <line>43</line>
+          <option name="timeStamp" value="16" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="javascript">
+          <url>file://$PROJECT_DIR$/resources/js/Pages/Complaint/Index.vue</url>
+          <line>39</line>
+          <option name="timeStamp" value="17" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>

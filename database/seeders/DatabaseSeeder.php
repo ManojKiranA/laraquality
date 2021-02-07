@@ -2,6 +2,7 @@
 
 namespace Database\Seeders;
 
+use App\Models\ComplaintType;
 use Illuminate\Database\Seeder;
 use Illuminate\Support\Facades\App;
 
@@ -32,6 +33,8 @@ class DatabaseSeeder extends Seeder
         /*Products Seeder*/
         $this->call(ProductSeeder::class);
 
+        /*Complaint Type Seeder*/
+        $this->call(ComplaintTypeSeeder::class);
 
         if(App::environment('local')){
             $this->call([

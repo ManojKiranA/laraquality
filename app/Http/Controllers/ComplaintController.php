@@ -3,39 +3,64 @@
 namespace App\Http\Controllers;
 
 use App\Models\Complaint;
+use App\Models\ComplaintType;
+use App\Models\Customer;
+use App\Models\Department;
+use App\Models\Product;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
+use Inertia\Inertia;
 
 class ComplaintController extends Controller
 {
     /**
      * Display a listing of the resource.
      *
-     * @return \Illuminate\Http\Response
+     * @return \Inertia\Response
      */
     public function index()
     {
-        //
+        return Inertia::render('Complaint/Index',[
+            'complaints' => Complaint::with('department:id,name','customer:id,name','product:id,name')->get(['id','customer_id','department_id','product_id','register_date']),
+        ]);
     }
 
     /**
      * Show the form for creating a new resource.
      *
-     * @return \Illuminate\Http\Response
+     * @return \Inertia\Response
      */
-    public function create()
+    public function create(Request $request)
     {
-        //
+        return Inertia::render('Complaint/Create',[
+            'customers' => Customer::all(['id','name']),
+            'departments' => Department::where('is_complaint',1)->get(['id','name']),
+            'products' => Product::where('department_id',$request->departmentID)->get(['id','name']),
+            'complaints' => ComplaintType::where('department_id',$request->departmentID)->get(['id','name']),
+        ]);
     }
 
     /**
      * Store a newly created resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @return \Illuminate\Http\Response
+     * @return \Illuminate\Http\RedirectResponse
      */
     public function store(Request $request)
     {
-        //
+        $attributes = new Complaint($request->all());
+        $attributes['creator_id'] = Auth::id();
+        $attributes->save();
+
+        /*Attach Complaint Types*/
+        $attributes->complaints()->attach($attributes['complaints']);
+
+        $message = [];
+        $message['type'] = 'success' ;
+        $message['content'] = 'The product has been successfully created. The product created: '.$request->name ;
+
+        return redirect()->route('complaint.index')
+            ->with('message', $message);
     }
 
     /**

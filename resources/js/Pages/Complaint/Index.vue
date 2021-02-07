@@ -2,42 +2,38 @@
     <app-layout>
         <!--Header-->
         <template #header>
-            Complaint Types
+            Complaints
         </template>
         <!--Sub Header-->
         <template #sub-header>
-            All of complaint types for the claims
+            All of complaints at the company
         </template>
         <!--Action Buttons-->
         <template #action-buttons>
-            <action-button label="Create New Complaint Type" :link="route('complaint-type.create')" action="submit"/>
+            <action-button label="Create New Complaints" :link="route('complaint.create')" action="submit"/>
         </template>
         <div class="relative w-full">
             <!--Content Table-->
             <DataTable
-                :value="complaintTypes"
+                :value="complaints"
                 :filters="filters"
                 class="p-datatable-responsive-demo p-datatable p-component p-datatable-gridlines p-datatable-striped">
                 <template #empty>
-                    No staff found.
+                    No complaint found.
                 </template>
                 <template #loading>
-                    Loading products data. Please wait.
+                    Loading complaints data. Please wait.
                 </template>
-                <!--Name-->
-                <Column field="name" header="Staff Name" filterMatchMode="contains">
+                <!--Date-->
+                <Column field="register_date" header="Date" filterMatchMode="contains">
                     <!--Filter-->
                     <template #filter>
-                        <InputText type="text" v-model="filters['name']" class="flex w-full border-gray-300 rounded-md" placeholder="Search by name"/>
+                        <InputText type="text" v-model="filters['register_date']" class="flex w-full border-gray-300 rounded-md" placeholder="Search by date"/>
                     </template>
                     <!--Content-->
                     <template #body="slotProps">
-                        <span class="p-column-title">Product Name</span>
-                        <div class="flex flex-row items-center">
-                            <img v-if="slotProps.data.profile_photo_path" :src="'/storage/'+slotProps.data.profile_photo_path" class="w-6 h-6 rounded-full mr-2 inline-block"/>
-                            <img v-else src="/images/general/dummy_user.svg" class="w-6 h-6 rounded-full mr-2"/>
-                            {{slotProps.data.name}}
-                        </div>
+                        <span class="p-column-title">Date</span>
+                            {{slotProps.data.date}}
                     </template>
                 </Column>
                 <!--Department-->
@@ -52,23 +48,35 @@
                         {{slotProps.data.department.name}}
                     </template>
                 </Column>
-                <!--Job Description-->
-                <Column field=job_description.name header="Job Description" filterMatchMode="contains">
+                <!--Product-->
+                <Column field="product.name" header="Product" filterMatchMode="contains">
                     <!--Filter-->
                     <template #filter>
-                        <InputText type="text" v-model="filters['job_description.name']" class="flex w-full border-gray-300 rounded-md" placeholder="Search by job desc."/>
+                        <InputText type="text" v-model="filters['product.name']" class="flex w-full border-gray-300 rounded-md" placeholder="Search by product"/>
                     </template>
                     <!--Content-->
                     <template #body="slotProps">
-                        <span class="p-column-title">Job Description</span>
-                        {{slotProps.data.job_description.name}}
+                        <span class="p-column-title">Product</span>
+                        {{slotProps.data.product.name}}
+                    </template>
+                </Column>
+                <!--Customer-->
+                <Column field="customer.name" header="Customer" filterMatchMode="contains">
+                    <!--Filter-->
+                    <template #filter>
+                        <InputText type="text" v-model="filters['customer.name']" class="flex w-full border-gray-300 rounded-md" placeholder="Search by customer"/>
+                    </template>
+                    <!--Content-->
+                    <template #body="slotProps">
+                        <span class="p-column-title">Customer</span>
+                        {{slotProps.data.customer.name}}
                     </template>
                 </Column>
                 <!--Status-->
                 <Column field="status" header="Status" filterMatchMode="in">
                     <!--Filter-->
                     <template #filter>
-                        <MultiSelect v-model="filters['status']" :options="employmentStatus" optionLabel="name" optionValue="value" placeholder="All" class="flex w-full border-gray-300 rounded-md">
+                        <MultiSelect v-model="filters['status']" :options="status" optionLabel="name" optionValue="value" placeholder="All" class="flex w-full border-gray-300 rounded-md">
                             <template #option="slotProps">
                                 <div class="p-multiselect-representative-option">
                                     <span class="image-text">{{slotProps.option.name}}</span>
@@ -79,11 +87,12 @@
                     <!--Content-->
                     <template #body="slotProps">
                         <span class="p-column-title">Status</span>
-                        <span v-if="slotProps.data.status != null" :class="employmentStatus[slotProps.data.status].class">{{ employmentStatus[slotProps.data.status].name }}</span>
+                        <span v-if="slotProps.data.status != null" :class="status[slotProps.data.status].class">{{ status[slotProps.data.status].name }}</span>
                         <span v-else class="flex items-center px-2 text-red border border-red-500 py-1 rounded-md w-min"><warning class="w-5 h-5 text-red-500 mr-2"/>Undefined</span>
                     </template>
                 </Column>
             </DataTable>
+            {{ complaints }}
         </div>
     </app-layout>
 </template>
@@ -109,7 +118,7 @@ import Chip from 'primevue/chip';
 import Badge from 'primevue/badge';
 
 export default {
-    props: ['complaintTypes'],
+    props: ['complaints'],
     components: {
         AppLayout,
         DataTable,
@@ -132,8 +141,8 @@ export default {
         return {
             filters: {},
             content: [],
-            employmentStatus:[
-                {name:"Left",value:0,class:'px-2 text-white py-1 rounded-md bg-yellow-500'},
+            status:[
+                {name:"Open",value:0,class:'px-2 text-white py-1 rounded-md bg-yellow-500'},
                 {name:"Active",value:1,class:'px-2 text-white py-1 rounded-md bg-green-500'},
                 {name:"Fired",value:2,class:'px-2 text-white py-1 rounded-md bg-red-500'},
                 {name:"Retired",value:3,class:'px-2 text-white py-1 rounded-md bg-blue-500'}
