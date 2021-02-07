@@ -14,7 +14,7 @@ use Inertia\Inertia;
 | contains the "web" middleware group. Now create something great!
 |
 */
-
+/*
 Route::get('/', function () {
     return Inertia::render('Welcome', [
         'canLogin' => Route::has('login'),
@@ -22,7 +22,12 @@ Route::get('/', function () {
         'laravelVersion' => Application::VERSION,
         'phpVersion' => PHP_VERSION,
     ]);
-});
+}); */
+
+    //Dashboard
+    Route::middleware(['auth:sanctum', 'verified'])->get('/', function(){
+        return Inertia::render('Dashboard');
+    })->name('dashboard');
 
 //API
 Route::get('getDepartments','\App\Http\Controllers\ApiController@getDepartments');
