@@ -31,8 +31,8 @@
                     </div>
                     <!--User Menu-->
                     <div class="flex items-center flex-shrink-0 ml-auto">
-                        <!--Teams-->
-                        <jet-dropdown align="right" width="60" v-if="$page.props.jetstream.hasTeamFeatures">
+                        <!--Teams ! Moved to UseR Menu-->
+                        <!--     <jet-dropdown align="right" width="60" v-if="$page.props.jetstream.hasTeamFeatures">
                             <template #trigger>
                                         <span class="inline-flex rounded-md">
                                             <button type="button" class="inline-flex items-center px-3 py-2 text-sm font-medium leading-4 text-gray-500 transition duration-150 ease-in-out bg-white border border-transparent rounded-md hover:bg-gray-50 hover:text-gray-700 focus:outline-none focus:bg-gray-50 active:bg-gray-50">
@@ -47,13 +47,13 @@
 
                             <template #content>
                                 <div class="w-60">
-                                    <!-- Team Management -->
+                                    &lt;!&ndash; Team Management &ndash;&gt;
                                     <template v-if="$page.props.jetstream.hasTeamFeatures">
                                         <div class="block px-4 py-2 text-xs text-gray-400">
                                             Manage Team
                                         </div>
 
-                                        <!-- Team Settings -->
+                                        &lt;!&ndash; Team Settings &ndash;&gt;
                                         <jet-dropdown-link :href="route('teams.show', $page.props.user.current_team)">
                                             Team Settings
                                         </jet-dropdown-link>
@@ -64,7 +64,7 @@
 
                                         <div class="border-t border-gray-100"></div>
 
-                                        <!-- Team Switcher -->
+                                        &lt;!&ndash; Team Switcher &ndash;&gt;
                                         <div class="block px-4 py-2 text-xs text-gray-400">
                                             Switch Teams
                                         </div>
@@ -82,7 +82,7 @@
                                     </template>
                                 </div>
                             </template>
-                        </jet-dropdown>
+                        </jet-dropdown>-->
                         <!--User's Info-->
                         <drop-down align="right" width="48">
                             <template #trigger>
@@ -121,12 +121,46 @@
 
                                 <div class="border-t border-gray-100"></div>
 
+                                <template v-if="$page.props.jetstream.hasTeamFeatures">
+                                    <div class="block px-4 py-2 text-xs text-gray-400">
+                                        Manage Team
+                                    </div>
+
+                                    <!-- Team Settings -->
+                                    <jet-dropdown-link :href="route('teams.show', $page.props.user.current_team)">
+                                        Team Settings
+                                    </jet-dropdown-link>
+
+                                    <jet-dropdown-link :href="route('teams.create')" v-if="$page.props.jetstream.canCreateTeams">
+                                        Create New Team
+                                    </jet-dropdown-link>
+
+                                    <div class="border-t border-gray-100"></div>
+
+                                    <!-- Team Switcher -->
+                                    <div class="block px-4 py-2 text-xs text-gray-400">
+                                        Switch Teams
+                                    </div>
+
+                                    <template v-for="team in $page.props.user.all_teams">
+                                        <form @submit.prevent="switchToTeam(team)" :key="team.id">
+                                            <jet-dropdown-link as="button">
+                                                <div class="flex items-center">
+                                                    <svg v-if="team.id == $page.props.user.current_team_id" class="w-5 h-5 mr-2 text-green-400" fill="none" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" stroke="currentColor" viewBox="0 0 24 24"><path d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
+                                                    <div>{{ team.name }}</div>
+                                                </div>
+                                            </jet-dropdown-link>
+                                        </form>
+                                    </template>
+                                </template>
+
+
                                 <!-- Authentication -->
-                                <form @submit.prevent="logout">
+                               <!-- <form @submit.prevent="logout">
                                     <jet-dropdown-link as="button">
                                         Logout
                                     </jet-dropdown-link>
-                                </form>
+                                </form>-->
                             </template>
                         </drop-down>
                         <!--Small User's Info-->
@@ -169,11 +203,11 @@
                                     </jet-responsive-nav-link>
 
                                     <!-- Authentication -->
-                                    <form method="POST" @submit.prevent="logout">
+                                <!--    <form method="POST" @submit.prevent="logout">
                                         <jet-responsive-nav-link as="button">
                                             Logout
                                         </jet-responsive-nav-link>
-                                    </form>
+                                    </form>-->
 
                                     <!-- Team Management -->
                                     <template v-if="$page.props.jetstream.hasTeamFeatures">
