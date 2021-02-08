@@ -72,6 +72,22 @@
                         {{slotProps.data.customer.name}}
                     </template>
                 </Column>
+                <!--Complaints-->
+                <Column field="complaint_types" header="Complaints" filterMatchMode="contains">
+                    <!--Filter-->
+                    <template #filter>
+                        <InputText type="text" v-model="filters['customer.name']" class="flex w-full border-gray-300 rounded-md" placeholder="Search by complaint type"/>
+                    </template>
+                    <!--Content-->
+                    <template #body="slotProps">
+                        <span class="p-column-title">Complaints</span>
+                        <div class="flex flex-col">
+                        <li v-for="item in slotProps.data.complaint_types">
+                        {{ item.name }}
+                        </li>
+                        </div>
+                    </template>
+                </Column>
                 <!--Status-->
                 <Column field="status" header="Status" filterMatchMode="in">
                     <!--Filter-->
@@ -88,11 +104,10 @@
                     <template #body="slotProps">
                         <span class="p-column-title">Status</span>
                         <span v-if="slotProps.data.status != null" :class="status[slotProps.data.status].class">{{ status[slotProps.data.status].name }}</span>
-                        <span v-else class="flex items-center px-2 text-red border border-red-500 py-1 rounded-md w-min"><warning class="w-5 h-5 text-red-500 mr-2"/>Undefined</span>
+                        <span v-else class="flex items-center px-2 py-1 border border-red-500 rounded-md text-red w-min"><warning class="w-5 h-5 mr-2 text-red-500"/>Undefined</span>
                     </template>
                 </Column>
             </DataTable>
-            {{ complaints }}
         </div>
     </app-layout>
 </template>
@@ -142,10 +157,9 @@ export default {
             filters: {},
             content: [],
             status:[
-                {name:"Open",value:0,class:'px-2 text-white py-1 rounded-md bg-yellow-500'},
-                {name:"Active",value:1,class:'px-2 text-white py-1 rounded-md bg-green-500'},
-                {name:"Fired",value:2,class:'px-2 text-white py-1 rounded-md bg-red-500'},
-                {name:"Retired",value:3,class:'px-2 text-white py-1 rounded-md bg-blue-500'}
+                {name:"New",value:0,class:'px-2 text-white py-1 rounded-md bg-yellow-500'},
+                {name:"Action Waiting",value:1,class:'px-2 text-white py-1 rounded-md bg-green-500'},
+                {name:"Closed",value:2,class:'px-2 text-white py-1 rounded-md bg-red-500'},
                 ]
         }
     },

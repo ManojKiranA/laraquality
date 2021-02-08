@@ -28,8 +28,8 @@ class Complaint extends Model
     }
 
     /*COMPLAINT TYPES FOR EVERY COMPLAINT*/
-    public function complaints(){
-        return $this->belongsToMany(Complaint::class,'complaint_complaint_type','complaint_id','complaint_type_id');
+    public function complaintTypes(){
+        return $this->belongsToMany(ComplaintType::class,'complaint_type_complaints','complaint_id','complaint_type_id');
     }
 
     //RELATED DEPARTMENT

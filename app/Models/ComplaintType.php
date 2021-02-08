@@ -11,6 +11,8 @@ class ComplaintType extends Model
 
     protected $fillable = ['name','department_id','source','advice','creator_id','updater_id'];
 
+    protected $hidden = ['pivot'];
+
     //RELATED DEPARTMENT
     public function department()
     {

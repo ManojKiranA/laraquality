@@ -21,7 +21,7 @@ class ComplaintController extends Controller
     public function index()
     {
         return Inertia::render('Complaint/Index',[
-            'complaints' => Complaint::with('department:id,name','customer:id,name','product:id,name')->get(['id','customer_id','department_id','product_id','register_date']),
+            'complaints' => Complaint::with('department:id,name','customer:id,name','product:id,name','complaintTypes:id,name')->get(['id','customer_id','department_id','product_id','register_date','status']),
         ]);
     }
 
@@ -50,10 +50,10 @@ class ComplaintController extends Controller
     {
         $attributes = new Complaint($request->all());
         $attributes['creator_id'] = Auth::id();
-        $attributes->save();
+        $item = $attributes->save();
 
         /*Attach Complaint Types*/
-        $attributes->complaints()->attach($attributes['complaints']);
+        Complaint::find($attributes->id)->complaints()->attach($request->complaints);
 
         $message = [];
         $message['type'] = 'success' ;
