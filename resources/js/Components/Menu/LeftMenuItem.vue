@@ -1,7 +1,8 @@
 <template>
     <div>
+        <!-- Dropdown, First Level Menu -->
         <div v-if="type == 'dropdown'" @click="showSubMenu = !showSubMenu;showLeftMenu()" :class="{'bg-blue-700 hover:bg-blue-800 hover:text-white font-bold':showSubMenu,'hover:text-gray-700':!showSubMenu}"
-             class="border-b border-gray-600 bg-gray-700 items-center py-3 text-gray-300 hover:bg-gray-200 focus:text-gray-400 focus:bg-gray-700 justify-start transition duration-150 ease-in-out shadow-xl w-full cursor-pointer">
+             class="items-center justify-start w-full py-3 text-gray-300 transition duration-150 ease-in-out bg-gray-700 border-b border-gray-600 shadow-xl cursor-pointer hover:bg-gray-200 focus:text-gray-400 focus:bg-gray-700">
             <div :class="{'flex justify-between w-full pr-4 pl-4':showingLeftMenu}">
                     <div :class="{'flex justify-start space-x-2':showingLeftMenu, 'flex justify-center':!showingLeftMenu}">
                         <component v-bind:is="icon" class="w-5 h-5"></component>
@@ -13,6 +14,7 @@
                     </div>
             </div>
         </div>
+        <!-- General Menu Item -->
         <div v-if="type != 'dropdown'">
             <inertia-link :href="
             link != null ?
@@ -34,7 +36,8 @@
 
             </inertia-link>
         </div>
-        <div v-if="showSubMenu && showingLeftMenu" :class="{'bg-gray-200 min-w-max':showSubMenu}">
+        <!-- Sub Menu -->
+        <div v-if="showSubMenu && showingLeftMenu" :active="active" :class="{'bg-gray-200 min-w-max':showSubMenu}">
             <slot></slot>
         </div>
     </div>
@@ -79,7 +82,7 @@ import MenuTriggerLeft from "@/Components/Icons/General/LeftArrow"
 import MenuTriggerDown from "@/Components/Icons/General/DownArrow"
 
 export default {
-    props: ['label','link', 'linkType','icon','type','index','active','showingLeftMenu'],
+    props: ['label','link', 'linkType','icon','type','index','active','showingLeftMenu','children'],
     components: {
         MenuTriggerLeft,
         MenuTriggerDown,
@@ -117,6 +120,7 @@ export default {
         SectionIconType,
     },
     computed: {
+
         classes() {
             return this.active
                 ? 'flex items-center py-3 bg-blue-500 text-white hover:text-gray-100 hover:bg-gray-700 border-b-2 border-indigo-400 font-bold leading-5 focus:outline-none focus:border-indigo-700 transition duration-150 ease-in-out'
@@ -124,14 +128,24 @@ export default {
         }
     },
     data() {
+        const vm = this;
+
         return{
-            showSubMenu : 0,
+            showSubMenu : vm.searchActive(),
         }
     },
     methods: {
         showLeftMenu(){
             this.$emit('show-menu')
-        }
+        },
+        searchActive(){
+            for(let child of this.children){
+                if(route().current(child.link)){
+                    return true;
+                }
+            }
+            return false;
+        },
     }
 }
 </script>

@@ -5,7 +5,7 @@
             <!--Left Menu-->
             <left-menu :showingLeftMenu="showingLeftMenu" class="bg-gray-800">
                 <div v-for="(item, index) in leftMenu">
-                       <left-menu-item :label="item.label" :link="item.link" :linkType="item.linkType" :icon="item.icon" :type="item.type" :showingLeftMenu="showingLeftMenu" @show-menu="showLeftMenu">
+                       <left-menu-item :label="item.label" :link="item.link" :linkType="item.linkType" :icon="item.icon" :type="item.type" :showingLeftMenu="showingLeftMenu" :children="item.items" @show-menu="showLeftMenu">
                            <div v-for="subItem in item.items">
                                <left-menu-sub-item :label="subItem.label" :link="subItem.link" :linkType="subItem.linkType" :icon="subItem.icon" :type="subItem.type"/>
                            </div>
@@ -13,7 +13,7 @@
                 </div>
             </left-menu>
             <!--Content-->
-            <div class="flex-grow text-gray-800 overflow-y-auto">
+            <div class="flex-grow overflow-y-auto text-gray-800">
                 <!--Top Menu-->
                 <div class="flex items-center h-20 px-6 bg-white sm:px-10">
                     <!--Left Menu Trigger-->
@@ -248,7 +248,7 @@
                             </div>
                         </div>
                         <!--Notification and Logout Buttons-->
-                        <div class="pl-3 ml-3 space-x-1 border-l flex -mr-4">
+                        <div class="flex pl-3 ml-3 -mr-4 space-x-1 border-l">
                             <!--Notifications-->
                             <drop-down align="right" width="48">
                                 <template #trigger>
@@ -283,7 +283,7 @@
                             </drop-down>
                             <!--Logout-->
                             <form @submit.prevent="logout">
-                                <button class="relative flex-row flex p-2 text-white bg-red-500 rounded-full hover:bg-gray-100 hover:text-gray-600 focus:bg-gray-100 focus:text-gray-600">
+                                <button class="relative flex flex-row p-2 text-white bg-red-500 rounded-full hover:bg-gray-100 hover:text-gray-600 focus:bg-gray-100 focus:text-gray-600">
                                     <svg aria-hidden="true" fill="none" viewBox="0 0 20 24" stroke="currentColor" class="w-6 h-6">
                                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 16l4-4m0 0l-4-4m4 4H7m6 4v1a3 3 0 01-3 3H6a3 3 0 01-3-3V7a3 3 0 013-3h4a3 3 0 013 3v1" />
                                     </svg>
@@ -317,13 +317,14 @@
                         <div v-if="$page.props.flash.message" class="alert">
                             <Message :severity="$page.props.flash.message.type" :life="10000" :sticky="false">{{ $page.props.flash.message.content }}</Message>
                         </div>
+
                         <slot></slot>
                     </main>
-                    <section class="font-semibold text-right text-gray-500 items-center flex justify-end space-x-1">
+                    <section class="flex items-center justify-end space-x-1 font-semibold text-right text-gray-500">
                         <a href="https://laraquality.dev/" class="text-blue-600 hover:underline">LaraQuality v_beta.0.0.5</a>
                         <span>by</span>
                         <a href="https://sinanaydogan.com.tr" class="text-teal-400 hover:underline">Sinan AYDOĞAN</a>
-                        <a href="https://github.com/sinan-aydogan/LaraQuality-i"  class="text-blue-600 hover:underline flex items-center" target="_blank"><git-hub-icon class="w-5 h-5" /></a>
+                        <a href="https://github.com/sinan-aydogan/LaraQuality-i"  class="flex items-center text-blue-600 hover:underline" target="_blank"><git-hub-icon class="w-5 h-5" /></a>
                     </section>
                 </div>
             </div>
@@ -447,6 +448,7 @@ export default {
                     link:'department.index',
                     linkType:'route',
                     type:'standard',
+                    activeKey:['department'],
                 },
                 {
                     label: 'Staff',
@@ -454,6 +456,7 @@ export default {
                     link:'',
                     linkType:'external',
                     type:'dropdown',
+                    activeKey:['staff','job-description'],
                     items: [
                         {
                             label: 'Staff',
@@ -461,6 +464,8 @@ export default {
                             link:'staff.index',
                             linkType:'route',
                             type:'standard',
+                            activeKey:['staff'],
+
                         },
                         {
                             label: 'Job Description',
@@ -468,6 +473,7 @@ export default {
                             link:'job-description.index',
                             linkType:'route',
                             type:'standard',
+                            activeKey:['job-description'],
                         }
                     ]
                 },
@@ -477,6 +483,7 @@ export default {
                     link:'',
                     linkType:'external',
                     type:'dropdown',
+                    activeKey:['machine','machine-type'],
                     items: [
                         {
                             label: 'Machines',
@@ -484,6 +491,7 @@ export default {
                             link:'machine.index',
                             linkType:'route',
                             type:'standard',
+                            activeKey:['machine'],
                         },
                         {
                             label: 'Machine Types',
@@ -491,6 +499,7 @@ export default {
                             link:'machine-type.index',
                             linkType:'route',
                             type:'standard',
+                            activeKey:['machine-type'],
                         }
                     ]
                 },
@@ -500,6 +509,7 @@ export default {
                     link:'',
                     linkType:'external',
                     type:'dropdown',
+                    activeKey:['maintenance','maintenance-action','maintenance-plan'],
                     items: [
                         {
                             label: 'Maintenance Orders',

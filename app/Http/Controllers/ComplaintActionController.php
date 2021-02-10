@@ -2,8 +2,11 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Complaint;
 use App\Models\ComplaintAction;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
+use Inertia\Inertia;
 
 class ComplaintActionController extends Controller
 {
@@ -14,7 +17,7 @@ class ComplaintActionController extends Controller
      */
     public function index()
     {
-        //
+        return Inertia::render('Complaint/ComplaintAction/Index');
     }
 
     /**
@@ -22,9 +25,11 @@ class ComplaintActionController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function create()
+    public function create(Request $request)
     {
-        //
+        return Inertia::render('Complaint/ComplaintAction/Create',[
+            'complaints' => Complaint::with('customer','product')->get(),
+        ]);
     }
 
     /**
@@ -35,7 +40,18 @@ class ComplaintActionController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $attributes = new ComplaintAction($request->all());
+        $request->complaint_id != null ? $attributes['complaint_id'] = $request->complaint_id['id'] : '';
+        $request->action_type != null ? $attributes['action_type'] = $request->action_type['value'] : '';
+        $attributes['creator_id'] = Auth::id();
+        $item = $attributes->save();
+
+        $message = [];
+        $message['type'] = 'success' ;
+        $message['content'] = 'The complaint action has been successfully created.';
+
+        return redirect()->route('complaint-action.index')
+            ->with('message', $message);
     }
 
     /**

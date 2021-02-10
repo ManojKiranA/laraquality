@@ -9,7 +9,11 @@
                   linkType == 'route' ? route().current(link) :
                   linkType == 'internal' ? URL().current(link) : '' : ''
                   "
-                  class="w-full" :class="classes">
+                  class="w-full"
+                  :class="{
+                      'inline-flex border-b border-gray-600 bg-yellow-400 bg-opacity-30 items-center pl-4 py-3 text-gray-800 hover:text-gray-700 hover:bg-gray-200 focus:text-gray-400 focus:bg-gray-700 justify-start transition duration-150 ease-in-out shadow-xl':route().current(link),
+                      'inline-flex border-b border-gray-600 bg-gray-700 bg-opacity-30 items-center pl-4 py-3 text-gray-800 hover:text-gray-700 hover:bg-gray-200 focus:text-gray-400 focus:bg-gray-700 justify-start transition duration-150 ease-in-out shadow-xl':!route().current(link),
+}">
         <div class="flex justify-between w-full pr-4">
             <div class="flex justify-start space-x-2">
                 <component v-bind:is="icon" class="w-5 h-5"></component>
@@ -100,11 +104,7 @@ export default {
         SectionIconType,
     },
     computed: {
-        classes() {
-            return this.active
-                ? 'inline-flex items-center pl-4 py-3 bg-blue-500 text-white hover:text-gray-100 hover:bg-gray-700 border-b-2 border-indigo-400 font-bold leading-5 focus:outline-none focus:border-indigo-700 transition duration-150 ease-in-out'
-                : 'inline-flex border-b border-gray-600 bg-gray-700 bg-opacity-30 items-center pl-4 py-3 text-gray-800 hover:text-gray-700 hover:bg-gray-200 focus:text-gray-400 focus:bg-gray-700 justify-start transition duration-150 ease-in-out shadow-xl'
-        }
+
     }
 }
 </script>
