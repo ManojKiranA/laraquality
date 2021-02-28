@@ -1,16 +1,16 @@
 <template>
     <aside class="flex flex-col justify-between h-full">
       <!--Logo-->
-      <div class="flex items-center justify-center h-20 bg-blue-700 hover:bg-blue-500 focus:bg-blue-500 px-4">
+      <div class="flex items-center justify-center h-20 px-4 bg-blue-700 hover:bg-blue-500 focus:bg-blue-500">
           <inertia-link :href="route('dashboard')">
-              <div class="flex h-20 items-center">
+              <div class="flex items-center h-20">
                   <logo class="w-10 h-10 text-white" />
                   <span class="mx-2 text-3xl text-white" v-if="showingLeftMenu">LaraQuality</span>
               </div>
           </inertia-link>
       </div>
       <!--Menu Items-->
-      <nav class="mt-6 flex flex-col text-gray-500 h-full overflow-y-auto">
+      <nav class="flex flex-col h-full mt-6 overflow-y-auto text-gray-500 scrollbar-thin scrollbar-thumb-blue-700 scrollbar-track-gray-500">
           <slot />
       </nav>
       <!--Left Menu Footer-->

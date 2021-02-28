@@ -25,12 +25,18 @@
         "resolve-url-loader": "^3.1.2",
         "sass": "^1.32.2",
         "sass-loader": "^8.0.2",
+        "tailwind-scrollbar": "^1.0.2",
         "tailwindcss": "^2.0.1",
         "vue": "^2.5.17",
         "vue-loader": "^15.9.6",
         "vue-template-compiler": "^2.6.10"
     },
     "dependencies": {
+        "@fortawesome/fontawesome-svg-core": "^1.2.34",
+        "@fortawesome/free-brands-svg-icons": "^5.15.2",
+        "@fortawesome/free-regular-svg-icons": "^5.15.2",
+        "@fortawesome/free-solid-svg-icons": "^5.15.2",
+        "@fortawesome/vue-fontawesome": "^2.0.2",
         "@inertiajs/progress": "^0.2.4",
         "dayjs": "^1.10.4",
         "primeicons": "^4.1.0",

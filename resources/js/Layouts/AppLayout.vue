@@ -4,9 +4,9 @@
         <div class="flex h-screen bg-gray-100 ">
             <!--Left Menu-->
             <left-menu :showingLeftMenu="showingLeftMenu" class="bg-gray-800">
-                <div v-for="(item, index) in leftMenu">
+                <div v-for="(item, index) in leftMenu" :key="index">
                        <left-menu-item :label="item.label" :link="item.link" :linkType="item.linkType" :icon="item.icon" :type="item.type" :showingLeftMenu="showingLeftMenu" :children="item.items" @show-menu="showLeftMenu">
-                           <div v-for="subItem in item.items">
+                           <div v-for="(subItem,index) in item.items" :key="index">
                                <left-menu-sub-item :label="subItem.label" :link="subItem.link" :linkType="subItem.linkType" :icon="subItem.icon" :type="subItem.type"/>
                            </div>
                        </left-menu-item>
@@ -321,7 +321,7 @@
                         <slot></slot>
                     </main>
                     <section class="flex items-center justify-end space-x-1 font-semibold text-right text-gray-500">
-                        <a href="https://laraquality.dev/" class="text-blue-600 hover:underline">LaraQuality v_beta.0.0.5</a>
+                        <a href="https://laraquality.dev/" class="text-blue-600 hover:underline">LaraQuality beta_v.0.0.7</a>
                         <span>by</span>
                         <a href="https://sinanaydogan.com.tr" class="text-teal-400 hover:underline">Sinan AYDOĞAN</a>
                         <a href="https://github.com/sinan-aydogan/LaraQuality-i"  class="flex items-center text-blue-600 hover:underline" target="_blank"><git-hub-icon class="w-5 h-5" /></a>
@@ -342,39 +342,6 @@ import LeftMenu from '@/Components/Menu/LeftMenu'
 import LeftMenuItem from '@/Components/Menu/LeftMenuItem'
 import LeftMenuSubItem from '@/Components/Menu/LeftMenuSubItem'
 import DropDown from '@/Components/ViewItems/DropDown'
-//Section Icons
-import SectionIconAction from '@/Components/Icons/Sections/Action'
-import SectionIconAudit from '@/Components/Icons/Sections/Audit'
-import SectionIconAuditFirm from '@/Components/Icons/Sections/AuditFirm'
-import SectionIconAuditor from '@/Components/Icons/Sections/Auditor'
-import SectionIconAudits from '@/Components/Icons/Sections/Audits'
-import SectionIconClaim from '@/Components/Icons/Sections/Claim'
-import SectionIconClaimDecision from '@/Components/Icons/Sections/ClaimDecision'
-import SectionIconClaims from '@/Components/Icons/Sections/Claims'
-import SectionIconCustomer from '@/Components/Icons/Sections/Customer'
-import SectionIconDepartment from '@/Components/Icons/Sections/Department'
-import SectionIconDocument from '@/Components/Icons/Sections/Document'
-import SectionIconDocuments from '@/Components/Icons/Sections/Documents'
-import SectionIconJobDescription from '@/Components/Icons/Sections/JobDescription'
-import SectionIconMachine from '@/Components/Icons/Sections/Machine'
-import SectionIconMachines from '@/Components/Icons/Sections/Machines'
-import SectionIconMachineType from '@/Components/Icons/Sections/MachineType'
-import SectionIconMaintenance from '@/Components/Icons/Sections/Maintenance'
-import SectionIconMeasurementTool from '@/Components/Icons/Sections/MeasurementTool'
-import SectionIconMeasurementTools from '@/Components/Icons/Sections/MeasurementTools'
-import SectionIconPlan from '@/Components/Icons/Sections/Plan'
-import SectionIconProduct from '@/Components/Icons/Sections/Product'
-import SectionIconProducts from '@/Components/Icons/Sections/Products'
-import SectionIconProductType from '@/Components/Icons/Sections/ProductType'
-import SectionIconProductVariations from '@/Components/Icons/Sections/ProductVariations'
-import SectionIconRawMaterial from '@/Components/Icons/Sections/RawMaterial'
-import SectionIconRawMaterials from '@/Components/Icons/Sections/RawMaterials'
-import SectionIconRecipe from '@/Components/Icons/Sections/Recipe'
-import SectionIconRegulation from '@/Components/Icons/Sections/Regulation'
-import SectionIconStaff from '@/Components/Icons/Sections/Staff'
-import SectionIconStaff2 from '@/Components/Icons/Sections/Staff2'
-import SectionIconStandard from '@/Components/Icons/Sections/Standard'
-import SectionIconType from '@/Components/Icons/Sections/Type'
 //Others
 import JetBanner from '@/Jetstream/Banner'
 import JetDropdown from '@/Jetstream/Dropdown'
@@ -383,9 +350,6 @@ import JetNavLink from '@/Jetstream/NavLink'
 import JetResponsiveNavLink from '@/Jetstream/ResponsiveNavLink'
 import PanelMenu from 'primevue/panelmenu'
 import Message from 'primevue/message';
-
-
-
 export default {
     components: {
         Logo,
@@ -400,38 +364,6 @@ export default {
         JetNavLink,
         JetResponsiveNavLink,
         PanelMenu,
-        SectionIconAction,
-        SectionIconAudit,
-        SectionIconAuditFirm,
-        SectionIconAuditor,
-        SectionIconAudits,
-        SectionIconClaim,
-        SectionIconClaimDecision,
-        SectionIconClaims,
-        SectionIconCustomer,
-        SectionIconDepartment,
-        SectionIconDocument,
-        SectionIconDocuments,
-        SectionIconJobDescription,
-        SectionIconMachine,
-        SectionIconMachines,
-        SectionIconMachineType,
-        SectionIconMaintenance,
-        SectionIconMeasurementTool,
-        SectionIconMeasurementTools,
-        SectionIconPlan,
-        SectionIconProduct,
-        SectionIconProducts,
-        SectionIconProductType,
-        SectionIconProductVariations,
-        SectionIconRawMaterial,
-        SectionIconRawMaterials,
-        SectionIconRecipe,
-        SectionIconRegulation,
-        SectionIconStaff,
-        SectionIconStaff2,
-        SectionIconStandard,
-        SectionIconType,
         Message,
     },
 
@@ -444,7 +376,7 @@ export default {
             leftMenu: [
                 {
                     label: 'Departments',
-                    icon:'SectionIconDepartment',
+                    icon:'sitemap',
                     link:'department.index',
                     linkType:'route',
                     type:'standard',
@@ -452,15 +384,14 @@ export default {
                 },
                 {
                     label: 'Staff',
-                    icon:'SectionIconStaff2',
-                    link:'',
+                    icon:'user-cog',
                     linkType:'external',
                     type:'dropdown',
                     activeKey:['staff','job-description'],
                     items: [
                         {
                             label: 'Staff',
-                            icon:'SectionIconStaff',
+                            icon:'user-circle',
                             link:'staff.index',
                             linkType:'route',
                             type:'standard',
@@ -469,7 +400,7 @@ export default {
                         },
                         {
                             label: 'Job Description',
-                            icon:'SectionIconJobDescription',
+                            icon:'dot-circle',
                             link:'job-description.index',
                             linkType:'route',
                             type:'standard',
@@ -479,15 +410,14 @@ export default {
                 },
                 {
                     label: 'Machine',
-                    icon:'SectionIconMachine',
-                    link:'',
+                    icon:'cogs',
                     linkType:'external',
                     type:'dropdown',
                     activeKey:['machine','machine-type'],
                     items: [
                         {
                             label: 'Machines',
-                            icon:'SectionIconMachines',
+                            icon:'solar-panel',
                             link:'machine.index',
                             linkType:'route',
                             type:'standard',
@@ -495,7 +425,7 @@ export default {
                         },
                         {
                             label: 'Machine Types',
-                            icon:'SectionIconType',
+                            icon:'th-list',
                             link:'machine-type.index',
                             linkType:'route',
                             type:'standard',
@@ -505,36 +435,35 @@ export default {
                 },
                 {
                     label: 'Maintenance',
-                    icon:'SectionIconMaintenance',
-                    link:'',
+                    icon:'solar-panel',
                     linkType:'external',
                     type:'dropdown',
                     activeKey:['maintenance','maintenance-action','maintenance-plan'],
                     items: [
                         {
                             label: 'Maintenance Orders',
-                            icon:'SectionIconAction',
+                            icon:'random',
                             link:'maintenance.index',
                             linkType:'route',
                             type:'standard',
                         },
                         {
                             label: 'Maintenance Actions',
-                            icon:'SectionIconAction',
+                            icon:'clipboard-list',
                             link:'maintenance-action.index',
                             linkType:'route',
                             type:'standard',
                         },
                         {
                             label: 'Maintenance Plans',
-                            icon:'SectionIconPlan',
+                            icon:'clipboard-check',
                             link:'maintenance-plan.index',
                             linkType:'route',
                             type:'standard',
                         },
                         {
                             label: 'Maintenance Types',
-                            icon:'SectionIconType',
+                            icon:'th-list',
                             link:'maintenance-type.index',
                             linkType:'standard',
                             type:'dropdown',
@@ -543,42 +472,41 @@ export default {
                 },
                 {
                     label: 'Product',
-                    icon:'SectionIconProduct',
-                    link:'',
+                    icon:'box',
                     linkType:'external',
                     type:'dropdown',
                     items: [
                         {
                             label: 'Products',
-                            icon:'SectionIconProducts',
+                            icon:'boxes',
                             link:'product.index',
                             linkType:'route',
                             type:'standard',
                         },
                         {
                             label: 'Products Types',
-                            icon:'SectionIconType',
+                            icon:'th-list',
                             link:'product-type.index',
                             linkType:'route',
                             type:'standard',
                         },
                         {
                             label: 'Products Variations',
-                            icon:'SectionIconProductVariations',
+                            icon:'tags',
                             link:'product-variation.index',
                             linkType:'route',
                             type:'standard',
                         },
                         {
                             label: 'Products Quality Plans',
-                            icon:'SectionIconPlan',
+                            icon:'clipboard-check',
                             link:'product-quality-plan.index',
                             linkType:'route',
                             type:'standard',
                         },
                         {
                             label: 'Recipes',
-                            icon:'SectionIconRecipe',
+                            icon:'mortar-pestle',
                             link:'recipe.index',
                             linkType:'route',
                             type:'standard',
@@ -587,28 +515,27 @@ export default {
                 },
                 {
                     label: 'Raw Material',
-                    icon:'SectionIconRawMaterial',
-                    link:'',
+                    icon:'square-full',
                     linkType:'external',
                     type:'dropdown',
                     items: [
                         {
                             label: 'Raw Materials',
-                            icon:'SectionIconRawMaterials',
+                            icon:'shapes',
                             link:'raw-material.index',
                             linkType:'route',
                             type:'standard',
                         },
                         {
-                            label: 'Raw Material Types',
-                            icon:'SectionIconType',
-                            link:'raw-material-types.index',
+                            label: 'RM Types',
+                            icon:'th-list',
+                            link:'raw-material-type.index',
                             linkType:'route',
                             type:'standard',
                         },
                         {
-                            label: 'Raw Material Quality Plans',
-                            icon:'SectionIconPlan',
+                            label: 'RM Quality Plans',
+                            icon:'clipboard-check',
                             link:'raw-material-quality-plan.index',
                             linkType:'route',
                             type:'standard',
@@ -617,49 +544,48 @@ export default {
                 },
                 {
                     label: 'Regulation',
-                    icon:'SectionIconRegulation',
-                    link:'',
+                    icon:'certificate',
                     linkType:'external',
                     type:'dropdown',
                     items: [
                         {
                             label: 'Audits',
-                            icon:'SectionIconAudits',
+                            icon:'user-secret',
                             link:'audit.index',
                             linkType:'route',
                             type:'standard',
                         },
                         {
                             label: 'Audit Calendar',
-                            icon:'SectionIconPlan',
+                            icon:'calendar',
                             link:'audit-plan.index',
                             linkType:'route',
                             type:'standard',
                         },
                         {
                             label: 'Audit Firms',
-                            icon:'SectionIconAuditFirm',
+                            icon:'landmark',
                             link:'audit-firm.index',
                             linkType:'route',
                             type:'standard',
                         },
                         {
                             label: 'Audit Types',
-                            icon:'SectionIconType',
+                            icon:'th-list',
                             link:'audit-type.index',
                             linkType:'route',
                             type:'standard',
                         },
                         {
                             label: 'Auditors',
-                            icon:'SectionIconAuditor',
+                            icon:'user-shield',
                             link:'auditor.index',
                             linkType:'route',
                             type:'standard',
                         },
                         {
                             label: 'Standards',
-                            icon:'SectionIconStandard',
+                            icon:'check-square',
                             link:'standard.index',
                             linkType:'route',
                             type:'standard',
@@ -668,21 +594,20 @@ export default {
                 },
                 {
                     label: 'Document',
-                    icon:'SectionIconDocument',
-                    link:'',
+                    icon:'file-alt',
                     linkType:'external',
                     type:'dropdown',
                     items: [
                         {
                             label: 'Documents',
-                            icon:'SectionIconDocuments',
+                            icon:'folder-open',
                             link:'document.index',
                             linkType:'route',
                             type:'standard',
                         },
                         {
                             label: 'Document Types',
-                            icon:'SectionIconType',
+                            icon:'th-list',
                             link:'document-type.index',
                             linkType:'route',
                             type:'standard',
@@ -691,35 +616,34 @@ export default {
                 },
                 {
                     label: 'Measurement Tool',
-                    icon:'SectionIconMeasurementTool',
-                    link:'',
+                    icon:'balance-scale',
                     linkType:'external',
                     type:'dropdown',
                     items: [
                         {
                             label: 'Measurement Tools',
-                            icon:'SectionIconMeasurementTools',
+                            icon:'balance-scale',
                             link:'measurement-tool.index',
                             linkType:'route',
                             type:'standard',
                         },
                         {
-                            label: 'Measurement Tool Actions',
-                            icon:'SectionIconAction',
+                            label: 'MT Actions',
+                            icon:'clipboard-list',
                             link:'measurement-tool-action.index',
                             linkType:'route',
                             type:'standard',
                         },
                         {
-                            label: 'Measurement Tool Types',
-                            icon:'SectionIconType',
+                            label: 'MT Types',
+                            icon:'th-list',
                             link:'measurement-tool-type.index',
                             linkType:'route',
                             type:'standard',
                         },
                         {
-                            label: 'Measurement Tool Properties',
-                            icon:'SectionIconType',
+                            label: 'MT Properties',
+                            icon:'bezier-curve',
                             link:'measurement-tool-property.index',
                             linkType:'route',
                             type:'standard',
@@ -727,43 +651,42 @@ export default {
                     ]
                 },
                 {
-                    label: 'Claim',
-                    icon:'SectionIconClaim',
-                    link:'',
+                    label: 'Complaint',
+                    icon:'heart-broken',
                     linkType:'external',
                     type:'dropdown',
                     items: [
                         {
                             label: 'Complaints',
-                            icon:'SectionIconClaims',
+                            icon:'heart-broken',
                             link:'complaint.index',
                             linkType:'route',
                             type:'standard',
                         },
                         {
                             label: 'Complaint Actions',
-                            icon:'SectionIconAction',
+                            icon:'clipboard-list',
                             link:'complaint-action.index',
                             linkType:'route',
                             type:'standard',
                         },
                         {
                             label: 'Complaint Decisions',
-                            icon:'SectionIconClaimDecision',
+                            icon:'gavel',
                             link:'complaint-decision.index',
                             linkType:'route',
                             type:'standard',
                         },
                         {
                             label: 'Complaint Types',
-                            icon:'SectionIconType',
+                            icon:'th-list',
                             link:'complaint-type.index',
                             linkType:'route',
                             type:'standard',
                         },
                         {
                             label: 'Complaint Properties',
-                            icon:'SectionIconType',
+                            icon:'bezier-curve',
                             link:'complaint-property.index',
                             linkType:'route',
                             type:'standard',
@@ -772,7 +695,7 @@ export default {
                 },
                 {
                     label: 'Customers',
-                    icon:'SectionIconCustomer',
+                    icon:'hands-helping',
                     link:'customer.index',
                     linkType:'route',
                     type:'standard',
