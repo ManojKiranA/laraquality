@@ -15,7 +15,15 @@ class CreateMachinesTable extends Migration
     {
         Schema::create('machines', function (Blueprint $table) {
             $table->id();
+            $table->string('code',100)->nullable();
+            $table->string('name',255);
+            $table->foreignId('machine_type_id')->nullable();
+            $table->foreignId('department_id')->nullable();
+            $table->foreignId('machine_id')->nullable();
+            $table->foreignId('creator_id');
+            $table->foreignId('updater_id')->nullable();
             $table->timestamps();
+            $table->softDeletes('deleted_at', 0);
         });
     }
 

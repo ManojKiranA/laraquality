@@ -24,11 +24,6 @@ Route::get('/', function () {
     ]);
 }); */
 
-    //Dashboard
-    Route::middleware(['auth:sanctum', 'verified'])->get('/', function(){
-        return Inertia::render('Dashboard');
-    })->name('dashboard');
-
 //API
 Route::get('getDepartments','\App\Http\Controllers\ApiController@getDepartments');
 

@@ -2,39 +2,63 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Department;
+use App\Models\Machine;
+use App\Models\MachineType;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
+use Inertia\Inertia;
 
 class MachineController extends Controller
 {
     /**
      * Display a listing of the resource.
      *
-     * @return \Illuminate\Http\Response
+     * @return \Inertia\Response
      */
     public function index()
     {
-        //
+        return Inertia::render('Machine/Index',[
+            'machines'=>Machine::all(),
+            'departments'=>Department::all()
+        ]);
     }
 
     /**
      * Show the form for creating a new resource.
      *
-     * @return \Illuminate\Http\Response
+     * @return \Inertia\Response
      */
     public function create()
     {
-        //
+        return Inertia::render('Machine/Create',[
+            'machines'=>Machine::all(),
+            'machineTypes'=>MachineType::all(),
+            'departments'=>Department::all(),
+        ]);
     }
 
     /**
      * Store a newly created resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @return \Illuminate\Http\Response
+     * @return \Illuminate\Http\RedirectResponse
      */
     public function store(Request $request)
     {
-        //
+        $attributes = $request->all();
+        isset($request->machine_type_id) ? $attributes['machine_type_id'] = $request->machine_type_id['id'] : $attributes['machine_type_id'] = null;
+        isset($request->department_id) ? $attributes['department_id'] = $request->department_id['id'] : $attributes['department_id'] = null;
+        isset($request->machine_id) ? $attributes['machine_id'] = $request->machine_id['id'] : $attributes['machine_id'] = null;
+        isset($request->department_id) ? $attributes['department_id'] = $request->department_id['id'] : $attributes['department_id'] = null;
+        $attributes['creator_id'] = Auth::id();
+        Machine::create($attributes);
+        $message = [];
+        $message['type'] = 'success' ;
+        $message['content'] = 'The machine has been successfully created. The machine created: '.$request->name ;
+
+        return redirect()->route('machine.index')
+            ->with('message', $message);
     }
 
     /**
