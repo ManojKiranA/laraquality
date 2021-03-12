@@ -19,8 +19,8 @@ class MachineController extends Controller
     public function index()
     {
         return Inertia::render('Machine/Index',[
-            'machines'=>Machine::all(),
-            'departments'=>Department::all()
+            'machines'=>Machine::with('department:id,name','machine:id,name','machineType:id,name')->get(['id','code','name','department_id','machine_type_id','machine_id']),
+            'departments'=>Department::all(['id','name'])
         ]);
     }
 
