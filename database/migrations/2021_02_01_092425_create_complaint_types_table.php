@@ -17,12 +17,12 @@ class CreateComplaintTypesTable extends Migration
             $table->id();
             $table->string('name',250);
             $table->tinyInteger('critical_level')->nullable()->default(0);
-            $table->boolean('department_id')->nullable()->references('id')->on('departments');
+            $table->boolean('department_id')->nullable();
             $table->json('product_id')->nullable();
             $table->string('source',750)->nullable();
             $table->string('advice',750)->nullable();
-            $table->foreignId('creator_id')->references('id')->on('users');
-            $table->foreignId('updater_id')->nullable()->references('id')->on('users');
+            $table->foreignId('creator_id');
+            $table->foreignId('updater_id')->nullable();
             $table->softDeletes('deleted_at', 0);
             $table->timestamps();
         });

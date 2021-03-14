@@ -17,13 +17,13 @@ class CreateProductsTable extends Migration
             $table->id();
             $table->string('name',255);
             $table->string('code',100);
-            $table->foreignId('department_id')->nullable()->references('id')->on('departments');
-            $table->foreignId('product_type_id')->nullable()->references('id')->on('product_types');
+            $table->foreignId('department_id')->nullable();
+            $table->foreignId('product_type_id')->nullable();
             $table->string('description',750)->nullable();
             $table->boolean('is_certified')->default(0);
-            $table->foreignId('standard_id')->nullable()->references('id')->on('standards');
-            $table->foreignId('creator_id')->references('id')->on('users');
-            $table->foreignId('updater_id')->nullable()->references('id')->on('users');
+            $table->foreignId('standard_id')->nullable();
+            $table->foreignId('creator_id');
+            $table->foreignId('updater_id')->nullable();
             $table->timestamps();
             $table->softDeletes('deleted_at', 0);
         });

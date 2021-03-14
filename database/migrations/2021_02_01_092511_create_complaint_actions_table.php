@@ -15,11 +15,11 @@ class CreateComplaintActionsTable extends Migration
     {
         Schema::create('complaint_actions', function (Blueprint $table) {
             $table->id();
-            $table->foreignId('complaint_id')->references('id')->on('complaints');
+            $table->foreignId('complaint_id');
             $table->tinyInteger('action_type')->default(0);
             $table->string('comment',750);
-            $table->foreignId('creator_id')->references('id')->on('users');
-            $table->foreignId('updater_id')->nullable()->references('id')->on('users');
+            $table->foreignId('creator_id');
+            $table->foreignId('updater_id')->nullable();
             $table->softDeletes('deleted_at', 0);
             $table->timestamps();
         });

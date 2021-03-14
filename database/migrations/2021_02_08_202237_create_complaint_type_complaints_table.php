@@ -15,8 +15,8 @@ class CreateComplaintTypeComplaintsTable extends Migration
     {
         Schema::create('complaint_type_complaints', function (Blueprint $table) {
             $table->id();
-            $table->foreignId('complaint_id')->references('id')->on('complaints');
-            $table->foreignId('complaint_type_id')->references('id')->on('complaint_types');
+            $table->foreignId('complaint_id');
+            $table->foreignId('complaint_type_id');
             $table->timestamps();
         });
     }

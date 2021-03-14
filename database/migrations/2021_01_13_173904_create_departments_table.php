@@ -16,14 +16,14 @@ class CreateDepartmentsTable extends Migration
         Schema::create('departments', function (Blueprint $table) {
             $table->id();
             $table->string('name',100);
-            $table->foreignId('manager_id')->nullable()->references('id')->on('users');
+            $table->foreignId('manager_id')->nullable();
             $table->boolean('is_complaint')->nullable()->default(false);
             $table->boolean('is_production')->nullable()->default(false);
             $table->boolean('department_type')->nullable()->default(false);
-            $table->boolean('department_id')->nullable()->references('id')->on('departments');
+            $table->boolean('department_id')->nullable();
             $table->string('description',255)->nullable();
-            $table->foreignId('creator_id')->references('id')->on('users');
-            $table->foreignId('updater_id')->nullable()->references('id')->on('users');
+            $table->foreignId('creator_id');
+            $table->foreignId('updater_id')->nullable();
             $table->softDeletes('deleted_at', 0);
             $table->timestamps();
         });
