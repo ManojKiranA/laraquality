@@ -33,6 +33,9 @@ class DatabaseSeeder extends Seeder
         /*Products Seeder*/
         $this->call(ProductSeeder::class);
 
+        /*Machine Type Seeder*/
+        $this->call(MachineTypeSeeder::class);
+
         /*Complaint Type Seeder*/
         $this->call(ComplaintTypeSeeder::class);
 
