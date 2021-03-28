@@ -39,7 +39,8 @@ import {
     faBezierCurve, //Properties
     faHeartBroken, //Customer Complaints
     faGavel, //Customer Complaint Decisions
-    faHandsHelping //Customers
+    faHandsHelping, //Customers
+    faStore //Manufacturers
 } from '@fortawesome/free-solid-svg-icons'
 library.add(
     faDotCircle,
@@ -71,7 +72,8 @@ library.add(
     faBezierCurve,
     faHeartBroken,
     faGavel,
-    faHandsHelping
+    faHandsHelping,
+    faStore
     )
 /* Generate Font Awesome Component */
 Vue.component('font-awesome-icon', FontAwesomeIcon)

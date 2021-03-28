@@ -699,6 +699,13 @@ export default {
                     link:'customer.index',
                     linkType:'route',
                     type:'standard',
+                },
+                {
+                    label: 'Manufactures',
+                    icon:'store',
+                    link:'manufacturer.index',
+                    linkType:'route',
+                    type:'standard',
                 }
                 ]
         }
