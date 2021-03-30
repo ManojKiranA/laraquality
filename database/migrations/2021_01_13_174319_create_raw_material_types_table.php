@@ -15,6 +15,11 @@ class CreateRawMaterialTypesTable extends Migration
     {
         Schema::create('raw_material_types', function (Blueprint $table) {
             $table->id();
+            $table->string('name',100);
+            $table->string('description',255)->nullable();
+            $table->foreignId('creator_id');
+            $table->foreignId('updater_id')->nullable();
+            $table->softDeletes('deleted_at', 0);
             $table->timestamps();
         });
     }
