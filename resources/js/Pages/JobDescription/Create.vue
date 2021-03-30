@@ -25,7 +25,7 @@
                     </input-group>
                     <!-- Collar Type -->
                     <input-group label="Collar Type" labelFor="collar_type" class="col-span-12 md:col-span-6">
-                        <Dropdown v-model="form.collar_type" :options="collarType" optionLabel="name" placeholder="Select" :showClear="true" @change="jobDescriptionChange">
+                        <Dropdown v-model="form.collar_type" :options="collarType" optionLabel="name" placeholder="Select" :showClear="true">
                             <!--Chosen Item-->
                             <template #value="slotProps">
                                 <div class="flex flex-row items-center" v-if="slotProps.value">
@@ -57,7 +57,7 @@
                     </input-group>
                     <!-- Summary -->
                     <input-group label="Summary" labelFor="summary" class="col-span-12">
-                        <Textarea v-model="summary" :autoResize="true" rows="2" cols="30" />
+                        <Textarea v-model="form.summary" :autoResize="true" rows="2" cols="30" />
                         <Error :message="error.summary"/>
                     </input-group>
                 </form-section>
@@ -66,23 +66,23 @@
                 description="Job description's definitions">
                     <!-- Job Requirements -->
                     <input-group label="Job Requirements" labelFor="job_requirement" class="col-span-12">
-                        <InputRepeatable id="job_requirement"  v-model="form.job_requirement" valueName="Requirement"/>
+                        <InputRepeatable id="job_requirement"  v-model="form.job_requirement" placeHolderText="Requirement"/>
                     </input-group>
                     <!-- Key Performance Indicators (KPIs) -->
                     <input-group label="Key Performance Indicators (KPIs)" labelFor="kpi" class="col-span-12">
-                        <InputRepeatable id="kpi"  v-model="form.kpi" valueName="KPI"/>
+                        <InputRepeatable id="kpi"  v-model="form.kpi" placeHolderText="KPI"/>
                     </input-group>
                     <!-- Job Responsibilities -->
                     <input-group label="Job Responsibilities" labelFor="job_responsibility" class="col-span-12">
-                        <InputRepeatable id="job_responsibility"  v-model="form.job_responsibility" valueName="Responsibility"/>
+                        <InputRepeatable id="job_responsibility"  v-model="form.job_responsibility" placeHolderText="Responsibility"/>
                     </input-group>
                     <!-- Working Conditions and Areas-->
                     <input-group label="Working Conditions and Areas" labelFor="working_conditions" class="col-span-12">
-                        <InputRepeatable id="working_conditions"  v-model="form.working_conditions" valueName="Condition or Area"/>
+                        <InputRepeatable id="working_conditions"  v-model="form.working_conditions" placeHolderText="Condition or Area"/>
                     </input-group>
                     <!-- Working Equipments-->
                     <input-group label="Working Equipments" labelFor="working_equipments" class="col-span-12">
-                        <InputRepeatable id="working_equipments"  v-model="form.working_equipments" valueName="Equipment"/>
+                        <InputRepeatable id="working_equipments"  v-model="form.working_equipments" placeHolderText="Equipment"/>
                     </input-group>
                     <!-- It works together with  -->
                     <input-group label="It works together with" labelFor="working_together" class="col-span-12  md:col-span-6">

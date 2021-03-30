@@ -11,7 +11,7 @@
                         <span class="flex mr-2 font-semibold text-md text-gray-400" :class="nullError && value[index] === null && 'text-red-500'">{{ index+1 }}.</span>
                         <!--Field-->
                         <label for="value" class="flex w-full">
-                            <input v-model="value[index]" type="text" name="value" class="flex w-full rounded border border-gray-300 p-2 text-gray-500" :class="nullError && value.length === index+1 && 'border-red-500 placeholder-red-500'" :placeholder="nullError && value.length === index+1 ? 'Please fill this field' : valueName" />
+                            <input v-model="value[index]" type="text" name="value" class="flex w-full rounded border border-gray-300 p-2 text-gray-500" :class="nullError && value.length === index+1 && 'border-red-500 placeholder-red-500'" :placeholder="nullError && value.length === index+1 ? 'Please fill this field' : placeHolderText" />
                         </label>
                         <!--Delete Button-->
                         <span class="col-span-1" @click="deleteItem(index)"><delete-icon class="w-6 h-5 text-red-500 cursor-pointer"/></span>
@@ -37,7 +37,7 @@ import AddIcon from '@/Components/Icons/General/Plus'
 import DeleteIcon from '@/Components/Icons/General/XIcon'
 import DownIcon from '@/Components/Icons/General/SlimeDownArrow'
 export default {
-    props:['valueName','value'],
+    props:['placeHolderText','value'],
     components: {
         AddIcon,
         DeleteIcon,
@@ -45,7 +45,6 @@ export default {
     },
     data(){
       return{
-          value:null,
           nullError:false,
       }
     },
