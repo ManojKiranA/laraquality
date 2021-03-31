@@ -9,8 +9,8 @@
             <!--Content-->
             <slot/>
             <!--Language selection-->
-            <div class="flex justify-around pt-2 mt-2 -mb-2 border-t">
-                <!--Turkish-->
+<!--            <div class="flex justify-around pt-2 mt-2 -mb-2 border-t">
+                &lt;!&ndash;Turkish&ndash;&gt;
                 <button class="py-2 justify-center flex-1 hover:bg-blue-200"
                         onclick="window.location.href='http://laraquality/dil/tr'">
                     <svg class="inline-block rounded-full w-8 h-8 mr-2" viewBox="0 0 512 512"
@@ -27,7 +27,7 @@
                     </svg>
                     Türkçe
                 </button>
-                <!--English-->
+                &lt;!&ndash;English&ndash;&gt;
                 <button class="py-2 justify-center flex-1 hover:bg-blue-200"
                         onclick="window.location.href='http://laraquality/dil/en'">
                     <svg id="Layer_1" class="inline-block rounded-full w-8 h-8 mr-2"
@@ -75,7 +75,7 @@
 </svg>
                     English
                 </button>
-            </div>
+            </div>-->
         </div>
     </div>
 </template>
