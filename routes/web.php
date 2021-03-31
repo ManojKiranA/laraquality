@@ -71,8 +71,8 @@ Route::middleware(['auth:sanctum', 'verified'])->prefix('dashboard')->group(func
     Route::resource('raw-material-type', \App\Http\Controllers\RawMaterialTypeController::class);
     //Raw Material Quality Plan
     Route::resource('raw-material-quality-plan', \App\Http\Controllers\RawMaterialQaulityPlanController::class);
-    //Manufactures
-    Route::resource('manufacturer', \App\Http\Controllers\ManufacturerController::class);
+    //Suppliers
+    Route::resource('supplier', \App\Http\Controllers\SupplierController::class);
     //Audit
     Route::resource('audit', \App\Http\Controllers\AuditController::class);
     //Audit Type

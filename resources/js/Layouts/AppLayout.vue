@@ -701,9 +701,9 @@ export default {
                     type:'standard',
                 },
                 {
-                    label: 'Manufactures',
+                    label: 'Suppliers',
                     icon:'store',
-                    link:'manufacturer.index',
+                    link:'supplier.index',
                     linkType:'route',
                     type:'standard',
                 }
