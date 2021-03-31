@@ -118,7 +118,6 @@
                     </template>
                 </Column>
             </DataTable>
-            {{test}}
         </div>
     </app-layout>
 </template>
