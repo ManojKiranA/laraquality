@@ -3,7 +3,7 @@
 namespace Database\Seeders;
 
 use App\Models\ComplaintType;
-use App\Models\Manufacturer;
+use App\Models\Supllier;
 use Illuminate\Database\Seeder;
 use Illuminate\Support\Facades\App;
 
@@ -26,7 +26,7 @@ class DatabaseSeeder extends Seeder
         \App\Models\Customer::factory(10)->create();
 
         /*Random Manufacturer Factory*/
-        \App\Models\Manufacturer::factory(10)->create();
+        \App\Models\Supplier::factory(10)->create();
 
         /*Department Seeder*/
         $this->call(DepartmentSeeder::class);

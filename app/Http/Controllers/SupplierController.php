@@ -2,28 +2,33 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Supplier;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
+use Inertia\Inertia;
 
-class ManufacturerController extends Controller
+class SupplierController extends Controller
 {
     /**
      * Display a listing of the resource.
      *
-     * @return \Illuminate\Http\Response
+     * @return \Inertia\Response
      */
     public function index()
     {
-        //
+        return Inertia::render('Supplier/Index',[
+            'suppliers' => Supplier::all(['id','name','phone','status']),
+        ]);
     }
 
     /**
      * Show the form for creating a new resource.
      *
-     * @return \Illuminate\Http\Response
+     * @return \Inertia\Response
      */
     public function create()
     {
-        //
+        return Inertia::render('Supplier/Create');
     }
 
     /**
@@ -34,7 +39,16 @@ class ManufacturerController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $attributes = $request->all();
+        $attributes['status'] = $request->status != null  ? $request->status['value'] : 1 ;
+        $attributes['creator_id'] = Auth::id();
+        Supplier::create($attributes);
+        $message = [];
+        $message['type'] = 'success' ;
+        $message['content'] = 'The supplier has been successfully created. The customer created: '.$request->name ;
+
+        return redirect()->route('supplier.index')
+            ->with('message', $message);
     }
 
     /**
