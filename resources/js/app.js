@@ -10,37 +10,38 @@ import { FontAwesomeIcon } from '@fortawesome/vue-fontawesome'
 /* Icons */
 import { library } from '@fortawesome/fontawesome-svg-core'
 import {
-    faDotCircle, //Iconless Item
-    faSitemap, // Departments
-    faUserCog, //Staff
-    faUserCircle, //Staff List
-    faCogs, //Machines
-    faSolarPanel, //Machine List
-    faThList, //Types
-    faTools, //Maintance
-    faClipboardList, //Action
-    faRandom, //Order
-    faClipboardCheck, //Plan
-    faBox, //Products
-    faBoxes, //Product List
-    faTags, //Product Variation
-    faMortarPestle, //Product Recipe
-    faSquareFull, //Raw Materials
-    faShapes, //Raw Materials List
-    faCertificate, //Regulations
-    faUserSecret, //Audits
-    faLandmark, //Audit Firms
-    faCalendar, //Audit Calendar
-    faUserShield, //Auditors
-    faCheckSquare, //Standards
-    faFileAlt, //Documents
-    faFolderOpen, //Documents List
-    faBalanceScale, //Measurement Tools
-    faBezierCurve, //Properties
-    faHeartBroken, //Customer Complaints
-    faGavel, //Customer Complaint Decisions
-    faHandsHelping, //Customers
-    faStore //Manufacturers
+  faDotCircle, //Iconless Item
+  faSitemap, // Departments
+  faUserCog, //Staff
+  faUserCircle, //Staff List
+  faCogs, //Machines
+  faSolarPanel, //Machine List
+  faThList, //Types
+  faTools, //Maintance
+  faClipboardList, //Action
+  faRandom, //Order
+  faClipboardCheck, //Plan
+  faBox, //Products
+  faBoxes, //Product List
+  faTags, //Product Variation
+  faMortarPestle, //Product Recipe
+  faSquareFull, //Raw Materials
+  faShapes, //Raw Materials List
+  faCertificate, //Regulations
+  faUserSecret, //Audits
+  faLandmark, //Audit Firms
+  faCalendar, //Audit Calendar
+  faUserShield, //Auditors
+  faCheckSquare, //Standards
+  faFileAlt, //Documents
+  faFolderOpen, //Documents List
+  faBalanceScale, //Measurement Tools
+  faBezierCurve, //Properties
+  faHeartBroken, //Customer Complaints
+  faGavel, //Customer Complaint Decisions
+  faHandsHelping, //Customers
+  faStore,  //Manufacturers
+  faPlusCircle, faMinusCircle
 } from '@fortawesome/free-solid-svg-icons'
 library.add(
     faDotCircle,
@@ -73,7 +74,9 @@ library.add(
     faHeartBroken,
     faGavel,
     faHandsHelping,
-    faStore
+    faStore,
+    faPlusCircle,
+    faMinusCircle
     )
 /* Generate Font Awesome Component */
 Vue.component('font-awesome-icon', FontAwesomeIcon)
