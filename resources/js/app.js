@@ -41,7 +41,7 @@ import {
   faGavel, //Customer Complaint Decisions
   faHandsHelping, //Customers
   faStore,  //Manufacturers
-  faPlusCircle, faMinusCircle
+  faPlusCircle, faMinusCircle, faCaretDown, faCaretUp
 } from '@fortawesome/free-solid-svg-icons'
 library.add(
     faDotCircle,
@@ -76,7 +76,9 @@ library.add(
     faHandsHelping,
     faStore,
     faPlusCircle,
-    faMinusCircle
+    faMinusCircle,
+    faCaretDown,
+    faCaretUp
     )
 /* Generate Font Awesome Component */
 Vue.component('font-awesome-icon', FontAwesomeIcon)

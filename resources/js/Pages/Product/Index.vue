@@ -15,15 +15,15 @@
     <template #content>
       <Table>
         <template #header>
-          <table-header>Name</table-header>
-          <table-header>Code</table-header>
+          <table-header fieldKey="name"  @sort="sort">Name</table-header>
+          <table-header fieldKey="code" @sort="sort">Code</table-header>
           <table-header>Department</table-header>
           <table-header>Type</table-header>
           <table-header>Standard</table-header>
           <table-header align="center">Certification</table-header>
         </template>
         <template #content>
-          <table-row v-for="(item,index) in products.data" :key="index" :id="index" :count="products.data.length">
+          <table-row v-for="(item,index) in sortedData" :key="index" :id="index" :count="products.data.length">
             <table-cell>{{ item.name }}</table-cell>
             <table-cell>{{ item.code }}</table-cell>
             <table-cell>{{ item.department }}</table-cell>
@@ -64,7 +64,24 @@ export default {
   },
   data(){
     return{
-
+        sortBy: null,
+        sortDirection: null
+    }
+  },
+  methods:{
+    sort(event){
+      this.sortBy = event.key;
+      this.sortDirection = event.direction;
+    }
+  },
+  computed:{
+    sortedData(){
+      return this.products.data.sort((p1,p2) => {
+        let modifier = 1;
+        if(this.sortDirection === 'desc') modifier = -1;
+        if(p1[this.sortBy] < p2[this.sortBy]) return -1 * modifier; if(p1[this.sortBy] > p2[this.sortBy]) return 1 * modifier;
+        return 0;
+      });
     }
   }
 }

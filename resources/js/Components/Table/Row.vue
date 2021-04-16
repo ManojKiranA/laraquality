@@ -1,6 +1,6 @@
 <template>
   <tr
-    class="bg-white hover:bg-blue-100"
+    class="bg-white hover:bg-blue-100 hover:shadow"
     :class="{
           'border-b border-gray-400' : id !== count-1,
           'rounded-t' : id === 0,
